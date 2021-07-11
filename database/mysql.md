@@ -8,7 +8,7 @@ SELECT member.birthdate , dayname(member.birthdate) FROM startupdocterdb.member;
 ```
 the result output will be 
 
-![result](../images/mysql_1.png)
+![result](../images/ms_1.png)
 
 ### char length 
  the length of string can be obtained 
@@ -19,4 +19,4 @@ the result output will be
 
 returns the output 
 
-![result](../images/mysql_2.png)
+![result](../images/ms_2.png)
