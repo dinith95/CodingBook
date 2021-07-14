@@ -81,7 +81,16 @@ returns all the items in **both the lists**.
 var commonItems = numbers.Intersect(doubles).ToList();
 ```
 
+### Zip 
 
+used to iterate over 2 lists parallely and returns value of the operation 
+
+``` C# 
+// iterate both numbers and numbersNew list items and retun the addition of each element 
+var totals = numbers.Zip(numbersNew, (num1, num2) => num1 + num2);
+//  num1 - numbers item 
+//  num2 - numbersNew item 
+```
 
 
         
