@@ -20,3 +20,39 @@ the result output will be
 returns the output 
 
 ![result](../images/ms_2.png)
+
+### get current time 
+ returns the current date time value 
+
+ ``` sql 
+ select now();
+ ```
+
+> output  =>  '2021-07-31 11:08:54'
+
+### add time to current time 
+
+add specific hours / minutes / seconds to existing time 
+
+``` sql 
+select now() as currentTime ,  addtime(now() , '0:05:00') as modifiedTime
+```
+
+> output 
+
+|currentTime        |modifiedTime       |
+|-------------------|-------------------|
+|2021-07-31 11:13:40|2021-07-31 11:18:40|
+
+### substract time 
+used substract time from a time 
+
+``` sql 
+select now() as currentTime ,  subtime(now() , '0:05:00') as modifiedTime
+```
+> output
+
+|currentTime        |modifiedTime       |
+|-------------------|-------------------|
+|2021-07-31 11:17:58|2021-07-31 11:12:58|
+
