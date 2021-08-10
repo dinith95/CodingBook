@@ -118,4 +118,17 @@ also abive tasks can be added to a list as shown below and **can be held till al
 downLoadTask.Add(task); // adding to list 
 
 Task.WaitAll(downLoadTask.ToArray()); // waiting until all of them are completed 
+```
 
+## Exceptions 
+
+### creating exceptions 
+
+> adding custom data to an exception
+
+``` C#
+OperationCanceledException exception = new OperationCanceledException();
+// adds custom data key => type , value => lightweight 
+exception.Data.Add("type", "lightweight"); 
+
+```
