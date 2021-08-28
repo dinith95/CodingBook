@@ -7,13 +7,17 @@ you can connect to the *aws ec2* instance by the commandline through **SSH**. A 
 > execute following commands when connecting from windows.
 
 ```powershell
+
+# assing the pem file name 
+ $varPem = ".\ec2test.pem"
+
 ## reset the permission 
-icacls.exe .\test.pem /reset  
+icacls.exe $varPem /reset  
 
 # Give current user explicit read-permission
-icacls.exe .\test.pem  /GRANT:R "$($env:USERNAME):(R)"
+icacls.exe $varPem  /GRANT:R "$($env:USERNAME):(R)"
 
 # Disable inheritance and remove inherited permissions
-icacls.exe .\tests.pem /inheritance:r
+icacls.exe $varPem /inheritance:r
 
 ```
