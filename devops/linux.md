@@ -20,3 +20,27 @@ to get the **runtime versions** repeat above steps with
 ```shell
 dotnet --list-runtimes ## get the donet runtimes 
 ```
+
+
+
+## Linux Process Management 
+
+### process output tools 
+
+```  > ``` - replace the standered output to text file , writes to the file .
+
+Eg => **ping 8.8.8.8 > sample.txt**
+
+``` >> ``` - replace the standered output to text file , appened to the file 
+
+``` < ``` - gets the content from file to a process 
+
+### process commands 
+
+``` & ``` - send a process to background 
+
+``` jobs ``` - get all the processes running in the background 
+
+``` fg < process id > ``` - get process to the foreground
+
+``` kill -9 < process id > ``` - kill a process from that id 
