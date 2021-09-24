@@ -40,3 +40,19 @@ eg =>  ```--include-pattern=\"*.json\"```
 
 eg => ``` --exclude-pattern=\"tree.json\"```
 
+
+sample command 
+```powershell
+ copy "<URL_OF_FILE>?<SAS_URL>" "D:\tempData\crawled-logs" --recursive --check-length=false --include-pattern="*.json" --exclude-pattern="tree.json"
+ ```
+
+### get list of files in a folder ### 
+
+use the ```.\azcopy.exe list  <url>?<sas_token> ```. 
+
+**Note** if you want to print to a textfile redirect the output to a text . 
+
+sample 
+```powershell 
+.\azcopy.exe list "<URL_OF_FOLDER>?<SAS_TOKEN>" > result.txt
+```
