@@ -34,9 +34,9 @@ main paratmeters
 
 > **--include-pattern**  - add a specific file pattern to download 
 
-eg =>  ```--include-pattern=\"*.json\"```
+eg =>  ```--include-pattern="*.json"```
 
 > **--exclude-pattern**  - removes specific file mathcing the path from the pattern from the download list 
 
-eg => ``` --exclude-pattern=\"tree.json\"```
+eg => ``` --exclude-pattern="tree.json"```
 
