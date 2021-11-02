@@ -5,6 +5,7 @@ refer the sql server  [LocalDb doc](https://docs.microsoft.com/en-us/sql/databas
 - create local db - `SqlLocalDB create TestInstance`
 - start local db - `SqlLocalDB s TestInstance` 
 - info local db - `SqlLocalDB i TestInstance` 
+- get all instances in local db - `SqlLocalDB.exe i`
 
 **note** - the info will provide info as below 
 
