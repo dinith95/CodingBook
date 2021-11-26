@@ -21,9 +21,11 @@ taskkill /PID < process-number > /F
 
 ### download files from azure file share 
 
-use the azcopy command ``` .\azcopy.exe copy <url>?<sas_token> <destination> ```
+use the azcopy command ``` .\azcopy.exe copy <url><folder_path>?<sas_token> <destination> ```
 main paratmeters 
 >  *url* - url of the azure file or diectory 
+
+> *folder_path* - folder path inside the file share 
 
 > *sas_token* - the token created defining permissions 
 
@@ -40,3 +42,19 @@ eg =>  ```--include-pattern="*.json"```
 
 eg => ``` --exclude-pattern="tree.json"```
 
+### Get a list of files from Azure file share 
+
+use the list command ``` .\azcopy.exe list <url><folder_path>?<sas_token> <destination> ```
+
+>  *url* - url of the azure file or diectory 
+
+> *folder_path* - folder path inside the file share 
+
+> *sas_token* - the token created defining permissions 
+
+
+**Note**
+
+``` .\azcopy.exe list <url><folder_path>?<sas_token>  > result.txt ```
+
+will print the output to a text file.
