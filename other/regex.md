@@ -45,6 +45,12 @@
 
 **\*** - 0 or more similar characters 
 
+**?** - 0 or 1 ( optional )
+
 **{3}** - exact count 
 
 **{3,5}** - range ( 3 to 5 characters )
+
+## regex groups 
+
+( r | s | rs ) - either can be *r or s or rs*
