@@ -31,7 +31,20 @@
 
 **[1-9]** - any character in between the range 
 ```
-    ex : *[a-f]* - any character in between a and f
-         *[1-5]* - any number in between 1 and 5 
+    ex : [a-f] - any character in between a and f
+         [1-5] - any number in between 1 and 5 
+         [a-fA-F] - any character in between a and f and A and F
 
 ```
+**[^ ] - any charater range not in the set 
+    ex : [^a-f] - all the characters not in a nd f range 
+
+## regex quantifiyers 
+
+**+** - 1 or more similar characters 
+
+**\*** - 0 or more similar characters 
+
+**{3}** - exact count 
+
+**{3,5}** - range ( 3 to 5 characters )
