@@ -92,6 +92,21 @@ var totals = numbers.Zip(numbersNew, (num1, num2) => num1 + num2);
 //  num2 - numbersNew item 
 ```
 
+### Sort 
+
+it sorts a list items default by **ascending order** . 
+
+sort can be used with the **IComparer** to provide custom comparison
+
+``` c# 
+
+  var words = new List<string> {"falcon", "order", "war", "sky", "ocean", "blue", "cloud","boy", "by", "raven", "station", "batallion"};
+
+  words.Sort((a, b) => a.Length.CompareTo(b.Length));  // sorts ascending length
+
+  words.Sort((a, b) => b.Length.CompareTo(a.Length)); // sorts decending length
+
+```
 
 
 
