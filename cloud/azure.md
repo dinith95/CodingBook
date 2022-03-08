@@ -21,6 +21,8 @@ taskkill /PID < process-number > /F
 
 ### download files from azure file share 
 
+az copy tool download link : https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10
+
 use the azcopy command ``` .\azcopy.exe copy <url><folder_path>?<sas_token> <destination> ```
 main paratmeters 
 >  *url* - url of the azure file or diectory 
