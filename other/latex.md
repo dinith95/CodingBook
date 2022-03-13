@@ -35,6 +35,24 @@ giving the custom margins :
   ``` \input{page1} ```
 
 
+## Add page header footer 
+
+use the package **fancyhdr** 
+
+> include section - ``` \usepackage{fancyhdr} ```
+
+> update pagestyle - ``` \pagestyle{fancy} ```
+
+> add header on center - ``` \chead{< header content > } ```
+
+> add footer on center - ``` \cfoot{< header content>} ```
+
+*Note* - 
+
+to remove the top bar autmatically added with header - ``` \renewcommand{\headrulewidth}{0pt} ```
+
+
+
 ## Lines and shapes 
 
 ### Horizontal Line 
