@@ -19,6 +19,21 @@ giving the custom margins :
 
  ```
 
+ ### Linking a another page
+
+ create a page without 
+  -  \documentclass 
+  - \begin{document} 
+  -  \end{document}
+  
+  Create a **new page** and import content
+
+  ``` \include{page1} ```
+
+  add content without a new page 
+
+  ``` \input{page1} ```
+
 
 ## Lines and shapes 
 
