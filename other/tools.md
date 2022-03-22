@@ -11,3 +11,7 @@ dot peek can be downloaded from [dot peek download ](https://www.jetbrains.com/d
 ### thnderclinet 
 vs code extension for the request sending  - similar to postman
 [thunder client web ](www.thunderclient.io)
+
+### azure functions 
+vs code extension for the azure functions - deploy and manage 
+[azure_functions_web](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
