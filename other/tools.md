@@ -15,3 +15,7 @@ vs code extension for the request sending  - similar to postman
 ### azure functions 
 vs code extension for the azure functions - deploy and manage 
 [azure_functions_web](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+
+### azure databases 
+vs code extension for the azure databases - manage 
+[azure_database_view](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
