@@ -21,9 +21,13 @@ taskkill /PID < process-number > /F
 
 ### download files from azure file share 
 
-use the azcopy command ``` .\azcopy.exe copy <url>?<sas_token> <destination> ```
+az copy tool download link : https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10
+
+use the azcopy command ``` .\azcopy.exe copy <url><folder_path>?<sas_token> <destination> ```
 main paratmeters 
 >  *url* - url of the azure file or diectory 
+
+> *folder_path* - folder path inside the file share 
 
 > *sas_token* - the token created defining permissions 
 
@@ -34,11 +38,27 @@ main paratmeters
 
 > **--include-pattern**  - add a specific file pattern to download 
 
-eg =>  ```--include-pattern=\"*.json\"```
+eg =>  ```--include-pattern="*.json"```
 
 > **--exclude-pattern**  - removes specific file mathcing the path from the pattern from the download list 
 
-eg => ``` --exclude-pattern=\"tree.json\"```
+eg => ``` --exclude-pattern="tree.json"```
+
+### Get a list of files from Azure file share 
+
+use the list command ``` .\azcopy.exe list <url><folder_path>?<sas_token> <destination> ```
+
+>  *url* - url of the azure file or diectory 
+
+> *folder_path* - folder path inside the file share 
+
+> *sas_token* - the token created defining permissions 
+
+
+**Note**
+
+``` .\azcopy.exe list <url><folder_path>?<sas_token>  > result.txt ```
+
 
 
 sample command 
@@ -56,3 +76,5 @@ sample
 ```powershell 
 .\azcopy.exe list "<URL_OF_FOLDER>?<SAS_TOKEN>" > result.txt
 ```
+=======
+will print the output to a text file.

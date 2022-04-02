@@ -92,6 +92,24 @@ var totals = numbers.Zip(numbersNew, (num1, num2) => num1 + num2);
 //  num2 - numbersNew item 
 ```
 
+### Sort 
+
+it sorts a list items default by **ascending order** . 
+
+sort can be used with the **IComparer** to provide custom comparison
+
+``` c# 
+
+  var words = new List<string> {"falcon", "order", "war", "sky", "ocean", "blue", "cloud","boy", "by", "raven", "station", "batallion"};
+
+  words.Sort((a, b) => a.Length.CompareTo(b.Length));  // sorts ascending length
+
+  words.Sort((a, b) => b.Length.CompareTo(a.Length)); // sorts decending length
+
+```
+
+
+
 ## Task Parallel Library 
 
 ### key points 
@@ -132,3 +150,28 @@ OperationCanceledException exception = new OperationCanceledException();
 exception.Data.Add("type", "lightweight"); 
 
 ```
+
+## Useful Methods 
+
+### compare to 
+
+compared the two objects and return an integer value base on the two values . 
+
+sample 
+
+``` c# 
+obj1.val.CompareTo(obj2.val) ; // compare two object values 
+ 
+val1.CompareTo(val2) ; // compare 2 values 
+
+```
+
+**results**
+
+> 1st object < 2nd objct => < 0 
+
+> 1st object  = 2nd object  =>  0 
+
+> 1st object > 2nd object => > 0
+
+

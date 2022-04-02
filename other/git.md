@@ -9,6 +9,17 @@ The username and the password can be
 ```bash
 git config --global credential.helper cache --timeout=3600
 ```
+## git configs 
+
+### adding default editor 
+The **VS code** can be added as default editor. 
+
+```
+git config --global core.editor " < VS Code file location > -w"
+
+```
+> note 
+    VS code local file path => C:\Users\dinith.jayabodhi\AppData\Local\Programs\Microsoft VS Code\Code.exe
 
 ## git changes handling 
 
