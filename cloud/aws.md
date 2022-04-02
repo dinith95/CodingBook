@@ -1,3 +1,35 @@
+# AWS services 
+
+## AWS Storage 
+
+### Elastic File System - EFS 
+shred file storage 
+
+### FSx
+windows based file server 
+
+
+## AWS Database 
+
+### AWS relational 
+
+AWS RDS - 3rd party databases 
+AWS Aurora - 
+
+### AWS Dynamo 
+
+key value pair 
+
+### In memory 
+
+Elastic Cache 
+Memory db for redis 
+
+### document db 
+
+
+
+
 ## common tricks 
 
 ### connecting aws ec2
@@ -65,4 +97,5 @@ important variables
 > keyout => path which private key is saved \
 > out => path which certificate is stored \
 > config => path to the above created config file 
+
 
