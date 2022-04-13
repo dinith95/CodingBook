@@ -21,7 +21,13 @@ to get the **runtime versions** repeat above steps with
 dotnet --list-runtimes ## get the donet runtimes 
 ```
 
+### Install azcopy tool in linux
 
+follow the commands in the below [github Post](https://gist.github.com/aessing/76f1200c9f5b2b9671937b3b0ed5fd6f) . 
+
+### Install powershell in linux
+
+follow the commands in [microsoft docs](https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2#installation-via-package-repository)
 
 ## Linux Process Management 
 
