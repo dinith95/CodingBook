@@ -48,8 +48,17 @@ h1:nth-child(2) {
 
 ## Animations in CSS 
 
+### Transform Animations 
+
+these will define the motion , size change , rotation , skew like propertese . 
+full documentation is available in [w3 demo page](https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_transform&preval=translate(20px,10px))
+
+to make the transform smooth **transition** can be used . See the [transform_demo](https://codepen.io/dinith72/pen/WNogjjB)
+
 
 ### Keyframe Animations 
+
+a demo of this can be founf in [keyframe demo](https://codepen.io/dinith72/pen/BaJGGRM)
 
 we can defines diffrent css propertese for each of the stages of animation through **keyframes**.
 
