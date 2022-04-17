@@ -43,3 +43,29 @@ h1:nth-child(2) {
   opacity: 1 !important;
  }
 ```
+
+
+
+## Animations in CSS 
+
+
+### Keyframe Animations 
+
+we can defines diffrent css propertese for each of the stages of animation through **keyframes**.
+
+```css
+
+h1 {
+    /* defines animations name , single animation time , number of loops */
+   animation: blink 6s infinite; 
+}
+
+/* propertese at different stages  */
+@keyframes blink {
+  0% {opacity : 0;}
+  /* 0 sec => 1.5 sec : opcity 0 => 1 */
+  25% {opacity : 1;}
+  75% {opacity : 1;}
+  /* 4.5 sec => 6 sec : opcity 1 => 0 */
+  100% {opacity : 0;}
+}
