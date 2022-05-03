@@ -19,3 +19,10 @@ vs code extension for the azure functions - deploy and manage
 ### azure databases 
 vs code extension for the azure databases - manage 
 [azure_database_view](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
+
+
+## node tools
+
+### nvm 
+nvm allows the user to switch between multiple node versions 
+[nvm_github_repo](https://github.com/coreybutler/nvm-windows)
