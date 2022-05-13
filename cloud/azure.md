@@ -79,6 +79,15 @@ sample
 =======
 will print the output to a text file.
 
+### azcopy optimising the performance
+The performance can be optimised by increasing the following varaibles 
+- AZCOPY_CONCURRENT_FILES 
+- AZCOPY_CONCURRENCY_VALUE ( No of concurrency HTTP connection )
+
+to set an env varaible in powershell 
+```powershell
+$env:AZCOPY_CONCURRENCY_VALUE = <value>
+```
 
 ## Azure VM
 
