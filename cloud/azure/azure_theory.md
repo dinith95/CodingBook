@@ -1,6 +1,32 @@
-## Azure storage 
+## Azure Functions
+Event driven serveless framework based on multiple triggers . 
+
+### characteristics 
+- scalable - will scale based on the number of requests 
+- stateless - new Invocation will not be able to acess the previous state . 
 
 
+Azure Function can be triggered by 
+ - REST  endpoint 
+ - Timer Job 
+ - message from another service ( ASB ) 
+
+ cost based on 
+ - execution count
+ - running time for each excution 
+
+
+## Azure Logic Apps
+Low code / No code development tool .
+
+### characteristics
+- designed in a web base portal
+- Built using large number of connectors.
+- custom connectors can be made
+
+cost based on 
+- execution count 
+- cost per connector
 
 ## Azure VM
 
