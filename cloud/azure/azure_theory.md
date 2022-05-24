@@ -5,6 +5,11 @@ Event driven serveless framework based on multiple triggers .
 - scalable - will scale based on the number of requests 
 - stateless - new Invocation will not be able to acess the previous state . 
 
+### selection criteria 
+- custom operation should be built 
+- functionality already existing in native code ( in programming language )
+- involves few api ( mostly a trigger source and response output )
+
 
 Azure Function can be triggered by 
  - REST  endpoint 
@@ -23,6 +28,10 @@ Low code / No code development tool .
 - designed in a web base portal
 - Built using large number of connectors.
 - custom connectors can be made
+
+### selection criteria 
+ - involves multiple popular endpoint or tasks  ( listen to queue , send email , add a record )
+ - non avaialability of developer resources 
 
 cost based on 
 - execution count 
