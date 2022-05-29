@@ -49,3 +49,14 @@ type the following command in terminal
 ``` powershell 
 ssh -i <pem_file_path> azureuser@20.69.160.50
 ```
+
+
+## Azure App service 
+HTTP  based service for *Web Applications / REST  Apis / Mobile backends* with build in **Auto Scale** Support.
+
+App service provides buillt in Authentication and Aujthorisations with multiple identity providers . 
+- [Active Directory](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad) 
+- [Facebook](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-facebook)
+- [Google](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-google)
+- [Twitter](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-twitter)
+
