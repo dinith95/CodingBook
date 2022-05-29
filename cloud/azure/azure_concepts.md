@@ -54,6 +54,8 @@ ssh -i <pem_file_path> azureuser@20.69.160.50
 ## Azure App service 
 HTTP  based service for *Web Applications / REST  Apis / Mobile backends* with build in **Auto Scale** Support.
 
+A [tutorial](https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-app-service/7-create-html-web-app) to create an host azure web app.
+
 App service provides buillt in Authentication and Aujthorisations with multiple identity providers . 
 - [Active Directory](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad) 
 - [Facebook](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-facebook)
