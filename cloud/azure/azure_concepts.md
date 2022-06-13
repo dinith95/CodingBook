@@ -20,6 +20,8 @@ Azure Function can be triggered by
  - execution count
  - running time for each excution 
 
+ 
+
 
 ## Azure Logic Apps
 Low code / No code development tool .
@@ -62,3 +64,41 @@ App service provides buillt in Authentication and Aujthorisations with multiple 
 - [Google](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-google)
 - [Twitter](https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-twitter)
 
+### Feature Flags 
+Boolean values which will decide the excution off a feature based on provided conditions. 
+ feature manager support *appsettings.json* to configure the features as shown . 
+
+ ``` json 
+ "FeatureManagement": {
+    "FeatureA": true, // Feature flag set to on
+    "FeatureB": false, // Feature flag set to off
+    "FeatureC": {
+        "EnabledFor": [
+            {
+                "Name": "Percentage",
+                "Parameters": {
+                    "Value": 50
+                }
+            }
+        ]
+    }
+}
+
+```
+
+### Autoscaling 
+
+Increase the number of resources based on the diffrent metrics exceeded by a server as defined by user . 
+
+eg -> user can design an web service to autoscale if the memory usage in > 80%. 
+
+always increase *the number of servers* will not scale vertically. 
+
+**scale in** - reduce the number of instances. 
+**scale out** - increase the number of instances. 
+
+Types of auto scales supported 
+
+- metric based - based on a monitored matrci ( HTTP request waiting / messages in a queue / CPU ) - [all metrics](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/3-app-service-autoscale-conditions-rules#:~:text=Metrics%20for%20autoscale%20rules)
+
+- schdule based - schdule to autoscal during a timeperiod ( 6pm - 8 pm / Sunday)
