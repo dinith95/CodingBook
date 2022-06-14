@@ -109,11 +109,15 @@ Multiple autoscale rules can be defined for the same autoscale condition .
 
 eg : sample rules 
 
-if HTTP Queue > 10 => scale out by 1
-if CPU > 70% => scale out by 1 
-if HTTP Queue = 0 => scale in by 1
-if CPU < 50% => scale in by 1
+- if HTTP Queue > 10 => scale out by 1 
+- if CPU > 70% => scale out by 1 
+- if HTTP Queue = 0 => scale in by 1
+- if CPU < 50% => scale in by 1
 
 > scale out => Any of the conditions should be met ( HTTP queue > 10 | CPU > 70%)
 
 > scale in => All the conditions should be met ( HTTP queue == 0 && CPU < 50%)
+
+**AutoScale flapping avoidance**
+
+Azure would try to avoid the system **would scaling in** if it has to scale out immediately after it scaled in .  - [more](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/5-autoscale-best-practices#:~:text=Choose%20the%20thresholds%20carefully%20for%20all%20metric%20types)
