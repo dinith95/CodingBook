@@ -102,3 +102,18 @@ Types of auto scales supported
 - metric based - based on a monitored matrci ( HTTP request waiting / messages in a queue / CPU ) - [all metrics](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/3-app-service-autoscale-conditions-rules#:~:text=Metrics%20for%20autoscale%20rules)
 
 - schdule based - schdule to autoscal during a timeperiod ( 6pm - 8 pm / Sunday)
+
+**Autoscale Conditions** - [more info](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/3-app-service-autoscale-conditions-rules#:~:text=has%20been%20crossed.-,Autoscale%20actions,-When%20an%20autoscale)
+
+Multiple autoscale rules can be defined for the same autoscale condition . 
+
+eg : sample rules 
+
+if HTTP Queue > 10 => scale out by 1
+if CPU > 70% => scale out by 1 
+if HTTP Queue = 0 => scale in by 1
+if CPU < 50% => scale in by 1
+
+> scale out => Any of the conditions should be met ( HTTP queue > 10 | CPU > 70%)
+
+> scale in => All the conditions should be met ( HTTP queue == 0 && CPU < 50%)
