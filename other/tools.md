@@ -26,3 +26,10 @@ vs code extension for the azure databases - manage
 ### nvm 
 nvm allows the user to switch between multiple node versions 
 [nvm_github_repo](https://github.com/coreybutler/nvm-windows)
+
+
+## windows tools
+
+### Revo uninstaller 
+remove any software with the temp data and the configerations . 
+download from [here](https://www.revouninstaller.com/revo-uninstaller-free-download/)
