@@ -24,7 +24,7 @@
 
  eg : no of pods / version of software running in a pods 
 
- ### Replica set 
+### Replica set 
  tell how many instances of the pods should be running . 
 
-if 1 pod goes down Replica set will create another pod. 
+ if 1 pod goes down Replica set will create another pod. 
