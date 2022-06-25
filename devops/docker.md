@@ -15,6 +15,29 @@ Follow step 2  of the install guide , add the current user to docker group
 Note => instead of the su - ${USER} ,  logout and log in 
 
 
+## docker concepts 
+
+
+### image 
+
+
+docker image is developed application with the its packages and the files bundled together . normally dokcer image has 
+
+ - main framework libraries ( .net core runtime)
+ - application resources ( dll libraries )
+ - congigeration files ( appsetting,json)
+
+[more info ](https://docs.docker.com/engine/reference/commandline/images/)
+
+### registry 
+
+registry is the place where to store the docker images and share with others.
+
+### container 
+
+container is created from the docker base image with application or other process running on it. [more info](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system%20libraries%20and%20settings.)
+
+
 ## docker useful commands 
 
 delete single image -   ```docker image rm```
