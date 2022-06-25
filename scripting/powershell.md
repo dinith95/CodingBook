@@ -20,7 +20,9 @@ Invoke-RestMethod -Uri https://reqbin.com/echo/post/json -Method POST
 
 more information [microsoft documentation ](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
 
+ ### quick tips 
  
+ > change the output color : ``` -ForegroundColor Green ```
 
 
 ## powershell scripting 
