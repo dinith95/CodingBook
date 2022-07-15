@@ -19,6 +19,10 @@ main paratmeters
 
 eg =>  ```--include-pattern="*.json"```
 
+to add multiple files to download specify them by semi-colon - **:**
+
+eg =>  ```--include-pattern="result_.xml;delivered;"```
+
 > **--exclude-pattern**  - removes specific file mathcing the path from the pattern from the download list 
 
 eg => ``` --exclude-pattern="tree.json"```

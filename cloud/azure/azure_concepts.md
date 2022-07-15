@@ -121,3 +121,13 @@ eg : sample rules
 **AutoScale flapping avoidance**
 
 Azure would try to avoid the system **would scaling in** if it has to scale out immediately after it scaled in .  - [more](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/5-autoscale-best-practices#:~:text=Choose%20the%20thresholds%20carefully%20for%20all%20metric%20types)
+
+
+
+## AKS - Azure Kubernates Service 
+
+Microsoft managed kubernates service 
+
+> master node is managed by **Azure**
+
+> Azure vms can be used to deploy the worker nodes . 
