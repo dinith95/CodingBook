@@ -131,3 +131,19 @@ Microsoft managed kubernates service
 > master node is managed by **Azure**
 
 > Azure vms can be used to deploy the worker nodes . 
+
+> only billed for the running agent pool nodes.
+
+
+## ACI - Azure Container Instances 
+
+Instantly host an docker image in a container without worrying about the underlying infrastructure. 
+
+## ACR - Azure Container Registry 
+
+> store the image information regard to the Azure container Images. 
+
+
+## Azure Batch Services 
+
+> cloud based job schduling tasks 
