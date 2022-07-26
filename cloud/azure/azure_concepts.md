@@ -147,3 +147,19 @@ Instantly host an docker image in a container without worrying about the underly
 ## Azure Batch Services 
 
 > cloud based job schduling tasks 
+
+
+## Azure Cosmos Db 
+
+used to store the document type data ( No SQL type data ). 
+
+
+### document  
+
+each record is an **Json object** .
+
+it has following metadata. 
+
+- etag 
+
+- _ts  shows the time which the document has last updated . it will be shows in  epoch time . [more info](https://stackoverflow.com/a/73123605/8313114)
