@@ -31,22 +31,49 @@ follow the commands in [microsoft docs](https://docs.microsoft.com/en-us/powersh
 
 ## Linux Process Management 
 
+### view the current cpu and memory availability 
+
+``` top ``` can be used to view the ongoing processes, cpu usage and memory usage 
+
 ### process output tools 
 
-```  > ``` - replace the standered output to text file , writes to the file .
+- ```  > ``` - replace the standered output to text file , writes to the file .
 
 Eg => **ping 8.8.8.8 > sample.txt**
 
-``` >> ``` - replace the standered output to text file , appened to the file 
+- ``` >> ``` - replace the standered output to text file , appened to the file 
 
-``` < ``` - gets the content from file to a process 
+- ``` < ``` - gets the content from file to a process 
 
 ### process commands 
 
-``` & ``` - send a process to background 
+- ``` & ``` - send a process to background 
 
-``` jobs ``` - get all the processes running in the background 
+- ``` jobs ``` - get all the processes running in the background 
 
-``` fg < process id > ``` - get process to the foreground
+- ``` fg < process id > ``` - get process to the foreground
 
-``` kill -9 < process id > ``` - kill a process from that id 
+- ``` kill -9 < process id > ``` - kill a process from that id 
+
+
+## Linux File managment 
+
+### compress  and extract files 
+
+**tar** command can be used to compress and extract .gz files 
+
+- ```  tar -czvf name-of-archive.tar.gz /path/to/directory-or-file ``` - to compress to **.gz** file 
+
+- ``` tar -xzvf archive.tar.gz ``` - will extract contents in a compressed file 
+
+- ``` tar -xzvf archive.tar.gz -C /dinith/content ``` - w8ill extract contents to a specific folder 
+
+
+
+## Linux useful commands 
+
+- ``` wget <url> ``` - download anything from web 
+
+ eg :- ``` wget "https://aka.ms/downloadazcopy-v10-linux" ``` will download the azcopy tool archive from the web . 
+
+- 
