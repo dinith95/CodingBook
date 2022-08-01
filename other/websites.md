@@ -14,6 +14,11 @@ large number of tools  to including
 - background removal 
 - url tracer 
 
+### Temporary email addess - [TempMail](https://temp-mail.org/en/) | [YopMail](https://yopmail.com/en/)
+
+Get a tempary email addresss instantly . 
+**Yopmail** address will remain for long time 
+
 ### converting to file formats - [convertio](https://convertio.co/)
 
 convert from one file format to another . 
