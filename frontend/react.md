@@ -2,7 +2,7 @@
 
 **webPack** is used to bundle all the js files to a single js file . It aslo has a web server . 
 
-webpack configeration for the react app is created [sample config](https://gist.github.com/dinith72/d0473ad18aa5387b0cfe503d5b847138)
+webpack configeration for the react app is created with the name [webpack.config.dev.js](https://gist.github.com/dinith72/d0473ad18aa5387b0cfe503d5b847138)
 
 **Babel** - Babel will be used to achive two objectives . 
 - convert *jsx* to the javascript code 
