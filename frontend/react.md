@@ -29,6 +29,18 @@ this would show
 - port it should run 
 
 
+## react inbuilt components 
+
+### react router 
+
+**react router** can be used to navigate in between different web pages . 
+
+**Switch** this will traverese from top to down and navigate the route which mateches first . 
+
+see the below [react router example](https://gist.github.com/dinith72/aaffbfb2ae1d0609ee1058e9f5decfbf)
+
+
+
 ## react useful libraries  
 
 ### react bootstrap - components 
