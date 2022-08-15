@@ -110,33 +110,6 @@ sort can be used with the **IComparer** to provide custom comparison
 
 
 
-## Task Parallel Library 
-
-### key points 
-> Do not use .Result  unless the task has already completed the execution
-
-> Do not use async void  user async Task 
-
-> Do not use wait()  it can lead to deadlocks 
-        ,
-
-### creating new task 
-A new task can be created from *Task.Run()* command . 
-
-``` C#
-Task task =  Task.Run(() => downLoadLogfile(outputfolder, Path.Join(azurePath, item.Name), item));
-                // downLoadLogfile => async method which returns a Task 
-```
-
-also abive tasks can be added to a list as shown below and **can be held till all are completed**
-
-``` C# 
- List<Task> downLoadTask = new List<Task>(); // creation of task list 
-
-downLoadTask.Add(task); // adding to list 
-
-Task.WaitAll(downLoadTask.ToArray()); // waiting until all of them are completed 
-```
 
 ## Exceptions 
 
@@ -150,6 +123,9 @@ OperationCanceledException exception = new OperationCanceledException();
 exception.Data.Add("type", "lightweight"); 
 
 ```
+
+
+
 
 ## Useful Methods 
 
@@ -173,5 +149,6 @@ val1.CompareTo(val2) ; // compare 2 values
 > 1st object  = 2nd object  =>  0 
 
 > 1st object > 2nd object => > 0
+
 
 
