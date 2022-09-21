@@ -31,3 +31,15 @@ all the local changes can be revered by
 git reset --hard
 ```
 
+## git clone 
+
+### shallow clone 
+
+``` bash 
+git clone --depth 1 --branch <branch> --single-branch <repo-url>
+
+```
+
+- --depth - the history of the repo 
+- --branch - the branches that should clone 
+
