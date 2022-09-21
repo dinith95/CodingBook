@@ -14,6 +14,13 @@ large number of tools  to including
 - background removal 
 - url tracer 
 
+### converting from csv to json - [Convert CSV](https://www.convertcsv.com/)
+
+this tool will help to convert data from 
+
+- csv/excel to json 
+- json to csv 
+
 ### Temporary email addess - [TempMail](https://temp-mail.org/en/) | [YopMail](https://yopmail.com/en/)
 
 Get a tempary email addresss instantly . 
