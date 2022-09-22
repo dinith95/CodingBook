@@ -1,4 +1,42 @@
-## python general patters
+## python functions
+
+## multiple arguments
+
+In python method overloading is not required as it will modify the function as of the presesnted arguments . 
+But the **default values should be assigned** , if not it will return an error.
+
+``` py
+def myInfo(name='dinith' , age  = 20):
+   print(name + ' age is ' ,age )
+
+myInfo(); # works without any params
+   # output -- dinith age is  20
+
+myInfo(age=36, name='dj') # order of the parameter can be changed
+   # output -- dj age is  36
+
+myInfo(name = 'dj')   # can paas only some parameters , still the function works
+   # output -- dj age is  20
+```
+
+Also functions can be defined such that it takes infinite arguments . 
+
+``` py
+def addNos(*args):
+   total = 0
+   for a in args:
+       total += a
+   print(total)
+
+addNos(2,3) 
+   ## output ## - 5
+
+addNos(2,5,8)
+   ## output ## - 15
+
+addNos(1,2,3,4,5,6,7,8,9)
+   ## output ## - 45
+```
 
 ### import from another python file
 
@@ -36,6 +74,11 @@ used to call the other bash or powershell scripts
 ## python file handling
 
 file can be open and contents can be written to python in relative ease 
+
+file handling modes 
+- r - read only 
+- w - write 
+- a - appened
 
 **Note** - all the files opened should be closed . 
 
