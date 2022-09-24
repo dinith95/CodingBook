@@ -43,3 +43,11 @@ git clone --depth 1 --branch <branch> --single-branch <repo-url>
 - --depth - the history of the repo 
 - --branch - the branches that should clone 
 
+**Note**  - after performing the shallow clone if you need to switch the branches please follow below steps 
+
+``` bash
+git remote set-branches origin <remote_branch_name>
+git fetch --depth 1 origin <remote_branch_name>
+git checkout <remote_branch_name>
+ 
+ ```
