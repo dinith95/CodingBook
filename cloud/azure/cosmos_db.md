@@ -92,6 +92,35 @@ select * FROM RetriggerScheduler c
 
 this will return the all the elements which would have *abc* *def* or *ghi* for the *Code* . 
 
+### Array_Slice 
+
+returns a specified portion of the array 
+
+> syntax  ``` ARRAY_SLICE (<array>, <array position> , <items count>) ```
+
+1.  array 
+
+any array 
+
+2. array position 
+
+starting position of the array 
+
+eg : 
+  - 0 - first element 
+  - 1 - second element
+  - -1 - last element 
+  - -2 - second last element 
+
+3. items count 
+  the number of items to be returned from the specified position. 
+
+  eg : 
+  ``` sql
+  -- get last 10 elements 
+  ARRAY_SLICE(c.History, -10 , 10) 
+  ```
+
 ## system generated values 
 
 ### _ts value
