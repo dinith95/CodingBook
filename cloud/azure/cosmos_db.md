@@ -11,6 +11,46 @@ SELECT * FROM RetriggerScheduler c where ....
 
 ```
 
+## User Defined Functions 
+UDF is a javascript function which will support to filter and present cosmos db data in more filtered or processed manner . 
+
+sample Udf function 
+
+``` js
+function userDefinedFunction(cubeReleases , compareDate){
+   // funtion logic 
+
+  return publishdate > cmpDate; // returns a bool 
+}
+
+// also we can return a value / object  as well
+function userDefinedFunction(cubeReleases,spcode){
+   // function logic
+
+  return {
+    sp : spcode,
+    date : date,
+    ficVer: fv
+  }
+}
+```
+
+UDF functions can be called in two ways 
+
+> in the where clause ( these would return a bool mostly )
+
+``` sql 
+    SELECT f.id, f.address.city
+    FROM f
+    WHERE udf.userDefinedFunction(f.address, "2022-09-24")
+```
+> in the select cluase ( these would return a value )
+
+``` sql
+SELECT udf.userDefinedFunction(f.address, "2022-09-24")
+FROM Families
+```
+
 ## InBuilt Functions 
 
 ### Count 
@@ -52,4 +92,18 @@ select * FROM RetriggerScheduler c
 
 this will return the all the elements which would have *abc* *def* or *ghi* for the *Code* . 
 
+## system generated values 
 
+### _ts value
+
+The _ts property shows the *date and time* which the document was *last updated* . 
+
+it is in [epoch](https://en.wikipedia.org/wiki/Unix_time) time . 
+
+this can be taken to human readable time by calling function ``` TimestampToDateTime(c._ts*1000) ```
+
+eg : 
+
+``` sql 
+SELECT c.FirstName , TimestampToDateTime(c._ts*1000) AS 'time' FROM Person c
+```
