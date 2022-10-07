@@ -2,7 +2,7 @@
 
 ## multiple arguments
 
-In python method overloading is not required as it will modify the function as of the presesnted arguments . 
+In python method overloading is not required as it will modify the function as of the presesnted arguments .
 But the **default values should be assigned** , if not it will return an error.
 
 ``` py
@@ -19,7 +19,7 @@ myInfo(name = 'dj')   # can paas only some parameters , still the function works
    # output -- dj age is  20
 ```
 
-Also functions can be defined such that it takes infinite arguments . 
+Also functions can be defined such that it takes infinite arguments .
 
 ``` py
 def addNos(*args):
@@ -56,31 +56,33 @@ print(getVersion()) ## get version function is called
 from testPath.source import getVersion 
 ```
 
-## python modules 
+## python modules
 
-Python has several useful modules which we could consume to write the scripts . 
+Python has several useful modules which we could consume to write the scripts .
 
-### sys module 
-use to manipulate the different parts of the python runtime env. 
+### sys module
+
+use to manipulate the different parts of the python runtime env.
 
 ### OS module
 
-use to do the OS tasks such as manipulating files and directories . 
+use to do the OS tasks such as manipulating files and directories .
 
-### subprocess modules 
+### subprocess modules
 
-used to call the other bash or powershell scripts 
+used to call the other bash or powershell scripts
 
 ## python file handling
 
-file can be open and contents can be written to python in relative ease 
+file can be open and contents can be written to python in relative ease
 
-file handling modes 
-- r - read only 
-- w - write 
+file handling modes
+
+- r - read only
+- w - write
 - a - appened
 
-**Note** - all the files opened should be closed . 
+**Note** - all the files opened should be closed .
 
 ``` py
 # open command take 2 arguments  , file path and the mode
@@ -89,5 +91,3 @@ sampleStr = 'i am dinith'
 file1.write(sampleStr)
 file1.close()
 ```
-
-
