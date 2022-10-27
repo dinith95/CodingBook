@@ -1,3 +1,30 @@
+# Foundational concepts 
+
+## Execution context 
+
+when a block of code is given for the execution , the js compiler will goes through it line by line and assign any varaibles to the memory . This execution process is called the **Thread of Executioion**.
+
+sample code 
+``` js
+const num = 1;
+function multBy2(num){
+  const result = num * 2;
+  return result;
+}
+const name = 'dinith';
+const output = multBy2(4);
+```
+> Execution steps 
+1. Add tne variable **num** to memory and assign  1
+2. Assign the function **MultBy2** to memory as a label ( function is not parsed until it is called.)
+3. Add tne variable **name** to memory and assign  'dinith'.
+4. Add tne variable **output** to memory ( global execution context ) and assign  *undefined* as its value is yet to be evaluated.
+5. create a **new execution context** and start evaluating the **MultBy2 function**.
+
+The *Memory and Thread of Execution* is know as the **The execution context**.
+
+> Note ->  the initial execution contect that program statis an *Global Ececution context* . 
+
 ## Generator Function
 
 Generator functions executes code in between perticular *yeild* statments .
