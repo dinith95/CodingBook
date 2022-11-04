@@ -24,6 +24,7 @@ more information [microsoft documentation ](https://docs.microsoft.com/en-us/pow
  
  > change the output color : ``` -ForegroundColor Green ```
 
+> get names ( only names ) of items in folder: ``` Get-ChildItem -Name ```
 
 ## powershell scripting 
 
