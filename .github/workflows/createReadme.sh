@@ -1,2 +1,2 @@
-
-Write-Host 'dinith'
+#!/bin/bash
+echo 'greetings from dinith'
