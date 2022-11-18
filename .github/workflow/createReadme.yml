@@ -21,3 +21,8 @@ jobs:
     
     - name: start
       run: echo "Hello creating readme ${{ github.event.inputs.name }}"
+
+    - name: run powershell
+      shell: pwsh
+      run: |
+        .\createReadme.ps1
