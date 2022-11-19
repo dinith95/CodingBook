@@ -23,5 +23,5 @@ jobs:
       run: echo "Hello creating readme ${{ github.event.inputs.name }}"
 
     - name: run bash
-      run: ./createReadme.sh
+      run: deploy\createReadme.sh
         shell: bash 
