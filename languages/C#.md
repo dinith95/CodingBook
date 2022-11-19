@@ -47,6 +47,13 @@ it is used to iterate over items and return the each element **after modifying t
 var doubles = numbers.Select(num => num * 2).ToList();
 ```
 
+An iterator value can be also take with the select command 
+
+``` c#
+// here c - city <string> , i - iterator <int>
+ var lines = cities.Select((c, i) => $"{i}. {c}").ToList();
+ ```
+
 ### Any 
 returns true if the **at least 1 element** satisfy the condition
 
