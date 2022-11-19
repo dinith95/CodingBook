@@ -24,4 +24,4 @@ jobs:
 
     - name: run bash
       run: deploy\createReadme.sh
-        shell: bash 
+      shell: bash 
