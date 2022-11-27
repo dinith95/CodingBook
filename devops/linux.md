@@ -58,6 +58,12 @@ Eg => **ping 8.8.8.8 > sample.txt**
 
 ## Linux File managment 
 
+### Directory Manipulations 
+
+- ``` mkdir < directory name > ```  => create a directory 
+
+- ``` mkdir -p dinith/dinith1/dinith2  ``` => create nested directories
+
 ### compress  and extract files 
 
 **tar** command can be used to compress and extract .gz files 
@@ -70,10 +76,26 @@ Eg => **ping 8.8.8.8 > sample.txt**
 
 
 
+## Linux search content 
+content can be searched and replaced in a file by different commands. 
+
+### sed command 
+
+use to search psatterns in text files and replace them. 
+
+``` sed '/s/text1/text2/' <filename> ``` - retrun set of text after the pattern matching and replacement. 
+
+**sed commands arguments**
+- *text1* - search for this value 
+- *text2* - replace with this value 
+
+``` sed -i '\s\text1\text2\' <filename> ``` - replaces the text matching the pattern on the source file 
+
+note that the forward slash (**/**) is know as the *delimeter*. Apart from ti other characters can be used - ( *. \ ,< space >*)
+
 ## Linux useful commands 
 
 - ``` wget <url> ``` - download anything from web 
 
  eg :- ``` wget "https://aka.ms/downloadazcopy-v10-linux" ``` will download the azcopy tool archive from the web . 
 
-- 
