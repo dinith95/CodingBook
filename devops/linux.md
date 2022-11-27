@@ -31,6 +31,12 @@ follow the commands in [microsoft docs](https://docs.microsoft.com/en-us/powersh
 
 ## Linux Process Management
 
+the first process is the **Init** process , it is triggered by the linux kernel.
+![init process](../images/linux-init.png)
+
+when new porcess is triggered it will **fork itself** and called process  *replace one of the init processes*.
+pf
+
 ### view the current cpu and memory availability
 
 ``` top ``` can be used to view the ongoing processes, cpu usage and memory usage
@@ -54,7 +60,9 @@ ps command values.
 
 - ``` fg < process id > ``` - get process to the foreground
 
-- ``` kill -9 < process id > ``` - kill a process from that id
+- ``` kill < process id > ``` - sends the kill or shutdown signal to application
+
+- ``` kill -9 < process id > ``` - kill a process from that id by the kernel
 
 ## Linux File managment
 
