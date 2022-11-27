@@ -35,15 +35,20 @@ follow the commands in [microsoft docs](https://docs.microsoft.com/en-us/powersh
 
 ``` top ``` can be used to view the ongoing processes, cpu usage and memory usage
 
-Eg => **ping 8.8.8.8 > sample.txt**
+### ps commands 
 
-- ``` >> ``` - replace the standered output to text file , appened to the file
+ps command values.
 
-- ``` < ``` - gets the content from file to a process
+- a = show processes for all users
+- u = display the process's user/owner
+- x = also show processes not attached to a terminal
+
 
 ### process commands
 
 - ``` & ``` - send a process to background
+
+- ``` lsof -i TCP:<port> ``` - get the processes running on specific port
 
 - ``` jobs ``` - get all the processes running in the background
 
