@@ -45,9 +45,10 @@ git clone --depth 1 --branch <branch> --single-branch <repo-url>
 
 **Note**  - after performing the shallow clone if you need to switch the branches please follow below steps 
 
-``` bash
-git remote set-branches origin <remote_branch_name>
-git fetch --depth 1 origin <remote_branch_name>
-git checkout <remote_branch_name>
+``` bash 
+$remotebranch = ""  # set branch name
+git remote set-branches origin $remotebranch
+git fetch --depth 1 origin $remotebranch
+git checkout $remotebranch
  
  ```
