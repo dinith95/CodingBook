@@ -86,8 +86,24 @@ function* sampleGen1() {
 }
 ```
 
-[passing-values-code-sample]()
 
 ### Infinite Iterator
 an infinite iterator can be created which would give return incremental value when required. 
 [sample infinite loop](https://replit.com/@dinith72/GeneratorFunction#infiniteLoop.js)
+
+
+
+# Js coding patterns
+
+## Set Interval function
+
+the set interval function will execute some code periodically until it is cleared. 
+
+funtion structure 
+
+``` js
+setInterval(fn(), 1000);
+// fn() - function to excute periodically 
+// 1000 - time duration between in ms 
+```
+[sample set interval function](https://replit.com/@dinith72/Moment#setInterval.js)
