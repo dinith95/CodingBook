@@ -1,7 +1,48 @@
-Azure Cosmos Db is the noSQL database in which the values are stored as Key value pairs . 
+Azure Cosmos Db is the noSQL database in which the values are stored as Key value pairs .
+
+# Db Information
+
+## Deployment plans
+
+There are 2 deployment plans
+
+- serverless 
+- provisioned througpput
+- autoscale 
+
+### Serverless 
+
+- consumption based model , user will be charged to each of the RUs used. 
+- accounts only in one region
+- max 50gb in container
+
+### Autoscale
+- set Max RUs amount can be specifed and the containers will scale within those values based on demand.
+- minimum 10% of the max RUs count. 
+
+## Throughputs 
+number of RU tha can be consumed by an application in 1 second. 
+
+when **Through is high** the db will **rate limit** or **throttle** the subcequent requests.
+
+through can be specidied in multiple ways .
+
+- database
+- container
+- combination of database and container
+
+### Database level provisioning
+
+- throughput values for complete database
+- the containers under it will share the throughput
+
+### container level 
+
+- specified RU is only for the perticular container
 
 
-# Reading Values - SQL API 
+
+# Reading Values - SQL API
 
 The values are queried through the **SQL API**. It provides an inbuilt tool to read and extract the values.
 
