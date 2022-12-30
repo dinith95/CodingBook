@@ -14,6 +14,11 @@ large number of tools  to including
 - background removal 
 - url tracer 
 
+### pdf convertion to word / OCR  - [Onlice ocr](https://www.onlineocr.net/)
+
+- pdf to word 
+- pdf images to word with text
+
 ### converting from csv to json - [Convert CSV](https://www.convertcsv.com/)
 
 this tool will help to convert data from 
