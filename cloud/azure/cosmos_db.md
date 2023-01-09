@@ -177,3 +177,59 @@ eg :
 ``` sql 
 SELECT c.FirstName , TimestampToDateTime(c._ts*1000) AS 'time' FROM Person c
 ```
+
+
+
+# .net SDK with cosmos db
+
+install the following nuget package 
+
+``` Microsoft.Azure.Cosmos ```
+
+## Creating the client connection 
+
+```  c#
+// create client connection 
+var client = new CosmosClient(config["cosmos_connString"]); // pass connection string 
+
+// get container 
+// dbName - database name 
+// container - name of the container
+client.GetContainer(dbName,container);
+```
+
+## querting for values 
+
+``` c#
+// queryStr - query string 
+var parameterizedQuery = new QueryDefinition(queryStr)
+                                            .WithParameter("@id", regulator.Id);
+
+// create the feed iterator and get the paged results 
+using FeedIterator<Regulators> filteredFeed = container.GetItemQueryIterator<Regulators>(parameterizedQuery);
+
+
+while (filteredFeed.HasMoreResults)
+{
+  // get the response dataset 
+    FeedResponse<Regulators> response = await filteredFeed.ReadNextAsync();
+    foreach (Regulators item in response)
+      Console.WriteLine($"Found item:\t{item.name}");
+        
+              
+}
+```
+
+> for more information regard to querying items refer [microsoft docs](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/how-to-dotnet-query-items#query-items-using-a-sql-query-asynchronously)
+
+
+## Adding new element 
+
+``` c#
+
+// commonEntitites - the container name 
+// type of item to be created
+ await commonEntitites.CreateItemAsync<Regulators>(regData, new PartitionKey("Regulators"));
+
+```
+
