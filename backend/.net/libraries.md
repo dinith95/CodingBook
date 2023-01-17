@@ -1,3 +1,13 @@
+## Dealing with Nugets
+
+### Nugget shell commands 
+
+> list all nuggets folder loations - ```dotnet nuget locals all --list```
+
+> clear all local nugget folder - ```dotnet nuget locals all --clear```
+
+
+
 ## Task Parallel Library 
 
 ### key points 
