@@ -19,3 +19,12 @@ Bank Balance => after trasaction occurred.
 Cash Balance => before the trasaction occurred. 
 
 > Durability - when trasaction is commited it will not change even if database system went offline.
+
+
+## Analytical Databases
+
+- ready heavy operations 
+- store vast volumes of historical data 
+- data is stored in data warehouses 
+
+[more about analytical databases](https://learn.microsoft.com/en-us/training/modules/explore-core-data-concepts/6-analytical-processing)
