@@ -1,0 +1,21 @@
+## Transactional Database
+
+- used to process trasactions 
+- both **read and write** optimised. 
+
+### ACID semantics 
+sample transaction => trasaction of cash is withdrawn bank account to cash account
+
+> Atomacity - Each trasactions is a single unit of action
+
+amount should be reduced from bank account and added to the cash account . Either both of them is recorded or none is recorded. 
+
+> Consistancy - transactions should take data from one valid state to another. 
+
+> Isolation - concurrent transactions cannot interfere with eachother. 
+
+a application that reads bank balance cannot return information like this : 
+Bank Balance => after trasaction occurred.
+Cash Balance => before the trasaction occurred. 
+
+> Durability - when trasaction is commited it will not change even if database system went offline.
