@@ -28,3 +28,26 @@ Cash Balance => before the trasaction occurred.
 - data is stored in data warehouses 
 
 [more about analytical databases](https://learn.microsoft.com/en-us/training/modules/explore-core-data-concepts/6-analytical-processing)
+
+# SQL 
+
+The stadered language to work with the database managment systems. 
+
+## SQL statement typs 
+
+### DDL statments 
+create / modify / delete tables and records. 
+
+eg : CREATE | DROP | ALTER
+
+### DCL statemnts 
+
+manage the accesss to the objects in the database .
+
+eg: GRANT | DENY | REVOKE
+
+### DML statements 
+
+read and manipulate data 
+
+eg: SELECT | INSERT | UPDATE 
