@@ -115,8 +115,17 @@ sort can be used with the **IComparer** to provide custom comparison
 
 ```
 
+### Take while 
+it will enumerate over a result set and return result until a given condition becomes false .
 
+``` c#
 
+int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+var firstNumbers = numbers.TakeWhile(n => n < 6);
+// output => 5, ,4 ,1 , 3
+
+```
+in the above code chunk it will excute until **9** on which the given conditon becomes false. 
 
 ## Exceptions 
 
