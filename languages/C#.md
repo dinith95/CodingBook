@@ -90,13 +90,24 @@ var commonItems = numbers.Intersect(doubles).ToList();
 
 ### Zip 
 
-used to iterate over 2 lists parallely and returns value of the operation 
+used to iterate over 2 lists sequentially  and returns value returning from the lamda function
 
 ``` C# 
-// iterate both numbers and numbersNew list items and retun the addition of each element 
-var totals = numbers.Zip(numbersNew, (num1, num2) => num1 + num2);
-//  num1 - numbers item 
-//  num2 - numbersNew item 
+ int[] numbers = { 1, 2, 3 };
+ string[] words = { "one", "two", "three" };
+// iterate both numbers and words list items and retun the concat of the each element 
+ var totals = numbers.Zip(words, (num, word) =>$"{num} => {word}");
+
+  foreach (var e in totals)
+  {
+      Console.Out.WriteLine(e);
+  }
+
+// output 
+// 1 => one
+// 2 => two
+// 3 => three
+ 
 ```
 
 ### Sort 
