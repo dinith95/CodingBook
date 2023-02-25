@@ -52,6 +52,19 @@ provide a common shared storage for the files so that multiple users can access 
 - stored in ssd 
 - greator throughput
 
+# Azure tables 
+
+used to store the semi structured data. 
+
+- a table row must have
+    - a partion key
+    - unique key
+
+- does not have concepts like *forign keys, relationships, view* 
+- containes denormalised data
+- when querying bot partition and row key should be passed.
+
+
 # storage sdks and connections
 
 
