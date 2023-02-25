@@ -52,3 +52,19 @@ git fetch --depth 1 origin $remotebranch
 git checkout $remotebranch
  
  ```
+
+## git branch management
+
+### Deletting multiple brnaches 
+
+to delete uing the git console 
+
+``` bash
+ git branch -d `git branch --list 'feature*'` 
+```
+
+to delete in the powershell / windows terminal 
+
+``` pwsh
+ git branch -d (git branch --list 'hotfix*').trim()
+ ```
