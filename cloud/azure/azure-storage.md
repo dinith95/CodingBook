@@ -1,3 +1,43 @@
+# Blob Storage 
+way of storing large untructured binary object ( blobs) . 
+
+it supports a folder structure but it is purely **vitual folders**. 
+
+## diffrent types of blob
+
+> block blobs 
+
+- support **standered storage**
+- data is stored as blocks 
+- block max size : 100MB
+- store dicrete large binary data
+
+> page blobs 
+- 512 bytes pages 
+- can fetch data from the random pages
+
+> append blobs 
+- blocks can be added to the end of the blob
+
+## acess tires of a blob 
+
+> Hot tier 
+- frequent access data 
+- highest cost 
+
+> cool tier 
+- infrequent aceess data 
+
+> archive 
+- lowest cost 
+- archival data 
+- data should be brought to hot tier before accessing. 
+
+a policy can be made to automatically move blob from *hot* to *cool* and after that to *archive*.
+
+# storage sdks and connections
+
+
 ## .net sdk for storage 
 
 ### connect to storage from SAS 
