@@ -35,6 +35,23 @@ it supports a folder structure but it is purely **vitual folders**.
 
 a policy can be made to automatically move blob from *hot* to *cool* and after that to *archive*.
 
+# File share storage 
+
+provide a common shared storage for the files so that multiple users can access it. 
+- 100Tb of data 
+-2000 connections per file 
+
+### perfomance tiers 
+
+> standered 
+
+- stored in a hard disk 
+
+> premium tier 
+
+- stored in ssd 
+- greator throughput
+
 # storage sdks and connections
 
 
