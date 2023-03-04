@@ -1,3 +1,27 @@
+
+## python modules mangement 
+
+python modules are a library in python . there are 2 ways to concume module in python .
+
+### importing as module 
+here the whole module is imported . 
+
+```py
+import random # random libaray is imported as module
+print(random.randint(1,10))
+```
+
+### importing a specif function only 
+here the specific function of the module is imprted to the namespace . 
+> warn - if you have exsiting implementation with same name in module . this will casue erros.
+
+```py
+from random import randint 
+#  ranint function is imported from the random library
+
+print(randint(1, 10))
+```
+
 ## python functions
 
 ## multiple arguments
