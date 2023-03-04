@@ -24,6 +24,22 @@ print(randint(1, 10))
 
 ## python functions
 
+### slice 
+
+An array or list can be sliced as it returns a subset of elemetns .
+
+```py
+import sys
+
+nums = [1,2,3,4,5,6]
+
+# here only 2nd to 4th elements are considered
+# if ending position is not mentioned it will take until last element
+for num in nums[1:3]:
+    print(num)
+
+```
+
 ## multiple arguments
 
 In python method overloading is not required as it will modify the function as of the presesnted arguments .
@@ -84,9 +100,7 @@ from testPath.source import getVersion
 
 Python has several useful modules which we could consume to write the scripts .
 
-### sys module
 
-use to manipulate the different parts of the python runtime env.
 
 ### OS module
 
@@ -114,4 +128,19 @@ file1 = open(os.path.join(path,'sample.txt'),'a')
 sampleStr = 'i am dinith'
 file1.write(sampleStr)
 file1.close()
+```
+
+
+# Useful Libraries 
+
+## sys libarary 
+shows the values in the python runtime environment. 
+
+> sys.argv returns a list of arguments passed when calling the python file. 
+
+```py 
+import sys
+## prints the name when python script is called . 
+## here 1 is used as 0 has the name of the python file which is executed. 
+print('hello: ' + sys.argv[1])
 ```
