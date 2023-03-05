@@ -123,6 +123,37 @@ use to do the OS tasks such as manipulating files and directories .
 
 used to call the other bash or powershell scripts
 
+## python classe
+
+python classes has below syntax 
+
+```py
+class Student:
+    
+    # constructor 
+    def __init__(self, name, age):
+        self.name = name # calls the proerty setter method 
+        self.age = age
+
+    # declare the property of a class    
+    @property
+    def age(self):
+        return self._age
+
+    # property setter method : set the property of class 
+    @age.setter
+    def age(self,age):
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self,name):
+        self._name = name
+```
+
 ## python file handling
 
 file can be open and contents can be written to python in relative ease
@@ -158,6 +189,21 @@ import sys
 print('hello: ' + sys.argv[1])
 ```
 
+# python data structures 
+
+## tuples 
+- similar to a list 
+- but are immtable 
+
+```py
+def getNums():
+    ## this returns a tuple of 2 random numbers
+    return (randint(1, 10),randint(11, 20))
+
+## consuming the tuple 
+t = getNums() 
+print(f'num 1: {t[0]} \nnum 2 : {t[1]}') 
+```
 
 # python unit tests
 
@@ -182,3 +228,4 @@ def test_sum123():
 ```
 
 ## 
+
