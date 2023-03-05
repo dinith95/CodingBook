@@ -22,6 +22,19 @@ from random import randint
 print(randint(1, 10))
 ```
 
+### guarding main method.
+The main method can be accidently called when the module is imported by another module. 
+To prevent this below systax is used 
+
+```py
+if __name__ == "__main__":
+   Main() ## main will be called only when file is excuted directly
+
+```
+if python modukle is executed directly the **\_\_name__** is set to the *"\_\_main__"*
+
+executed through an import the **\_\_name__** is set to the *name of the module*
+
 ## python functions
 
 ### slice 
