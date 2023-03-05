@@ -157,3 +157,28 @@ import sys
 ## here 1 is used as 0 has the name of the python file which is executed. 
 print('hello: ' + sys.argv[1])
 ```
+
+
+# python unit tests
+
+python has support for the unit tests .
+
+most of the unit test has following format . 
+
+> logic module  - this has the functional logic: **calc.py**
+```py
+def sum(a,b):
+    return a + b
+```
+
+> test librarry - this has tooling and support for python test : **pytest**.
+
+> uni test module - unit tests the functions in logic module: **calc_test.py**
+
+```py
+def test_sum123():
+    assert sum(1,3) == 4
+    assert sum(0,4) == 4
+```
+
+## 
