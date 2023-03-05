@@ -1,5 +1,11 @@
 Azure Cosmos Db is the noSQL database in which the values are stored as Key value pairs .
 
+> cosmos db version 
+- key value 
+- document 
+- graph 
+- coloumn family stores 
+
 # Db Information
 
 ## Deployment plans
