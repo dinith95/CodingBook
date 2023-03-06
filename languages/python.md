@@ -227,5 +227,8 @@ def test_sum123():
     assert sum(0,4) == 4
 ```
 
-## 
+# python useful packages 
+
+## structlink
+[struct link docs](https://eeshannarula29.github.io/structlinks/) - this implements linked list , trees , graphs and hash maps
 
