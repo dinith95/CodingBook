@@ -153,11 +153,14 @@ it has following metadata.
 
 - _ts  shows the time which the document has last updated . it will be shows in  epoch time . [more info](https://stackoverflow.com/a/73123605/8313114)
 
-## Azure analystics Servcies
+# Data analytics 
+
+## Data analytic service types 
 
 there are four types of analytics services 
 
 > descriptive snalysis 
+
 shows what has happened to data using charts diagrams etc. 
 answers question **what is happening ?**
 
@@ -165,6 +168,7 @@ service by azure
  - azure analytics services 
 
  > predictive analysis 
+
  using  existing data and algorithems to identify what will be the outcomes in the future ? .
 
 > cofnitive analysis 
@@ -175,3 +179,45 @@ recognises the photos , audios and vedios from the pre trained algorhythems in a
 
 using the existing data and determinig the optmal solution for a problem or respponse to an event. 
 answers the question **what is the best option?**. 
+
+
+## Data ingestion pipeline 
+
+through these the the process of *ETL* or *ELT*  is performed. 
+
+ELT Stands for 
+- extract the data 
+- tranforms the data 
+- load - moved from the staging area to the data store 
+
+## Data stores 
+
+### Data warehouse 
+
+relational data is stored in a schema optmised for the data analytics 
+
+> fact table 
+
+place where the numeric values are stored 
+eg : order information 
+
+> dimesnsions table 
+
+place where the data describing the numeric data are stored 
+eg : customer info , dates , stores info 
+
+> star schema 
+
+arrangement of fact tables and dimension tables in a star pattern. 
+
+> snoflake schema 
+
+here the star schema is exteneded to show the dimesion highrachies . 
+
+eg: customer catagories / store location catagories 
+
+
+### Data lakes 
+
+distributed file store , containin **semi structured and un structured* data. 
+
