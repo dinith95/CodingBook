@@ -152,3 +152,26 @@ it has following metadata.
 - etag 
 
 - _ts  shows the time which the document has last updated . it will be shows in  epoch time . [more info](https://stackoverflow.com/a/73123605/8313114)
+
+## Azure analystics Servcies
+
+there are four types of analytics services 
+
+> descriptive snalysis 
+shows what has happened to data using charts diagrams etc. 
+answers question **what is happening ?**
+
+service by azure 
+ - azure analytics services 
+
+ > predictive analysis 
+ using  existing data and algorithems to identify what will be the outcomes in the future ? .
+
+> cofnitive analysis 
+
+recognises the photos , audios and vedios from the pre trained algorhythems in azure. 
+
+> prescriptive analysis 
+
+using the existing data and determinig the optmal solution for a problem or respponse to an event. 
+answers the question **what is the best option?**. 
