@@ -50,4 +50,9 @@ SpreadsheetApp.getUi().createMenu("scripts")
 ```
 
 
+## sample appscripts 
+
+sample appscripts can be found here [sample-app-scripts](https://gist.github.com/dinith95/3a981a22430553e7eb3167402bd02372)
+
+
 
