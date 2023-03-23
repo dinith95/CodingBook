@@ -74,6 +74,40 @@ the function is used in **child component**.
   );
 ```
 
+### passing content from children
+
+> child component
+
+the following **interface** should be added. 
+``` ts
+interface AlertProps {
+    children: string
+}
+```
+
+to send html content , **type of children** should be changed **to ReactNode** 
+
+``` ts
+interface AlertProps {
+    children: ReactNode
+}
+```
+
+> parent component 
+
+values can be passed as children. 
+
+``` html
+<div className='App'>
+      <Alert>
+        sample text
+      </Alert>
+
+    </div>
+```
+
+
+**children** is special property which let you pass items as children.
 
 ## react inbuilt components 
 
