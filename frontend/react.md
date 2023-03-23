@@ -28,6 +28,52 @@ this would show
 - the location of the webpack config file 
 - port it should run 
 
+## react concepts 
+
+### passing function as props 
+
+> in the *typescript* version the interface for props should be defined . 
+
+``` ts
+interface ListGroupProps {
+  items: string[],
+  heading: string,
+  onSelectItem: (item: string) => void // interface for the function
+}
+```
+Note that we are going to pass a function which **accepts a string and return nothing**
+
+> in the child component 
+
+can be *destructured* and imported in props. In below **onSelectItem** is the function. 
+```  ts
+function ListGroup({ items, heading, onSelectItem }: ListGroupProps) { ....}
+```
+
+the function is used in **child component**. 
+
+``` html
+<li   
+    key={index}
+    onClick={() => {  onSelectItem(item); }}
+  >
+    {item}
+  </li>
+```
+
+> in the parent component
+
+``` ts
+// function defined here 
+  const handleSelectItem = (item: string) => console.log(item); 
+  return (
+    <div className='App'>
+    // passed to child item here 
+      <ListGroup items={items} heading='Countries' onSelectItem={handleSelectItem} />
+    </div>
+  );
+```
+
 
 ## react inbuilt components 
 
@@ -45,7 +91,9 @@ see the below [react router example](https://gist.github.com/dinith72/aaffbfb2ae
 
 ### react bootstrap - components 
 
-react bootstrap can be added ``` npm install react-bootstrap bootstrap ```
+react bootstrap can be added ``` npm install  bootstrap ```
+
+add following line to the **index.js / index.ts** - ```import 'bootstrap/dist/css/bootstrap.css';```
 
 
 ### styling in react - scss 
@@ -56,6 +104,7 @@ Then
 
 - rename all the .css file to **.scss**
 - update the file import css files with new name 
+
 
 ### fontawesome icons 
 
