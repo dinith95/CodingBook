@@ -167,6 +167,9 @@ answers question **what is happening ?**
 service by azure 
  - azure analytics services 
 
+ > diagnistic analysis 
+ shows the reason behind an event or outcome . answers the question **why it is happening ?**
+
  > predictive analysis 
 
  using  existing data and algorithems to identify what will be the outcomes in the future ? .
