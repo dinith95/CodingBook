@@ -109,6 +109,38 @@ values can be passed as children.
 
 **children** is special property which let you pass items as children.
 
+### updating state of nested objects 
+
+when updating the state of a nested object , **each of the object shouuld be recreated** as the *spread operator will do shallow copy: it will copy address of the child objects*.
+
+usecase : copying of person details 
+
+``` ts 
+  // person detail object strucure 
+let { customer, setCustomer } = useState({
+    name: 'dinith',
+    address: {
+      street: '140/3, Kandy road',
+      zipCode: 11870
+    }
+  });
+    // method to update state
+  const handleCustomer = () => {
+    setCustomer({
+      ...customer,
+      // address object has to created as a new object since spread operator will point to same object
+      address: {
+        ...customer.address,
+        zipCode: 12070
+      }
+    })
+  }
+  ```
+Here 
+ - the spread operator will return the *existing address* object . 
+ - since state update needs a new object always 
+ - a **new object should be created** explicitely
+ - if there are multiple objects this should be done.
 ## react inbuilt components 
 
 ### react router 
@@ -118,6 +150,12 @@ values can be passed as children.
 **Switch** this will traverese from top to down and navigate the route which mateches first . 
 
 see the below [react router example](https://gist.github.com/dinith72/aaffbfb2ae1d0609ee1058e9f5decfbf)
+
+### react strictMode
+
+- once it is enabled **all the components are rendered twice** .
+- each component is rendered twice to **identify any errors done while creating components**. 
+ - effects of this are only applied in the *development environment* .
 
 
 
