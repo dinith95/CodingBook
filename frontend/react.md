@@ -136,11 +136,21 @@ let { customer, setCustomer } = useState({
     })
   }
   ```
-Here 
- - the spread operator will return the *existing address* object . 
- - since state update needs a new object always 
+
+Here
+
+ - the spread operator will return the *existing address* object.
+ - since state update needs a new object always.
  - a **new object should be created** explicitely
  - if there are multiple objects this should be done.
+
+ ### updating state using [immer](https://immerjs.github.io/immer/)
+
+ immer can be used to update the **state in mutable way**. underthehood immer will *translate to a immutable state update*. 
+
+ sample code snippet showing how to update state using immer is shown [here](https://gist.github.com/dinith95/4d845e0de1a5ddb07d39b6599aea1e87#file-update-with-immer-tsx)
+
+
 ## react inbuilt components 
 
 ### react router 
@@ -205,3 +215,22 @@ import { solid, regular,  brands } from '@fortawesome/fontawesome-svg-core/impor
  <FontAwesomeIcon icon={brands('linkedin')} />
 ```
 
+### react icons 
+react icons consist of icons from the major icon libraries and can be used easily . 
+
+- to install run following script ```npm install react-icons --save```
+
+- improting icons to the application 
+
+``` tsx
+import { AiFillHeart } from 'react-icons/ai' // import the icon that is needed
+
+// icon can be directly used as react element
+ return ( <AiFillHeart size='40' color='red' onClick={handleClick} />)
+
+```
+
+**Notes**
+
+- when the icons are imported select the *correct distribution* , destribution can be taken from *first 2 letters of icon name* . 
+eg : for *AiFillHeart* => destribution is *ai*
