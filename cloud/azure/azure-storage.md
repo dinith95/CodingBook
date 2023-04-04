@@ -79,3 +79,24 @@ connect to file storage through a SAS token.
 var sc = new ShareClient(new Uri(config[sasKey]), null);
  var directory = sc.GetDirectoryClient("firectory1"); // path to the directory
 ```
+
+get the **directory client of folder** which is few levels down the root directory . 
+
+``` c#
+
+const string XmlFolder = "IX/3rd party XML/xmls";
+var xmlFolderClient = regSASClient.GetDirectoryClient(XmlFolder); // directly get folder client of specified path
+```
+
+download  **file from ```FileShareClinet```** to local storage.
+
+``` c#
+// here xmlfolderClinet is the DirectoryShareClient
+ var filesClient = xmlFolderClient.GetFileClient($"{documentId}.xml");
+var downloadStream = await filesClient.DownloadAsync();
+
+using (FileStream stream = new FileStream(Path.Join(tempFolder,$"{documentId}.xml"), FileMode.Create))
+{
+    downloadStream.Value.Content.CopyTo(stream); // copy the download stream to local file
+} 
+```        
