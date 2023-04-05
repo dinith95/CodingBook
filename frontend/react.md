@@ -30,6 +30,26 @@ this would show
 
 ## react concepts 
 
+### react useref hook
+
+**useeref hook is used to get reference to html element**- i t can be very much useful in getting values in formcontrols. 
+
+``` ts
+// declaring the red 
+const nameRef = useRef<HTMLInputElement>(null); 
+
+// connecting with html element through ref attribute 
+ <input ref={nameRef} id='name' type="text" className='form-control' />
+
+// reading the value from ref
+if(nameRef.current)
+    person.name = nameRef.current.value; // ref.current will return the dom element
+
+```
+> notes 
+
+- if the linking dom element *HTmlInput* folling **HTMLInputElement** generic should be passed to the **useref hook**
+
 ### passing function as props 
 
 > in the *typescript* version the interface for props should be defined . 
@@ -143,6 +163,10 @@ Here
  - since state update needs a new object always.
  - a **new object should be created** explicitely
  - if there are multiple objects this should be done.
+
+### updating state of an array 
+
+if state of array of items needs to be updated , it should be done **without modifying** the existing array. 
 
  ### updating state using [immer](https://immerjs.github.io/immer/)
 
