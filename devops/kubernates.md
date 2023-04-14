@@ -28,3 +28,13 @@
  tell how many instances of the pods should be running . 
 
  if 1 pod goes down Replica set will create another pod. 
+
+ ## Kubectl commands 
+
+ ### Get logs of a pod
+
+ basic command : ``` kubectl logs -n < namespace> < pod-name > -f ```
+
+ parameters information 
+
+ - -f => this will show the logs continuously. 
