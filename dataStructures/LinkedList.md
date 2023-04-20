@@ -80,3 +80,46 @@ def AddElementAtBegining(list1: ListNode,  element):
     newNode.next = list1
     return newNode
 ```
+
+## insert at the end 
+
+> time complexity : **O(n)**
+
+```py
+ def appendToEnd(self, new_element):
+        current = self.head
+        if self.head:
+            ## iterate until the last item is reached 
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+```
+
+## insert at give positon
+
+insert the element at a give positon , eg : for 3rd element 
+
+```py
+ # return the element at a perticular positon        
+def get_position(self, position):  
+    posCount = 1
+    current = self.head
+
+    # iterate till positon is reached 
+    while posCount < position:
+        current = current.next
+        posCount += 1
+    return current
+
+def insert(self, new_element, position): 
+    prev = self.get_position(position-1) # get element just before the mentioned position
+    new_element.next = prev.next
+    prev.next = new_element
+    return
+```
+
+
+
+
