@@ -31,6 +31,14 @@
 
  ## Kubectl commands 
 
+ ## Manage the contexts 
+
+ Get list of contexts - ```kubectl config get-contexts```
+
+Get the current contexts - ```kubectl config current-context```
+
+change context - ```kubectl config use-context <context>```
+
  ### Get logs of a pod
 
  basic command : ``` kubectl logs -n < namespace> < pod-name > -f ```
