@@ -33,6 +33,10 @@ database is in shared server with the dbs of the other azure clients
  - scales automatially 
  - resources are allocated and removed when needed .
 
+ if there are no worlloads the *DB will paused*  and user is only **billed for the storage**. 
+
+ `Auto Pause Delay` - configerable time, when database become idle for that amount of time **DB will pause**. 
+
  ## elastic pool 
  - a resource pool should be created . 
  - the dbs created will share the resouces on the pool. 
