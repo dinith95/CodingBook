@@ -171,6 +171,12 @@ file handling modes
 file1 = open(os.path.join(path,'sample.txt'),'a') 
 text = file1.read() ## read the everything on file 1 to text varaible
 line1 = file.readline() ## read the first line of the file
+
+# here the file is read line by line without storing data to memory
+for row in file1:
+    vals = row.split(',')
+
+# writing to a file 
 sampleStr = 'i am dinith'
 file1.write(sampleStr)
 file1.close()
