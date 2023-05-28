@@ -169,6 +169,8 @@ file handling modes
 ``` py
 # open command take 2 arguments  , file path and the mode
 file1 = open(os.path.join(path,'sample.txt'),'a') 
+text = file1.read() ## read the everything on file 1 to text varaible
+line1 = file.readline() ## read the first line of the file
 sampleStr = 'i am dinith'
 file1.write(sampleStr)
 file1.close()
