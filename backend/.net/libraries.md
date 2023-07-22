@@ -51,3 +51,78 @@ public static T GetService<T>(IConfiguration config)
     return (T)Activator.CreateInstance(typeof(T), new object[] { config });
 }
 ```
+
+## Autofac Libary
+
+Autofac is a Inversion of Control container library . It manages the dependencies with the classes so that applications can scale easily . 
+
+### registering typical class 
+
+``` c#
+// initialise a container builder 
+ ContainerBuilder builder = new ContainerBuilder();
+
+ // class is registered with its interface 
+  builder.RegisterType<FileService>().As<IFileService>();
+
+// register as a instance object 
+    builder.Register<ILogger>(c =>
+            {
+                return new LoggerConfiguration()
+                .WriteTo.Console()
+                .CreateLogger();
+            })
+            .SingleInstance();
+
+// finally after registering all the types use build method to return container
+    return builder.Build();
+```
+
+### consuming a typical class 
+
+autofac will insert the constructor parameters. 
+Only the relavant interface should be declared 
+
+``` c#
+public class MainService
+{
+    // declare the interface property 
+     private readonly IFileService _fileService;
+
+    // FileService object will be inserted by autofac
+    public MainService(IFileService fileService)
+    {
+        _fileService = fileService;
+    }
+}
+
+public void SampleMethod(){
+    // or can be obtainer from the container object 
+    var cubeService = container.Resolve<ICubeService>();
+}
+
+
+```
+
+### keyed Registrations 
+
+multiple implementations can be declred for the **same interface** as **keyed Registrations**. 
+
+``` c#
+
+// declaring the registrations 
+     builder.RegisterType<GeneralProcessor>().Keyed<IProcessor>("general");
+    builder.RegisterType<PipelineProcessor>().Keyed<IProcessor>("pipeline");
+
+```
+
+``` c#
+// can be cosumed using container object 
+     container.ResolveKeyed<IProcessor>("general");
+
+// can be consumed through a key filter attribute in constructor
+    public SampleConstructor([KeyFilter("general")]IProcessor processor)
+    {
+        _processor = processor;
+    }
+```
