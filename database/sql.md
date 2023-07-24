@@ -52,3 +52,13 @@ END;
 --  calling the stored procedure
 EXEC PaymentsAbove @Amount = 10
 ```
+
+## sample SQL Statements 
+
+### DML Statements 
+
+> DISTINCT  statement
+
+To remove the duplicates from the result set. 
+
+If multiple values are there **duplicates of combinations** of those values will be removed
