@@ -93,3 +93,32 @@ ORDER BY emp.salary
 ```
 
 **WITH TIES** - this will send all the tied records for a perticular position. 
+
+## concepts
+
+### Concept of NULL 
+In SQL NULL means the value is unknown . 
+
+Null will *never be equal to another null*
+
+to check whther value is null - `IS NULL`
+
+> ISNULL() function
+
+this would check perticular value is null, 
+    - *null* - replace with given value 
+    - *not null* - return the value
+
+``` SQL
+-- checks whther bonus is null, if so replace it with 0
+ISNULL(bonus,0) 
+```
+
+> COALESCE() function
+returns the *first not null expression*
+
+``` SQL
+-- returns first of phone , mobile or work phone which has a value first 
+-- if all the above are null return NA
+COALESCE(emp.phone, emp.mobile, emp.workPhone, 'NA')
+```
