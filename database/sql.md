@@ -62,3 +62,34 @@ EXEC PaymentsAbove @Amount = 10
 To remove the duplicates from the result set. 
 
 If multiple values are there **duplicates of combinations** of those values will be removed
+
+### Data Query Statements 
+
+> ORDER BY  
+
+order the content by a coloumn in the table , default **Ascending**
+
+``` SQL
+-- order the results set by the population_count
+SELECT   ap.species_id , ap.locality, ap.population_count
+FROM bird.antarctic_populations ap
+ORDER BY ap.population_count 
+
+-- order the results set by the population_count
+SELECT   ap.species_id , ap.locality, ap.population_count
+FROM bird.antarctic_populations ap
+ORDER BY 3 -- here 3 means the 3rd coloumn in the result set
+```
+
+> TOP 
+
+return top most n records filtered for the result set . 
+
+``` SQL
+-- select employee with least salary
+SELECT top 1 WITH TIES  emp.first_name, emp.last_name
+FROM hcm.employees emp
+ORDER BY emp.salary 
+```
+
+**WITH TIES** - this will send all the tied records for a perticular position. 
