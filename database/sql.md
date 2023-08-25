@@ -123,6 +123,42 @@ returns the *first not null expression*
 COALESCE(emp.phone, emp.mobile, emp.workPhone, 'NA')
 ```
 
+### Collations 
+
+rules which define the way in which the *characters are compared*. 
+
+Collations can be defined in the 
+- server level 
+- database level 
+- coloumn level
+
+sample collations : `Latin1_General_CI_AS` , here 
+- CI -  case insensitive
+- AS - Accent Sensitive ( a != á )
+
+we can alther the collation in a query also 
+
+```SQL
+-- set colation to Case Sensitive  and Accent Sensitive
+SELECT p.product_id, p.product_name 
+FROM oes.products p
+WHERE p.product_name = 'usb hub' 
+COLLATE Latin1_General_CS_AS  
+```
+
+### Pattern Matching 
+
+we can match diffrent character patterns using the pattern matching sytnx. 
+We should use the **LIKE** keyword with any of the pattern matchings. 
+
+sample pattern matching character 
+- % =>  any number of characters 
+- _ =>  single character
+- [0-9] => any digit from  0 to 9 
+- [A-Z] => any letter from A to Z 
+
+
+
 ## Qick Tips
 
 ### Querying Date
