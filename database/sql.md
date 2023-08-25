@@ -122,3 +122,10 @@ returns the *first not null expression*
 -- if all the above are null return NA
 COALESCE(emp.phone, emp.mobile, emp.workPhone, 'NA')
 ```
+
+## Qick Tips
+
+### Querying Date
+When querying in the SQL  date can be written in **YYYYMMDD**  format. 
+
+> eg : 2023-08-25 can be written '`20230825`'
