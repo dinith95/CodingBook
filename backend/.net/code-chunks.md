@@ -17,6 +17,14 @@
 
 - [append zip](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-c-snippets-appendzip-cs)
 
+### Read and Write CSV data
+
+this uses the nugget package [CSVHelper](https://www.nuget.org/packages/CsvHelper/). 
+
+[Read from CSV file](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-read-from-csv-file-cs) - returns a *DataTable*
+
+[Write to CSV File](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-write-to-csvfile-cs) - accepts a *DataTable*
+
 
 
 ## other operations 
