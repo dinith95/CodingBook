@@ -94,6 +94,25 @@ ORDER BY emp.salary
 
 **WITH TIES** - this will send all the tied records for a perticular position. 
 
+> JSON_VALUE
+
+format -  ``` JSON_QUERY (jsonData , [Path Mode] JSON_path)```
+
+get a value of a JSON object stored as a string.
+
+in a *SELECT CLAUSE* 
+``` SQL
+SELECT JSON_VALUE('{"name": "John", "age": 30}', '$.name') AS name -- return John as the result
+ ```
+in a *WHERE CLAUSE* 
+``` SQL
+-- returns all ids of SampleTable where section_id in JSON matches in the given value in data coloumn.
+SELECT  t.Id
+FROM SampleTable t
+WHERE  JSON_VALUE(t.[Data] , '$.section_id') = '6488282009129ffba030ec5e'
+```
+
+
 ## concepts
 
 ### Concept of NULL 
