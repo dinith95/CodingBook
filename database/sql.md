@@ -96,7 +96,7 @@ ORDER BY emp.salary
 
 > JSON_VALUE
 
-format -  ``` JSON_QUERY (jsonData , [Path Mode] JSON_path)```
+format -  ``` JSON_VALUE (jsonData , [Path Mode] JSON_path)```
 
 get a value of a JSON object stored as a string.
 
@@ -111,7 +111,16 @@ SELECT  t.Id
 FROM SampleTable t
 WHERE  JSON_VALUE(t.[Data] , '$.section_id') = '6488282009129ffba030ec5e'
 ```
+> JSON_QUERY
 
+used to extract a object or array of json data. 
+
+format - `JSON_QUERY (jsonData , [Path Mode] JSON_path)`
+
+``` SQL
+-- return the data of the first empoyee in json data as result
+SELECT  JSON_QUERY(@data, '$.employees[0]') AS 'Result';
+```
 
 ## concepts
 
