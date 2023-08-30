@@ -94,6 +94,36 @@ ORDER BY emp.salary
 
 **WITH TIES** - this will send all the tied records for a perticular position. 
 
+> GROUP BY 
+
+this groups the data by the value in the given coloumn. 
+
+Note that the **GROUP BY** clause will runs first before the **SELECT**  statements. 
+
+``` SQL
+-- customers data is groupd by the state_province coloumn
+SELECT c.state_province , COUNT(c.customer_id)
+FROM oes.customers c
+GROUP BY c.state_province
+```
+
+In a sql statment with **GROUP BY**
+- only coloumn which is in GROUP BY clause should exists in SELECT statment
+- other coloumns should be in an *aggregate function*. 
+
+>  HAVING 
+
+HAVING CLAUSE  *filters the results of the GROUP BY*  based on a condition.
+
+``` SQL
+-- the customer data which is grouped by the state-province 
+-- is filtered groups which has more than 4 records 
+SELECT c.state_province , COUNT(c.customer_id)
+FROM oes.customers c
+GROUP BY c.state_province
+HAVING COUNT(c.customer_id) > 4
+```
+
 > JSON_VALUE
 
 format -  ``` JSON_VALUE (jsonData , [Path Mode] JSON_path)```
@@ -123,6 +153,18 @@ SELECT  JSON_QUERY(@data, '$.employees[0]') AS 'Result';
 ```
 
 ## concepts
+
+### Concept of excution order
+
+- the SQL engine **does not need to follw** the below order . 
+- but it should return a *result as it has followed the below order*. 
+
+1. FROM 
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. SELECT 
+6. ORDER BY
 
 ### Concept of NULL 
 In SQL NULL means the value is unknown . 
