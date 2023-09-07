@@ -29,25 +29,14 @@ Cash Balance => before the trasaction occurred.
 
 [more about analytical databases](https://learn.microsoft.com/en-us/training/modules/explore-core-data-concepts/6-analytical-processing)
 
-# SQL 
+## SQL joins 
 
-The stadered language to work with the database managment systems. 
+sample table - 
 
-## SQL statement typs 
+![table](../images//sample.png?raw=true "table")
 
-### DDL statments 
-create / modify / delete tables and records. 
 
-eg : CREATE | DROP | ALTER
+### Inner Join
+returns all the rows which are matching the join condition. 
 
-### DCL statemnts 
 
-manage the accesss to the objects in the database .
-
-eg: GRANT | DENY | REVOKE
-
-### DML statements 
-
-read and manipulate data 
-
-eg: SELECT | INSERT | UPDATE 
