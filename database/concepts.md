@@ -31,12 +31,44 @@ Cash Balance => before the trasaction occurred.
 
 ## SQL joins 
 
-sample table - 
+sample table 
 
 ![table](../images//sample.png?raw=true "table")
+
+Note - here the colour of the row represent value of the coloumn which the table is matched on. 
 
 
 ### Inner Join
 returns all the rows which are matching the join condition. 
 
+![inner join](../images/inner-join.png)
 
+note that only the *green and blue* cells are matched as they are ones which have same values . 
+
+### Left Join 
+
+reaturns all the rows of left table and corresponsding matching row in right table or null if there isnt a matching table . 
+
+**Left Table** - Table on left side of the *JOIN*  command . 
+
+![left join](../images/left-join.png)
+
+note =>  that the *red cell* is returned will null as there isnt an corresponsding value on right table 
+
+### Right join 
+
+reaturns all the rows of right table and corresponsding matching row in left table or null if there isnt a matching table . 
+
+**Right Table** - Table on tight side of the *JOIN*  command . 
+
+![right-join](../images/right-join.png)
+
+note =>  that *purple cell* will return as null as corrosponding value becuase of the null. 
+
+### Full Join 
+
+returns all the rows of the right table and corresponding matching row and also all the rows of the left table. 
+
+![full-join](../images/full-join.png)
+
+Note => here both *purple and red* cells are returned with null as they do not have a corresponding element.  
