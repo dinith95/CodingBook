@@ -72,3 +72,9 @@ returns all the rows of the right table and corresponding matching row and also 
 ![full-join](../images/full-join.png)
 
 Note => here both *purple and red* cells are returned with null as they do not have a corresponding element.  
+
+### Cross Join 
+here the each row of the table A is joined with all the rows in the table B. 
+
+### Self Referencing Join 
+ here the same table is join on itself based on common criteria. 
