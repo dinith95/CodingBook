@@ -36,3 +36,16 @@ def methOnPwr2(numList):
 this is because based on the number of inputs the prints statements will vary expotetially
  - 10 inputs => 100 executions
  - 100 inputs => 10000 excutions
+
+ ## O of multiple terms - O(a,b)
+ > here multiple terms are given 
+
+for function similar to below we can simplify to : `O(a+b)` 
+
+```py
+def print_items(a,b):
+    for i in range(0,a):
+        print(a)
+    for j in range(0,b):
+        print(b)
+```
