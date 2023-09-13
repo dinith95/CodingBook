@@ -55,19 +55,55 @@ EXEC PaymentsAbove @Amount = 10
 
 ## Set operators 
 
+- when 2 nulls are compared they are evaluated to TRUE. 
+- coloums numbers returned from each select statement  should be same 
+- coloumns data types should match
+- the coloumn names of the first table will be displayed.  
+
 ### Set operator precedence 
 1. INTERSECT 
 2. UNION / UNION ALL / EXCEPT
 
 ### UNION 
+- combines the output of 2 or more SELECT  statements. 
+- UNION will remove the duplicate records. 
 
+``` SQL 
+SELECT cs.scientific_name FROM bird.california_sightings cs
+UNION
+SELECT ars.scientific_name FROM bird.arizona_sightings ars
+```
+
+> in the above the **scientific_name** records  from **california_sightings** are combined with the **arizona_sightings**. 
 
 ### INTERSECT  
 they get the common set of records from two queries . 
 
+``` SQL
+SELECT c.customer_id 
+     FROM oes.customers c 
+INTERSECT
+SELECT O.customer_id
+      FROM oes.orders O
+```
+
+>  in the above example it get the *common customer ids* from the customer table and the orders table . 
+
 ### EXCEPT  
 get the diffrence between the two select statements . 
 here the *order of the select statments do matter*
+
+``` SQL 
+SELECT p.product_id 
+    FROM oes.products p
+EXCEPT
+SELECT i.product_id
+    FROM oes.inventories i
+```
+
+in the above example returns the products ids 
+- in the **product table** 
+- not in the **Inventories table**
 
 
 ## sample SQL Statements 
