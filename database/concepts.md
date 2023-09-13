@@ -78,3 +78,4 @@ here the each row of the table A is joined with all the rows in the table B.
 
 ### Self Referencing Join 
  here the same table is join on itself based on common criteria. 
+

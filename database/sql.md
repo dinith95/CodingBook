@@ -53,6 +53,23 @@ END;
 EXEC PaymentsAbove @Amount = 10
 ```
 
+## Set operators 
+
+### Set operator precedence 
+1. INTERSECT 
+2. UNION / UNION ALL / EXCEPT
+
+### UNION 
+
+
+### INTERSECT  
+they get the common set of records from two queries . 
+
+### EXCEPT  
+get the diffrence between the two select statements . 
+here the *order of the select statments do matter*
+
+
 ## sample SQL Statements 
 
 ### DML Statements 
