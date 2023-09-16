@@ -126,7 +126,7 @@ in the above example returns the products ids
 
 ## sample SQL Statements 
 
-### DML Statements 
+## DML Statements 
 
 > DISTINCT  statement
 
@@ -134,9 +134,9 @@ To remove the duplicates from the result set.
 
 If multiple values are there **duplicates of combinations** of those values will be removed
 
-### Data Query Statements 
+## Data Query Statements 
 
-> ORDER BY  
+### ORDER BY  
 
 order the content by a coloumn in the table , default **Ascending**
 
@@ -152,7 +152,7 @@ FROM bird.antarctic_populations ap
 ORDER BY 3 -- here 3 means the 3rd coloumn in the result set
 ```
 
-> TOP 
+### TOP 
 
 return top most n records filtered for the result set . 
 
@@ -165,7 +165,7 @@ ORDER BY emp.salary
 
 **WITH TIES** - this will send all the tied records for a perticular position. 
 
-> GROUP BY 
+### GROUP BY 
 
 this groups the data by the value in the given coloumn. 
 
@@ -182,7 +182,7 @@ In a sql statment with **GROUP BY**
 - only coloumn which is in GROUP BY clause should exists in SELECT statment
 - other coloumns should be in an *aggregate function*. 
 
->  HAVING 
+###  HAVING 
 
 HAVING CLAUSE  *filters the results of the GROUP BY*  based on a condition.
 
@@ -195,13 +195,13 @@ GROUP BY c.state_province
 HAVING COUNT(c.customer_id) > 4
 ```
 
-> EXISTS 
+### EXISTS 
 
 the exists returns **TRUE** if there are **one or more rows in subquery**. 
 
 Note - exists is faster when the subquery result is large . 
 
-> JSON_VALUE
+### JSON_VALUE
 
 format -  ``` JSON_VALUE (jsonData , [Path Mode] JSON_path)```
 
@@ -218,7 +218,7 @@ SELECT  t.Id
 FROM SampleTable t
 WHERE  JSON_VALUE(t.[Data] , '$.section_id') = '6488282009129ffba030ec5e'
 ```
-> JSON_QUERY
+### JSON_QUERY
 
 used to extract a object or array of json data. 
 
@@ -227,6 +227,18 @@ format - `JSON_QUERY (jsonData , [Path Mode] JSON_path)`
 ``` SQL
 -- return the data of the first empoyee in json data as result
 SELECT  JSON_QUERY(@data, '$.employees[0]') AS 'Result';
+```
+
+### Common Table Expressions ( CTE )
+
+> syntax of CTE 
+
+```SQL
+WITH <table_name> AS 
+    ( 
+        <sub query>
+    ) 
+<outer-query>
 ```
 
 ## concepts
