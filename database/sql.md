@@ -53,6 +53,24 @@ END;
 EXEC PaymentsAbove @Amount = 10
 ```
 
+## window Functions 
+
+operate on multiple rows at a time and return one output per row 
+
+### RANK Function 
+
+thiss functions assigns a rank to each of the items in the table after partitioning the result set . 
+
+- PARTITION BY - partition the result set based on criteria ( eg: employees dataset by deprtment )
+
+- ORDER BY - orders the results set in the partition by a criteria . ( Eg: employees within the department by the salary )
+
+syntax 
+```SQL
+RANK() OVER (PARTITION BY <expr> ORDER BY <expr> [ ASC | DESC ] )
+```
+
+
 ## Set operators 
 
 - when 2 nulls are compared they are evaluated to TRUE. 
@@ -176,6 +194,12 @@ FROM oes.customers c
 GROUP BY c.state_province
 HAVING COUNT(c.customer_id) > 4
 ```
+
+> EXISTS 
+
+the exists returns **TRUE** if there are **one or more rows in subquery**. 
+
+Note - exists is faster when the subquery result is large . 
 
 > JSON_VALUE
 
