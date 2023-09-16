@@ -57,6 +57,97 @@ The values are queried through the **SQL API**. It provides an inbuilt tool to r
 SELECT * FROM RetriggerScheduler c where ....
 
 ```
+## JOINS  
+Joins can be used join the document on the same document and return an iterating set of element in the document as a collection. 
+
+ex: think of a document structure like below and if there are multiple documents of the similar structure. 
+
+```json
+{
+    "id": "2b161158aa25480ea6868ec4683cdcc6",
+    // other json propertese  
+    "Tags": [
+        {
+            "Label": "Citi-3",
+            "id": "Citi-3"
+        },
+        {
+            "Label": "Citi",
+            "id": "Citi"
+        },
+        {
+            "Label": "Monitored",
+            "id": "Monitored"
+        },
+        {
+            "Label": "ClassificationStandard",
+            "id": "ClassificationStandard"
+        }
+    ]
+}
+```
+if we need to get an enumeration for each of the tags with the id following query can be written . 
+
+```sql
+SELECT c.id, t.Label FROM c 
+-- each document is joined on its tags 
+join t in c.Tags
+where c.id = '2b161158aa25480ea6868ec4683cdcc6'
+```
+
+the results set is 
+```json 
+[
+    {
+        "id": "2b161158aa25480ea6868ec4683cdcc6",
+        "Label": "Citi-3"
+    },
+    {
+        "id": "2b161158aa25480ea6868ec4683cdcc6",
+        "Label": "Citi"
+    },
+    {
+        "id": "2b161158aa25480ea6868ec4683cdcc6",
+        "Label": "Monitored"
+    },
+    {
+        "id": "2b161158aa25480ea6868ec4683cdcc6",
+        "Label": "ClassificationStandard"
+    }
+]
+```
+
+> if you need to get filtered list of documents **with a property on tags** , you can use similar query as below. 
+
+```SQL
+SELECT c.id, t.Label FROM c 
+join t in c.Tags
+where t.Label = 'Citi'
+```
+this would returns info of **all documents with tag label citi**. 
+
+```SQL
+[
+    {
+        "id": "4ce342a1d78847e48a381b7e625bc9e3",
+        "Label": "Citi"
+    },
+    {
+        "id": "13a4648a55164e6db4887417f8caa4df",
+        "Label": "Citi"
+    },
+    {
+        "id": "bb5d5f7447d5478eba67ffb4d554a442",
+        "Label": "Citi"
+    },
+    {
+        "id": "0f468f69695040c1adf3b8bf06aa2baf",
+        "Label": "Citi"
+    }
+]
+```
+
+
 
 ## User Defined Functions 
 UDF is a javascript function which will support to filter and present cosmos db data in more filtered or processed manner . 
