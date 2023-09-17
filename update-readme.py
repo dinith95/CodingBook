@@ -14,6 +14,8 @@ def processSubFolders(path,depth):
         tabstr += TAB_CHAR
 
     (_,dirs,files) = os.walk(path).__next__()
+    dirs.sort(reverse=False)
+    files.sort(reverse=False)
     for dir in dirs:
         childPath = path + '/' + dir
         line = '{s0} {s1} [{s2}]({s3})'.format(
@@ -50,6 +52,8 @@ def main():
     writeMdHeading()
 
     (root, dirs, files) = os.walk('./',).__next__()
+    dirs.sort(reverse=False)
+    files.sort(reverse=False)
 
     # recursively add folders 
     for dir in dirs:
