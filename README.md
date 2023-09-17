@@ -37,6 +37,17 @@
 &emsp;&emsp; :page_with_curl: [reactLibararies.md](./frontend/react/reactLibararies.md)  
 &emsp; :page_with_curl: [angular.md](./frontend/angular.md)  
 &emsp; :page_with_curl: [css_scss.md](./frontend/css_scss.md)  
+
+:file_folder: [database](./database)  
+&emsp; :page_with_curl: [mysql.md](./database/mysql.md)  
+&emsp; :page_with_curl: [sql.md](./database/sql.md)  
+&emsp; :page_with_curl: [concepts.md](./database/concepts.md)  
+:file_folder: [dataStructures](./dataStructures)  
+&emsp; :page_with_curl: [bigONotation.md](./dataStructures/bigONotation.md)  
+&emsp; :page_with_curl: [LinkedList.md](./dataStructures/LinkedList.md)  
+&emsp; :page_with_curl: [sample.md](./dataStructures/sample.md)  
+&emsp; :page_with_curl: [stacks.md](./dataStructures/stacks.md)  
+
 :file_folder: [languages](./languages)  
 &emsp; :page_with_curl: [C#.md](./languages/C#.md)  
 &emsp; :page_with_curl: [javascript.md](./languages/javascript.md)  
