@@ -14,6 +14,7 @@
 :file_folder: [dataStructures](./dataStructures)  
 &emsp; :page_with_curl: [bigONotation.md](./dataStructures/bigONotation.md)  
 &emsp; :page_with_curl: [LinkedList.md](./dataStructures/LinkedList.md)  
+&emsp; :page_with_curl: [sample.md](./dataStructures/sample.md)  
 &emsp; :page_with_curl: [stacks.md](./dataStructures/stacks.md)  
 :file_folder: [languages](./languages)  
 &emsp; :page_with_curl: [C#.md](./languages/C#.md)  
