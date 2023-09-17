@@ -240,7 +240,21 @@ WITH <table_name> AS
     ) 
 <outer-query>
 ```
+sample :
+```SQL
+-- the result set from the products table is taken as S
+WITH s AS 
+(
+    SELECT p.product_id , p.product_name, p.list_price, p.category_id,
+            RANK() OVER ( PARTITION BY p.category_id ORDER BY  p.list_price ASC) as rnk
+        FROM oes.products p
+)
+-- the result set S is filtered as a normal query
+SELECT s.product_id, s.product_name , s.list_price , s.category_id
+FROM s 
+WHERE S.rnk = 1
 
+```
 ## concepts
 
 ### Concept of excution order
@@ -324,3 +338,23 @@ sample pattern matching character
 When querying in the SQL  date can be written in **YYYYMMDD**  format. 
 
 > eg : 2023-08-25 can be written '`20230825`'
+
+### NOT IN NULL Trap 
+
+if you are doing an SQL with a syntax similar to following ,
+
+```SQL
+SELECT <expression >
+FROM <table> t
+WHERE e.employee_id NOT IN (
+    -- SUBQUERY 
+    SELECT DISTINCT o.employee_id
+    FROM oes.orders o
+    WHERE o.employee_id IS NOT NULL
+)
+```
+
+make sure that **sube query does not return any element as NULL**, if it does the final result will not return any results. 
+
+it is advisable to add **IS NOT NULL** check as shown above. 
+
