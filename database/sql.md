@@ -194,6 +194,36 @@ FROM oes.customers c
 GROUP BY c.state_province
 HAVING COUNT(c.customer_id) > 4
 ```
+### IN
+- IN operator allows WHERE  clause to compare  on multiple values ( i.e , similar to multiple OR statements )
+- in the below query it will return values for products with prices **20 or 30 or 40**
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price IN ( 20, 30 ,40 )
+```
+
+- IN can be  used with a subquery,  
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price IN ( 
+    SELECT MIN(p2.list_price)  FROM oes.products p2
+    )
+```
+in the above query info is returned only for products which has minimum proce ( satisfies the sub query).
+
+### NOT IN 
+- NOT IN  operator returns the values for which the value in question in not within the specified set. 
+- in the below query it will return values for products with prices except **20 or 30 or 40**.
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price NOT IN ( 20, 30 ,40 )
+```
 
 ### EXISTS 
 
