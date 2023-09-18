@@ -52,6 +52,67 @@ END;
 --  calling the stored procedure
 EXEC PaymentsAbove @Amount = 10
 ```
+## Scaler Functions
+
+### CONCAT Function 
+
+- combine two or more string values together. 
+- *NULL* values will be automatically replaced by *empty strings* in the concat function. 
+- the below query will *CONCAT*  the firstName and the lastName as **FullNaame**. 
+
+```SQL
+SELECT c.customer_id , CONCAT(c.first_name,' ',c.last_name) as FullName 
+FROM oes.customers c
+```
+
+### CHARINDEX Function
+
+- get the positon of perticular character ( starting pos: 1 )
+- syntax ```CHARINDEX( <char>, <string>)```
+- the below query shows the postion of *@* symbol in each email address 
+
+```SQL
+SELECT c.email , CHARINDEX('@', c.email) As Atpos
+FROM oes.customers c
+```
+
+### SUBSTRING Function
+
+- returns defined number of characters from defined starting position of a string
+- it *includes the character* at the *starting pos* 
+- syntax: `SUBSTRING( <string>, <start pos>, <number of chars> )`
+- below query returns 6 characters left of 4th character ( including 4th character.)
+
+```SQL
+SELECT c.email , SUBSTRING(c.email, 4, 6) As substr
+FROM oes.customers c
+```
+
+### GETDATE Function
+
+- get the current date and time which the query is run 
+- sample 
+
+```SQL 
+SELECT GETDATE(); -- returns 2023-09-19 02:58:38.893
+```
+
+### CURRENT_TIMESTAMP
+
+- get the current date and time which the query is run as similar to GETDATE()
+
+```SQL
+SELECT   CURRENT_TIMESTAMP  -- returns 2023-09-19 02:58:38.893
+```
+
+###  SYSDATETIME()
+
+- get the current date and time which the query is run as similar to GETDATE() 
+- but it **much more precise**
+
+```SQL
+SELECT  SYSDATETIME() -- 2023-09-19 02:58:38.8951834
+```
 
 ## window Functions 
 
