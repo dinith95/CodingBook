@@ -352,13 +352,16 @@ WHERE S.rnk = 1
 
 - the SQL engine **does not need to follw** the below order . 
 - but it should return a *result as it has followed the below order*. 
+[ms learn article](https://learn.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN#logical-processing-order-of-the-select-statement)
 
 1. FROM 
 2. WHERE
 3. GROUP BY
 4. HAVING
 5. SELECT 
-6. ORDER BY
+6. DISTINCT
+7. ORDER BY
+8. TOP
 
 ### Concept of NULL 
 In SQL NULL means the value is unknown . 
