@@ -33,3 +33,7 @@ this uses the nugget package [CSVHelper](https://www.nuget.org/packages/CsvHelpe
 
 - will generate the **SHA1 hash **  based on the given string
 - [generate hash snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-genhash-cs)
+
+### generate dynamic class 
+- create a dynamic class with the `ExpandoObject`
+- [dynamic-class-creation-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-dynamic-class-cs)
