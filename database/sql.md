@@ -90,7 +90,7 @@ FROM oes.customers c
 
 ### GETDATE Function
 
-- get the current date and time which the query is run 
+- get the current date and time as per location of SQL server on  which the query is run 
 - sample 
 
 ```SQL 
@@ -99,7 +99,7 @@ SELECT GETDATE(); -- returns 2023-09-19 02:58:38.893
 
 ### CURRENT_TIMESTAMP
 
-- get the current date and time which the query is run as similar to GETDATE()
+- get the current date and time as per location of SQL server which the query is run as similar to GETDATE()
 
 ```SQL
 SELECT   CURRENT_TIMESTAMP  -- returns 2023-09-19 02:58:38.893
@@ -107,11 +107,19 @@ SELECT   CURRENT_TIMESTAMP  -- returns 2023-09-19 02:58:38.893
 
 ###  SYSDATETIME()
 
-- get the current date and time which the query is run as similar to GETDATE() 
+- get the current date and time as per location of SQL server which the query is run as similar to GETDATE() 
 - but it **much more precise**
 
 ```SQL
 SELECT  SYSDATETIME() -- 2023-09-19 02:58:38.8951834
+```
+
+### GETUTCDATE()
+- get the current date time in **UTC  format** . 
+- sample 
+
+```SQL
+SELECT GETUTCDATE() as UtcDate -- 2023-09-24 14:22:26.353
 ```
 
 ## window Functions 
