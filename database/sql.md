@@ -122,6 +122,31 @@ SELECT  SYSDATETIME() -- 2023-09-19 02:58:38.8951834
 SELECT GETUTCDATE() as UtcDate -- 2023-09-24 14:22:26.353
 ```
 
+### DATEPART() 
+- get the portion of DAY | MONTH | YEAR  in a date . 
+- ex: if we specify month it will return the month number of a perticular date
+
+```SQL
+SELECT DATEPART( MONTH, GETDATE()) as 'month' -- 9
+```
+
+### DATENAME()
+
+- return the portion of the date as a string 
+- even year and day will be return as a string 
+
+```SQL
+SELECT DATENAME(MONTH, GETDATE()) as 'month' -- September
+SELECT DATENAME(DAY, GETDATE()) as 'day' -- 29 
+```
+
+### DATEDIFF()
+- return the diffrence between 2 dates in specified portion 
+- diffrence between date1 and date2 will be given in **days**. 
+
+```SQL
+SELECT DATEDIFF(DAY, DATEADD(DAY,-5,GETDATE()) , GETDATE()) AS 'daysDiff' -- 5 
+```
 ## window Functions 
 
 operate on multiple rows at a time and return one output per row 
