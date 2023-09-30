@@ -325,6 +325,36 @@ the exists returns **TRUE** if there are **one or more rows in subquery**.
 
 Note - exists is faster when the subquery result is large . 
 
+### CASE Expressions 
+- Use to define conditional value return.
+- case statement should have **END**  clause 
+- the name for the result column can be given after the **END** clause.  
+
+> simple format 
+```SQL
+SELECT 
+    p.product_id , p.product_name , p.discontinued, 
+    CASE p.discontinued -- value on which logic is based on 
+        WHEN  1 THEN 'YES' 
+        WHEN  0 THEN 'NO'
+        ELSE 'UNKNOWN'
+    END AS disDescription
+FROM oes.products p;
+```
+
+> normal format 
+
+```SQL
+SELECT 
+    p.product_id , p.product_name, p.list_price,
+    CASE 
+        WHEN p.list_price < 50 THEN  'Low' -- conditinal statements 
+        WHEN p.list_price >= 50 AND p.list_price  < 250 THEN 'Medium'
+        WHEN  p.list_price >= 250 THEN 'High'
+        ELSE 'Unknown'
+    END AS 'PriceGrade'
+FROM oes.products p 
+```
 ### JSON_VALUE
 
 format -  ``` JSON_VALUE (jsonData , [Path Mode] JSON_path)```
@@ -399,7 +429,8 @@ WHERE S.rnk = 1
 ### Concept of NULL 
 In SQL NULL means the value is unknown . 
 
-Null will *never be equal to another null*
+- Null will *never be equal to another null*
+- *NULL* plus anything will return *NULL*
 
 to check whther value is null - `IS NULL`
 
