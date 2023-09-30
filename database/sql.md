@@ -52,7 +52,101 @@ END;
 --  calling the stored procedure
 EXEC PaymentsAbove @Amount = 10
 ```
+## Scaler Functions
 
+### CONCAT Function 
+
+- combine two or more string values together. 
+- *NULL* values will be automatically replaced by *empty strings* in the concat function. 
+- the below query will *CONCAT*  the firstName and the lastName as **FullNaame**. 
+
+```SQL
+SELECT c.customer_id , CONCAT(c.first_name,' ',c.last_name) as FullName 
+FROM oes.customers c
+```
+
+### CHARINDEX Function
+
+- get the positon of perticular character ( starting pos: 1 )
+- syntax ```CHARINDEX( <char>, <string>)```
+- the below query shows the postion of *@* symbol in each email address 
+
+```SQL
+SELECT c.email , CHARINDEX('@', c.email) As Atpos
+FROM oes.customers c
+```
+
+### SUBSTRING Function
+
+- returns defined number of characters from defined starting position of a string
+- it *includes the character* at the *starting pos* 
+- syntax: `SUBSTRING( <string>, <start pos>, <number of chars> )`
+- below query returns 6 characters left of 4th character ( including 4th character.)
+
+```SQL
+SELECT c.email , SUBSTRING(c.email, 4, 6) As substr
+FROM oes.customers c
+```
+
+### GETDATE Function
+
+- get the current date and time as per location of SQL server on  which the query is run 
+- sample 
+
+```SQL 
+SELECT GETDATE(); -- returns 2023-09-19 02:58:38.893
+```
+
+### CURRENT_TIMESTAMP
+
+- get the current date and time as per location of SQL server which the query is run as similar to GETDATE()
+
+```SQL
+SELECT   CURRENT_TIMESTAMP  -- returns 2023-09-19 02:58:38.893
+```
+
+###  SYSDATETIME()
+
+- get the current date and time as per location of SQL server which the query is run as similar to GETDATE() 
+- but it **much more precise**
+
+```SQL
+SELECT  SYSDATETIME() -- 2023-09-19 02:58:38.8951834
+```
+
+### GETUTCDATE()
+- get the current date time in **UTC  format** . 
+- sample 
+
+```SQL
+SELECT GETUTCDATE() as UtcDate -- 2023-09-24 14:22:26.353
+```
+
+### DATEPART() 
+- get the portion of DAY | MONTH | YEAR  in a date . 
+- ex: if we specify month it will return the month number of a perticular date
+
+```SQL
+SELECT DATEPART( MONTH, GETDATE()) as 'month' -- 9
+```
+
+### DATENAME()
+
+- return the portion of the date as a string 
+- even year and day will be return as a string 
+
+```SQL
+SELECT DATENAME(MONTH, GETDATE()) as 'month' -- September
+SELECT DATENAME(DAY, GETDATE()) as 'day' -- 29 
+```
+
+### DATEDIFF()
+- return the diffrence between 2 dates in specified portion 
+- diffrence between date1 and date2 will be given in **days**. 
+
+```SQL
+SELECT DATEDIFF(DAY, DATEADD(DAY,-5,GETDATE()) , GETDATE()) AS 'daysDiff' -- 5 
+```
 ## window Functions 
 
 operate on multiple rows at a time and return one output per row 
@@ -194,6 +288,36 @@ FROM oes.customers c
 GROUP BY c.state_province
 HAVING COUNT(c.customer_id) > 4
 ```
+### IN
+- IN operator allows WHERE  clause to compare  on multiple values ( i.e , similar to multiple OR statements )
+- in the below query it will return values for products with prices **20 or 30 or 40**
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price IN ( 20, 30 ,40 )
+```
+
+- IN can be  used with a subquery,  
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price IN ( 
+    SELECT MIN(p2.list_price)  FROM oes.products p2
+    )
+```
+in the above query info is returned only for products which has minimum proce ( satisfies the sub query).
+
+### NOT IN 
+- NOT IN  operator returns the values for which the value in question in not within the specified set. 
+- in the below query it will return values for products with prices except **20 or 30 or 40**.
+
+```SQL
+SELECT p.product_id, p.product_name, p.list_price, p.category_id 
+FROM oes.products p
+WHERE p.list_price NOT IN ( 20, 30 ,40 )
+```
 
 ### EXISTS 
 
@@ -201,6 +325,36 @@ the exists returns **TRUE** if there are **one or more rows in subquery**.
 
 Note - exists is faster when the subquery result is large . 
 
+### CASE Expressions 
+- Use to define conditional value return.
+- case statement should have **END**  clause 
+- the name for the result column can be given after the **END** clause.  
+
+> simple format 
+```SQL
+SELECT 
+    p.product_id , p.product_name , p.discontinued, 
+    CASE p.discontinued -- value on which logic is based on 
+        WHEN  1 THEN 'YES' 
+        WHEN  0 THEN 'NO'
+        ELSE 'UNKNOWN'
+    END AS disDescription
+FROM oes.products p;
+```
+
+> normal format 
+
+```SQL
+SELECT 
+    p.product_id , p.product_name, p.list_price,
+    CASE 
+        WHEN p.list_price < 50 THEN  'Low' -- conditinal statements 
+        WHEN p.list_price >= 50 AND p.list_price  < 250 THEN 'Medium'
+        WHEN  p.list_price >= 250 THEN 'High'
+        ELSE 'Unknown'
+    END AS 'PriceGrade'
+FROM oes.products p 
+```
 ### JSON_VALUE
 
 format -  ``` JSON_VALUE (jsonData , [Path Mode] JSON_path)```
@@ -240,25 +394,43 @@ WITH <table_name> AS
     ) 
 <outer-query>
 ```
+sample :
+```SQL
+-- the result set from the products table is taken as S
+WITH s AS 
+(
+    SELECT p.product_id , p.product_name, p.list_price, p.category_id,
+            RANK() OVER ( PARTITION BY p.category_id ORDER BY  p.list_price ASC) as rnk
+        FROM oes.products p
+)
+-- the result set S is filtered as a normal query
+SELECT s.product_id, s.product_name , s.list_price , s.category_id
+FROM s 
+WHERE S.rnk = 1
 
+```
 ## concepts
 
 ### Concept of excution order
 
 - the SQL engine **does not need to follw** the below order . 
 - but it should return a *result as it has followed the below order*. 
+[ms learn article](https://learn.microsoft.com/en-us/sql/t-sql/queries/select-transact-sql?view=sql-server-ver16&redirectedfrom=MSDN#logical-processing-order-of-the-select-statement)
 
 1. FROM 
 2. WHERE
 3. GROUP BY
 4. HAVING
 5. SELECT 
-6. ORDER BY
+6. DISTINCT
+7. ORDER BY
+8. TOP
 
 ### Concept of NULL 
 In SQL NULL means the value is unknown . 
 
-Null will *never be equal to another null*
+- Null will *never be equal to another null*
+- *NULL* plus anything will return *NULL*
 
 to check whther value is null - `IS NULL`
 
@@ -324,3 +496,23 @@ sample pattern matching character
 When querying in the SQL  date can be written in **YYYYMMDD**  format. 
 
 > eg : 2023-08-25 can be written '`20230825`'
+
+### NOT IN NULL Trap 
+
+if you are doing an SQL with a syntax similar to following ,
+
+```SQL
+SELECT <expression >
+FROM <table> t
+WHERE e.employee_id NOT IN (
+    -- SUBQUERY 
+    SELECT DISTINCT o.employee_id
+    FROM oes.orders o
+    WHERE o.employee_id IS NOT NULL
+)
+```
+
+make sure that **sube query does not return any element as NULL**, if it does the final result will not return any results. 
+
+it is advisable to add **IS NOT NULL** check as shown above. 
+
