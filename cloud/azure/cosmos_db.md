@@ -46,6 +46,45 @@ through can be specidied in multiple ways .
 
 - specified RU is only for the perticular container
 
+# Database Design 
+
+## Choosing a Partition Key [more](https://learn.microsoft.com/en-us/training/modules/implement-non-relational-data-model/6-choose-partition-key#:~:text=Next-,Choose%20a%20partition%20key,-Completed)
+
+- partition key ensures that the data is stored in **same logical** partition. 
+- several logical partitions can be stored in physical partition.
+- 20GB max can be stored in the **logical partition**
+-  when partitioning having large amount of logical partitions are fine. 
+
+### Hot Partitions 
+- ones which have large amount of data stored or throughput. 
+
+> Storage Hot Partition
+- one partition large amount of data is stored 
+- other partitions very less amount of data stored 
+
+> Throughput Hot Partition [more](https://learn.microsoft.com/en-us/training/modules/implement-non-relational-data-model/6-choose-partition-key#:~:text=Throughput%20hot%20partitions)
+- In one partition the data is accessed very frequently and others idle. 
+- throughput evenly distributed across **all physical partitions** 
+
+## Embedding Data 
+- the diffrent entities that the main entity interacts with are embedded 
+- these embeds should be done carefully and to make sure less requests to read the data. 
+
+> data should be embedded in these scenarios 
+
+- data is **read and updated** together 
+- 1:1 relationship between the data 
+- 1:FEW  relationship , like bounded number of child elements like
+    - customer adress on customers
+    - telephone numbers of an employee
+
+> data should be referenced in these scenarios 
+- data is **read and updated** independetly
+    - when updating whole document is replaced, so better to keep static data and dynamic data seperately. 
+- 1:MANY unbonded entitites 
+    - document max size is 2mb , so better keep unbounded entities seperate
+    - customers and orders ( customer may place large number of orders)
+- MANY:MANY relationship
 
 
 # Reading Values - SQL API
