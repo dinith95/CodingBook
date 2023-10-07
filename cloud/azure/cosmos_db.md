@@ -86,6 +86,14 @@ through can be specidied in multiple ways .
     - customers and orders ( customer may place large number of orders)
 - MANY:MANY relationship
 
+## Change Feed 
+- change feeds monitors for the changes to the data in the containers and allows developers to write logic accodingly . 
+- this is useful in tracking changes to metadata, then updating the reference data accordignly 
+
+- code based [changed-feed-implementation](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/change-feed-processor?tabs=dotnet#implement-the-change-feed-processor)
+
+- change feed implementation through [azure-function](https://gist.github.com/dinith95/c6f167b988097f5d502847606da5c31a)
+    - in function implementatiion **function is triggered** when there is a change to metadata
 
 # Reading Values - SQL API
 
