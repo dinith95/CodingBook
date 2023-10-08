@@ -10,7 +10,7 @@ Azure Cosmos Db is the noSQL database in which the values are stored as Key valu
 
 ## Deployment plans
 
-There are 2 deployment plans
+There are 3  deployment plans
 
 - serverless 
 - provisioned througpput
@@ -23,7 +23,7 @@ There are 2 deployment plans
 - max 50gb in container
 
 ### Autoscale
-- set Max RUs amount can be specifed and the containers will scale within those values based on demand.
+- set **Max and MIN RUs** amount can be specifed and the containers will scale within those values based on demand.
 - minimum 10% of the max RUs count. 
 
 ## Throughputs 
@@ -46,6 +46,21 @@ through can be specidied in multiple ways .
 
 - specified RU is only for the perticular container
 
+## Time To Live 
+- items will be automatically deleted ( expired ) if not modified for *x no of seconds* from last modification time. 
+
+- can be set in 
+    - container level 
+    - item level 
+
+- ttl spcial values 
+    - null : not set 
+    - -1: infinite
+
+> rules in time to live 
+
+- ttl for item to be active only if **ttl** is **enabled in container level**
+- ttl for itema will override ttl in container level. 
 # Database Design 
 
 ## Choosing a Partition Key [more](https://learn.microsoft.com/en-us/training/modules/implement-non-relational-data-model/6-choose-partition-key#:~:text=Next-,Choose%20a%20partition%20key,-Completed)
@@ -236,15 +251,7 @@ SELECT udf.userDefinedFunction(f.address, "2022-09-24")
 FROM Families
 ```
 
-## InBuilt Functions 
-
-### Count 
-
-return count of the attributes . 
-
-``` SQL
-SELECT count(c.Code) FROM rs c where c.ScheduleId = "50cdbbd3-5813-4300-b775-ada8105622e8"
-```
+## Keywords
 
 ### Order by 
 
@@ -262,7 +269,93 @@ get specified top results of a collection .
 SELECT Top 5 * FROM RetriggerScheduler c where c.EntityName = "Schedule"
 ```
 
+### VALUE 
+
+- flattern the result set to a simple type . 
+- remove unnessasary object wrapper . 
+
+```SQL
+SELECT 
+    p.name
+FROM
+    products p
+```
+
+the above query will result on 
+```json
+[
+    {
+        "name": "Components, Road Frames"
+    },
+    {
+        "name": "Components, Touring Frames"
+    }
+]
+```
+
+in order to remove the additional wrapper ```VALUE``` can be used. 
+
+```SQL
+SELECT VALUE
+    p.name
+FROM
+    products p
+```
+the above will result in 
+
+```json
+[
+    "Components, Road Frames",
+    "Components, Touring Frames"
+]
+```
+
+## InBuilt Functions 
+
+### Count 
+
+return count of the attributes . 
+
+``` SQL
+SELECT count(c.Code) FROM rs c where c.ScheduleId = "50cdbbd3-5813-4300-b775-ada8105622e8"
+```
+
+### IS_DEFINED
+- check a property exists in the item. 
+
+- eg: chceck tags exists in the product 
+
+```SQL
+SELECT
+    IS_DEFINED(p.tags) AS tags_exist
+FROM
+    products p
+```
+
+### IS_ARRAY 
+- check perticular property exists as an array.
+
+- eg: check whther the **Tags** exists as an array.
+
+```SQL
+SELECT
+    IS_ARRAY(p.tags) 
+FROM
+    products p
+```
 this will return the top 5 results. 
+
+### IS_NULL 
+- check property of a object **is null**.
+
+- eg: check whether the **Tags** is null 
+
+```SQL
+SELECT
+    IS_NULL(p.tags) 
+FROM
+    products p
+```
 
 ### Array_Contains
 
