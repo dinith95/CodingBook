@@ -470,3 +470,88 @@ while (filteredFeed.HasMoreResults)
 
 ```
 
+# Scripting With Cosmos DB
+
+## Creating Resource [more info](https://learn.microsoft.com/en-us/training/modules/write-scripts-for-azure-cosmos-db-sql-api/2-create-resources#:~:text=Azure%20Cosmos%20DB%20account%20group%20commands)
+
+> Create new account 
+
+```powershell
+# create a new account 
+az cosmosdb create \
+    --name '<account-name>' \
+    --resource-group '<resource-group>'
+```
+
+> create a database 
+
+```powershell
+# create a new account 
+az cosmosdb sql database create \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --name '<database-name>'
+```
+
+> create a container 
+
+```powershell
+az cosmosdb sql container create \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --database-name '<database-name>' \
+    --name '<container-name>' \
+    --throughput '400' \
+    --partition-key-path '<partition-key-path-string>'
+```
+
+## Managing Throughput
+> upldate throughput 
+
+```powershell
+# update in database 
+az cosmosdb sql database throughput update \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --name '<database-name>' \
+    --throughput '4000'
+
+# update in a container 
+az cosmosdb sql container throughput update \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --database-name '<database-name>' \
+    --name '<container-name>' \
+    --throughput '1000'
+
+```
+> migrate manual to autoscale in throughput 
+
+```powershell
+# manual => autoscale 
+az cosmosdb sql container throughput migrate \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --database-name '<database-name>' \
+    --name '<container-name>' \
+    --throughput-type 'autoscale'
+
+# set max throughput 
+az cosmosdb sql container throughput update \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --database-name '<database-name>' \
+    --name '<container-name>' \
+    --max-throughput '5000'
+```
+
+> migrate autoscale to manual throughput 
+
+```powershell
+az cosmosdb sql container throughput migrate \
+    --account-name '<account-name>' \
+    --resource-group '<resource-group>' \
+    --database-name '<database-name>' \
+    --name '<container-name>' \
+    --throughput-type 'manual'
+```
