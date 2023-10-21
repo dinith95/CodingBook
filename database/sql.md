@@ -22,17 +22,35 @@ the **Instance pipe name**  is the connection string for the database.
 
 ## Data Types 
 
+### Char(n)
+- declared as `CHAR(50)`
+- storeas fixed length of characters 
+- if a s string with lesser number of chars added sql server automatically add blank spaces. 
+
+### NChar(n)
+- declared as `NCHAR(50)`
+- similar to *char* but can store *unicode* characters. 
+
+### Varchar(n)
+- declared as `VARCHAR(50)`
+- variable length characters can be stored
+- n specifies the number of characters 
+
+### NVarchar(n)
+- declared as `NVARCHAR(50)`
+- can store variable length of characters 
+- can store the non unicode charactor data 
+
 ### Decimal ( Numeric )
 
 - declared as `DECIMAL(8,5)`
-    - total of 8 chars
-    - 5 chars after the decimal point
-    - so the max value `999.99999`
+- total of 8 chars
+- 5 chars after the decimal point
+- so the max value `999.99999`
 
 ### Float 
 - approximate number datatype , the numbers here are of approximate values 
-
-> [!NOTE] should never be used for finance , accountance information
+-  should never be used for finance , accountance information
 
 
 ## sample trigger 
@@ -509,7 +527,7 @@ sample pattern matching character
 ### Querying Date
 When querying in the SQL  date can be written in **YYYYMMDD**  format. 
 
-> eg : 2023-08-25 can be written '`20230825`'
+> eg : 2023-08-25 can be written `'20230825'`
 
 ### NOT IN NULL Trap 
 
