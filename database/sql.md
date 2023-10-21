@@ -20,6 +20,20 @@ refer the sql server  [LocalDb doc](https://docs.microsoft.com/en-us/sql/databas
 
 the **Instance pipe name**  is the connection string for the database.
 
+## Data Types 
+
+### Decimal ( Numeric )
+
+- declared as `DECIMAL(8,5)`
+    - total of 8 chars
+    - 5 chars after the decimal point
+    - so the max value `999.99999`
+
+### Float 
+- approximate number datatype , the numbers here are of approximate values 
+
+> [!NOTE] should never be used for finance , accountance information
+
 
 ## sample trigger 
 
