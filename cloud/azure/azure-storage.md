@@ -52,7 +52,7 @@ a policy can be made to automatically move blob from *hot* to *cool* and after t
 ## Object Replication in Blob [more info](https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication)
 - copies the blobs in a container asynchronously to another destination.
 - **requires** blob versioning to be enabled on both the accounts. 
-- source and destination containers can be in different access tiers. 
+- source and destination containers can be in hot and cool access tiers. 
 
 
 
