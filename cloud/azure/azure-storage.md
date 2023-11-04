@@ -1,3 +1,8 @@
+# Storage Accounts 
+
+## Rules to be followed in creating account
+- only letters and numbers can be used 
+- should be globally unique 
 # Blob Storage 
 way of storing large untructured binary object ( blobs) . 
 
