@@ -1,9 +1,15 @@
 # Storage Accounts 
 
-## Rules to be followed in creating account
-- only letters and numbers can be used 
+## Rules in Creation
+- only lowercase letters and numbers can be used 
 - should be globally unique 
+
 # Blob Storage 
+
+## rules in Creation
+- only lowercase letters numbers and hyphens
+- begin with letter or number 
+
 way of storing large untructured binary object ( blobs) . 
 
 it supports a folder structure but it is purely **vitual folders**. 
@@ -28,17 +34,27 @@ it supports a folder structure but it is purely **vitual folders**.
 
 > Hot tier 
 - frequent access data 
-- highest cost 
+- highest storage cost 
+- low access cost
 
 > cool tier 
 - infrequent aceess data 
 
 > archive 
-- lowest cost 
+- lowest storage cost 
+- highest access cost
 - archival data 
 - data should be brought to hot tier before accessing. 
 
+## Life cycle managemnet policy
 a policy can be made to automatically move blob from *hot* to *cool* and after that to *archive*.
+
+## Object Replication in Blob [more info](https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication)
+- copies the blobs in a container asynchronously to another destination.
+- **requires** blob versioning to be enabled on both the accounts. 
+- source and destination containers can be in different access tiers. 
+
+
 
 # File share storage 
 
