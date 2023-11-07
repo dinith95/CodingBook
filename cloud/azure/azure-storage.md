@@ -4,6 +4,26 @@
 - only lowercase letters and numbers can be used 
 - should be globally unique 
 
+## Authorisation 
+authorisation can be given by many starategies. 
+
+- Microsft Entra ID - RBAC access can be given for each of the storage services 
+- shared Key - access keys to the storage account 
+- SAS toekn - delegates access to specific resource with specific permission and for specified time interval 
+- anonymous access - 
+
+### Autherisation from Stored Access Policies
+
+- storead access policies can be created 
+    - blob container 
+    - table
+    - file share 
+    - queue 
+- An SAS can be created defining the access policy
+- permission and expiry time can be defined. 
+- compared to default SAS these permissions can be revoked or changed when required. 
+
+
 # Blob Storage 
 
 ## rules in Creation
