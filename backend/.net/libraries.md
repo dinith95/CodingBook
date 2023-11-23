@@ -1,8 +1,8 @@
-## Dealing with Nugets
+## Dealing with Nuggets
 
 ### Nugget shell commands 
 
-> list all nuggets folder loations - ```dotnet nuget locals all --list```
+> list all nuggets folder locations - ```dotnet nuget locals all --list```
 
 > clear all local nugget folder - ```dotnet nuget locals all --clear```
 
