@@ -1,4 +1,6 @@
 # Folder Structure  
+:file_folder: [.vscode](./.vscode)  
+&emsp; :page_with_curl: [settings.json](./.vscode/settings.json)  
 :file_folder: [algorhythems](./algorhythems)  
 &emsp; :page_with_curl: [binary-search.md](./algorhythems/binary-search.md)  
 &emsp; :page_with_curl: [merge-sort.md](./algorhythems/merge-sort.md)  
