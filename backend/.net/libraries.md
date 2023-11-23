@@ -116,7 +116,16 @@ multiple implementations can be declred for the **same interface** as **keyed Re
 
 ```
 
+before consumption of the keyed registration the `WithAttributeFiltering()` should be added to the registration of the *class which has the Keyed Registration*.
+
 ``` c#
+// the ReadyToProcessService constructor consumes the GeneralProcessor
+// with the key filter general
+builder.RegisterType<ReadyToProcessService>().As<IReadyToProcessService>().WithAttributeFiltering();
+```
+
+``` c#
+
 // can be cosumed using container object 
      container.ResolveKeyed<IProcessor>("general");
 
