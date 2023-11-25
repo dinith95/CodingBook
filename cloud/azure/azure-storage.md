@@ -66,6 +66,19 @@ it supports a folder structure but it is purely **vitual folders**.
 - archival data 
 - data should be brought to hot tier before accessing. 
 
+## Blob Data Retension Policy 
+support the policy ```Write once read many ``` for immutable storage. 
+- blob can be transffered within diffrennt *access tiers* while holding the immutability
+
+### Time based Retension 
+- specific period can be specified  for retention
+- during that time blob can be read only after creation. 
+- after that blob can be deleted but **Cannot be Updated**
+
+## Legal Hold policy [more info](https://learn.microsoft.com/en-us/training/modules/storage-security/7-blob-data-retention-policies#:~:text=Legal%20hold%20policy%20support)
+
+- if the retention time is not known *legal Hold policy* can be created.
+
 ## Life cycle managemnet policy
 a policy can be made to automatically move blob from *hot* to *cool* and after that to *archive*.
 
