@@ -53,6 +53,19 @@ the **Instance pipe name**  is the connection string for the database.
 -  should never be used for finance , accountance information
 
 
+### Unique Identifyer
+- hexadecimal number which is globally unique 
+- can be generated through the `NEWID()` function 
+- can set th table creation the value to `DEFAULT` to `NEWID()`
+    example :
+``` sql
+    CREATE TABLE [hcm].[departments2]
+    (
+        dept_id UNIQUEIDENTIFIER DEFAULT NEWID(),
+        dept_name VARCHAR(30)
+    )
+```
+
 ## sample trigger 
 
 sample code for the sql trigger 
@@ -67,8 +80,7 @@ BEGIN
     update Payment
     set  PaymentDate = GetDate()
     where PaymentId in ( select PaymentId from INSERTED)
-END 
-```
+END ```
 
 ## sample procedure 
 
