@@ -4,6 +4,25 @@
 - only lowercase letters and numbers can be used 
 - should be globally unique 
 
+## Redudancy Options 
+
+- LRS 
+    - 3 copies are maintained in the same data center 
+    - redudancy against the server failures. 
+
+- ZRS 
+    - copy is replicated within each of the **3 avaialability regions**.
+
+- GRS 
+    - data is copied 3 times in the primary data center using the LRS 
+    - Data is **asynchronously** copies to another region. 
+    - in a case of failure this would become the new primary region.
+
+- GZRS 
+    - copies data *sycronously* to 3 azure avaialability zones. 
+    - *asyncronously* copies data to another region.
+
+
 ## Authorisation 
 authorisation can be given by many starategies. 
 
