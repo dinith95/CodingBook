@@ -135,3 +135,30 @@ builder.RegisterType<ReadyToProcessService>().As<IReadyToProcessService>().WithA
         _processor = processor;
     }
 ```
+
+## HttpClient Library 
+
+### Creating with IHttpClientFactory [more info](https://learn.microsoft.com/en-us/training/modules/implement-http-operations-asp-razor/2-explore-http-clients)
+
+- used as a factory abstraction through which the `HttpClient` can be created.
+- exposes the HtppClient as a dependency injection ready type 
+
+> Basic Implementation
+
+``` c#
+
+builder.Services.AddHttpClient(); // this will register HTTPClient factory 
+
+// consumption of HttpClentFactory 
+
+// DI in the constructor
+public  class SampleService(
+    IHttpClientFactory httpClientFactory,
+    ILogger<SampleService> logger)
+
+// create http client in method 
+public async Task GetResponse(){
+    // create http client using the factory
+     using HttpClient client = httpClientFactory.CreateClient(); 
+}
+```
