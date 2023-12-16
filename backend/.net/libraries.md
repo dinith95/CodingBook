@@ -162,3 +162,51 @@ public async Task GetResponse(){
      using HttpClient client = httpClientFactory.CreateClient(); 
 }
 ```
+
+> Named Implementation
+ - mupltiple `HttpClient` can be configured to return based on the name. 
+``` c#
+// registration of the httpclient factory 
+  builder.Services.AddHttpClient("catFacts", 
+      client => client.BaseAddress = new Uri("https://catfact.ninja"));
+
+// consumption through the HttpClientFactory 
+
+// DI in the contructor 
+ public SampleService(IHttpClientFactory httpClientFactory)
+ {
+     _httpClientFactory = httpClientFactory;
+ }
+
+// create http client in method 
+public async Task GetResponse(){
+    // create http client using the factory
+     var httpClient = _httpClientFactory.CreateClient("catFacts");
+}
+```
+
+> Typed Implementation 
+
+- the HttpClient can be configured for perticular service 
+- when the `HttpClient` is called in perticular service the client configured with that service will be returned 
+
+``` c#
+
+// registration of the httpclient factory 
+ builder.Services.AddHttpClient<CatFactsService>( 
+     client => { client.BaseAddress = new Uri("https://catfact.ninja"); });
+
+// consumption  of HttpClient directly 
+
+// DI in the contructor 
+ public CatFactsService(HttpClient httpClient)
+ {
+     _httpClient = httpClient;
+ }
+
+
+ public async Task GetResponse(){
+    //  get the response from the HttpClient 
+     var response = await _httpClient.GetAsync("https://catfact.ninja/fact");
+}
+```
