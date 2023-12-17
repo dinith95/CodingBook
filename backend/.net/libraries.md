@@ -167,8 +167,13 @@ public async Task GetResponse(){
  - mupltiple `HttpClient` can be configured to return based on the name. 
 ``` c#
 // registration of the httpclient factory 
-  builder.Services.AddHttpClient("catFacts", 
-      client => client.BaseAddress = new Uri("https://catfact.ninja"));
+builder.Services.AddHttpClient("catFacts", httpClient =>
+{
+    httpClient.BaseAddress = new Uri("https://catfact.ninja");
+    
+    // headers that should be sent with each request can be added here
+    httpClient.DefaultRequestHeaders.Add("api-key", "<api=key>");  
+});
 
 // consumption through the HttpClientFactory 
 
