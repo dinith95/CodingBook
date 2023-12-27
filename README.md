@@ -35,7 +35,6 @@
 &emsp; :page_with_curl: [azureDevOps.md](./devops/azureDevOps.md)  
 &emsp; :page_with_curl: [docker.md](./devops/docker.md)  
 &emsp; :page_with_curl: [git.md](./devops/git.md)  
-&emsp; :page_with_curl: [kubernates.md](./devops/kubernates.md)  
 &emsp; :page_with_curl: [linux.md](./devops/linux.md)  
 :file_folder: [frontend](./frontend)  
 &emsp; :file_folder: [react](./frontend/react)  
