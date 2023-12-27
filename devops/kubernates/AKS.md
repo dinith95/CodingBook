@@ -56,3 +56,18 @@ AKS creates a virtual network which all the agent nodes are connected.
 
 ### etcd 
 - key value datastore storing the current configeration in the k8s cluster. 
+
+## Namespaces 
+
+### Default 
+- here the pods and the deployments reside 
+- can deploy apps directly to this namespace 
+
+## kube-system 
+- core resources exists such as 
+    - DNS 
+    - proxy 
+    - kubernates dashboard 
+
+## kube-public 
+- used for resources visible in whole cluster. 
