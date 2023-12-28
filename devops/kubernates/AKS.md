@@ -71,3 +71,25 @@ AKS creates a virtual network which all the agent nodes are connected.
 
 ## kube-public 
 - used for resources visible in whole cluster. 
+
+## Networking Architecture 
+
+### Hub and Spoke 
+
+- HUb and the Spoke is deployed in *seperate VNETs* 
+
+- HUb contains the 
+    - azure firewall 
+    - azure bastion
+    - azure monitor
+
+- Hub has 3 subnets. 
+    - host azure firewall 
+    - host gateway 
+    - azure bastion
+
+- spoke has 4 subnets 
+    - host azure application gateway ( consists of WAF )
+    - host ingress resources 
+    - host the cluster nodes 
+    - host private link endpoints ( connections to Container Registry and Key Vault )
