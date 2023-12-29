@@ -12,6 +12,7 @@
 :file_folder: [cloud](./cloud)  
 &emsp; :file_folder: [azure](./cloud/azure)  
 &emsp;&emsp; :page_with_curl: [azure-storage.md](./cloud/azure/azure-storage.md)  
+&emsp;&emsp; :page_with_curl: [azure_ad.md](./cloud/azure/azure_ad.md)  
 &emsp;&emsp; :page_with_curl: [azure_concepts.md](./cloud/azure/azure_concepts.md)  
 &emsp;&emsp; :page_with_curl: [azure_sql.md](./cloud/azure/azure_sql.md)  
 &emsp;&emsp; :page_with_curl: [azure_tools.md](./cloud/azure/azure_tools.md)  
