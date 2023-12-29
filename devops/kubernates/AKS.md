@@ -93,3 +93,17 @@ AKS creates a virtual network which all the agent nodes are connected.
     - host ingress resources 
     - host the cluster nodes 
     - host private link endpoints ( connections to Container Registry and Key Vault )
+
+## Autoscaling in AKS 
+
+### Horizontal Pod Autoscaler 
+
+- scales the number of pods in a Node 
+-  **max replica count** and **min replica count** should be set. 
+- relies on the **Kubernates Scheduler** to assign new pods or delete pods. 
+
+### Cluster Autoscaler 
+
+- AKS add on component that scales the number of nodes. 
+- when K8s scheduler fails to create a pod , autoscaler *provisions a new node*. 
+- when autoscaler detects unused capacity , pods are moved to another node and node is removed. 
