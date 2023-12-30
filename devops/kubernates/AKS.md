@@ -72,6 +72,23 @@ AKS creates a virtual network which all the agent nodes are connected.
 ## kube-public 
 - used for resources visible in whole cluster. 
 
+## Storage in AKS 
+
+### EmptyDir 
+- temporary space for the pod. 
+- all containers can access this volume 
+- reside only **lifespan of the pod**. 
+
+### secret 
+- inject the pods sensitive data as passwords. 
+
+### Configmap 
+- inject the pods **key-value pair** propertese. 
+
+### PersistentVolume 
+- block of file storage managed by *Kubernates API* 
+- has the ability to perisist beyond the lifetime of the pod. 
+
 ## Networking Architecture 
 
 ### Hub and Spoke 
