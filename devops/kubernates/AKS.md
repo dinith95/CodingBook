@@ -107,3 +107,12 @@ AKS creates a virtual network which all the agent nodes are connected.
 - AKS add on component that scales the number of nodes. 
 - when K8s scheduler fails to create a pod , autoscaler *provisions a new node*. 
 - when autoscaler detects unused capacity , pods are moved to another node and node is removed. 
+
+## Azure policy 
+- requires 3 new pods to be runnning. 
+    - 1 audit pod 
+    - 2 webhook pods 
+
+## Azure Initiative
+- collection of *Azure-policies* towards specific target. 
+- eg : resources to meet the **PCI-DSS** compliance. 
