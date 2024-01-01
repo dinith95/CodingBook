@@ -115,15 +115,18 @@ AKS creates a virtual network which all the agent nodes are connected.
 
 ### Horizontal Pod Autoscaler 
 
+- updated every 60 seconds 
 - scales the number of pods in a Node 
 -  **max replica count** and **min replica count** should be set. 
 - relies on the **Kubernates Scheduler** to assign new pods or delete pods. 
+- delay of 5 mins is set for scale down events so that Metrics apis values reflect the scaling behaviour 
 
 ### Cluster Autoscaler 
 
 - AKS add on component that scales the number of nodes. 
 - when K8s scheduler fails to create a pod , autoscaler *provisions a new node*. 
 - when autoscaler detects unused capacity , pods are moved to another node and node is removed. 
+- if nodes need to be scaled quickly ACI can be used. [ACI more info ](https://learn.microsoft.com/en-us/azure/aks/concepts-scale#burst-to-azure-container-instances-aci)
 
 ## Azure policy 
 - requires 3 new pods to be runnning. 
