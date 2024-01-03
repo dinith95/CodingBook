@@ -272,6 +272,28 @@ To remove the duplicates from the result set.
 
 If multiple values are there **duplicates of combinations** of those values will be removed
 
+> DELETE &  TRUNCATE  statements 
+ - Both the statemnets are used to remove the records 
+ - Bith of these statments **can be rolled back** if it is within a Trasaction. 
+
+| Delete Statemnt | Truncate Statement |
+|-----------------|---------------------|
+| `WHERE` clause can be specified| no `WHEREE` clause |
+| enters records into `Transaction` log ( slower)| use optimised logging ( more faster)| 
+| does not reset the coloumn identity  | reset identity to seed value | 
+| Can be used with table has `FK`, | cannot use with table having `FK`
+
+- **Note**
+    - in `DELETE` auto increment id will note be reset to seed value, i.e when new record is added id will start at the next value not the seed value 
+    - in `TRUNCATE`  the auto increment id is set to seed value. 
+    - in `DELETE` there should not be related rows in child table 
+    - in `tRUNCATE` the forign-key should be dropped and recreated. 
+ 
+> DROP TABLE  
+
+- remove **all the data and table structure**. 
+- if there is `FK` the FK should be dropped and recreated. 
+
 ## Data Query Statements 
 
 ### ORDER BY  
