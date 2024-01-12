@@ -262,17 +262,27 @@ in the above example returns the products ids
 - not in the **Inventories table**
 
 
+## contraints 
+
+### Unique Contraints 
+
+- ensures all the values are unique 
+- if multiple rows specified combinations should be unique. 
+- does allow a single null value not multiple null values 
+- table can have **multiple unique constrainsts**.
+
+
 ## sample SQL Statements 
 
 ## DML Statements 
 
-> DISTINCT  statement
+### DISTINCT  statement
 
 To remove the duplicates from the result set. 
 
 If multiple values are there **duplicates of combinations** of those values will be removed
 
-> DELETE &  TRUNCATE  statements 
+### DELETE &  TRUNCATE  statements 
  - Both the statemnets are used to remove the records 
  - Bith of these statments **can be rolled back** if it is within a Trasaction. 
 
@@ -289,10 +299,25 @@ If multiple values are there **duplicates of combinations** of those values will
     - in `DELETE` there should not be related rows in child table 
     - in `tRUNCATE` the forign-key should be dropped and recreated. 
  
-> DROP TABLE  
+### DROP TABLE  
 
 - remove **all the data and table structure**. 
 - if there is `FK` the FK should be dropped and recreated. 
+
+### ALTER COLUMN
+- change the coloumns data type 
+- can used to add `NOT NULL` ( before this is run coloumn should not have rows with null values)
+
+### DROP COLUMN
+- remove a column from the table 
+- the column will be removed with its data also. 
+
+### Rename Column 
+- should run the built it stored procedure `sp_rename`.
+
+```SQL
+    sp_rename 'dbo.product.product_name', 'prod_name', 'COLUMN'
+```
 
 ## Data Query Statements 
 
@@ -556,7 +581,7 @@ sample pattern matching character
 
 
 
-## Qick Tips
+## Quick Tips
 
 ### Querying Date
 When querying in the SQL  date can be written in **YYYYMMDD**  format. 
