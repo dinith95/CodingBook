@@ -14,6 +14,7 @@
 &emsp;&emsp; :page_with_curl: [azure-storage.md](./cloud/azure/azure-storage.md)  
 &emsp;&emsp; :page_with_curl: [azure_ad.md](./cloud/azure/azure_ad.md)  
 &emsp;&emsp; :page_with_curl: [azure_concepts.md](./cloud/azure/azure_concepts.md)  
+&emsp;&emsp; :page_with_curl: [azure_log_analytics.md](./cloud/azure/azure_log_analytics.md)  
 &emsp;&emsp; :page_with_curl: [azure_sql.md](./cloud/azure/azure_sql.md)  
 &emsp;&emsp; :page_with_curl: [azure_tools.md](./cloud/azure/azure_tools.md)  
 &emsp;&emsp; :page_with_curl: [azure_vm.md](./cloud/azure/azure_vm.md)  
