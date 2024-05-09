@@ -50,6 +50,7 @@
 &emsp; :page_with_curl: [python.md](./languages/python.md)  
 :file_folder: [misc](./misc)  
 &emsp; :page_with_curl: [cron_expression.md](./misc/cron_expression.md)  
+&emsp; :page_with_curl: [k9s-k8s-ide.md](./misc/k9s-k8s-ide.md)  
 &emsp; :page_with_curl: [latex.md](./misc/latex.md)  
 &emsp; :page_with_curl: [regex.md](./misc/regex.md)  
 &emsp; :page_with_curl: [tools.md](./misc/tools.md)  
