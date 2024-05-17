@@ -28,3 +28,5 @@ shows the secret values like environment secrets
 ### Change Default Editor
 
 to change the default editor to vscode use `$env:EDITOR = "code -w"` in powershell
+
+or to set permanently add that to the **Environment Variables** in windows screen
