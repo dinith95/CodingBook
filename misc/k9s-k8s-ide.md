@@ -22,3 +22,9 @@ list the set of pods and their properties ( CPU , RAM )
 ### secrets 
 
 shows the secret values like environment secrets 
+
+## Configurations
+
+### Change Default Editor
+
+to change the default editor to vscode use `$env:EDITOR = "code -w"` in powershell
