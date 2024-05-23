@@ -15,6 +15,11 @@ K9s is one of the great ides for managing the Kubernetes clusters
 
 ## Commands 
 
+### info 
+command - `k9s info` 
+
+shows the list of configurations to the terminal
+
 ### Pods 
 
 list the set of pods and their properties ( CPU , RAM )
