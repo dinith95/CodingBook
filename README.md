@@ -33,6 +33,7 @@
 :file_folder: [devops](./devops)  
 &emsp; :file_folder: [kubernates](./devops/kubernates)  
 &emsp;&emsp; :page_with_curl: [AKS.md](./devops/kubernates/AKS.md)  
+&emsp;&emsp; :page_with_curl: [helm.md](./devops/kubernates/helm.md)  
 &emsp;&emsp; :page_with_curl: [kubernates.md](./devops/kubernates/kubernates.md)  
 &emsp; :page_with_curl: [azureDevOps.md](./devops/azureDevOps.md)  
 &emsp; :page_with_curl: [docker.md](./devops/docker.md)  
