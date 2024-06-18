@@ -14,5 +14,5 @@ helm upgrade --install  <chart-name> <helm-folder> -f <values-file> --namespace 
  - values-file - file containing the values for the helm
  - namespace - k8s namespace
 
- >[!NOTE]\
+ >[!NOTE]
  sample note 
