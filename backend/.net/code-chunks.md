@@ -45,7 +45,7 @@ this uses the nugget package [CSVHelper](https://www.nuget.org/packages/CsvHelpe
 
 A generic method can be created to query cosmos container data encapsulating the boiler plate logic. 
 
->[!note] Passing the Query string 
+>[!NOTE] Passing the Query string 
 
 - paramsCollection - list of query params as a dicionary 
 
@@ -59,7 +59,7 @@ A generic method can be created to query cosmos container data encapsulating the
 
 - [query-code-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-cosmosquery_querystr-cs)
 
->[!note] passing the delegate 
+>[!NOTE] passing the delegate 
 
 - container - the cosmosdb container 
 
