@@ -109,6 +109,40 @@ END;
 --  calling the stored procedure
 EXEC PaymentsAbove @Amount = 10
 ```
+
+>[!NOTE]
+**SET NOCOUNT ON;** - stop the update messages sent by SSMS \
+**SET XACT_ABORT ON;** - rollback the updates in any error condition
+
+stored procedure with out parameter 
+```sql
+CREATE PROCEDURE [dbo].AddNewPark
+(
+    @park_name VARCHAR(50),
+    @entry_fee DECIMAL(6,2),
+    @park_id INT OUT -- this parameter is returned and OUT should be present
+)
+AS 
+
+SET NOCOUNT ON; -- stop sending the no of rows updated messages 
+SET XACT_ABORT ON; -- rollback the stored procedure in any error condition
+
+BEGIN 
+    INSERT INTO [dbo].parks2 (park_name,entry_fee)
+    VALUES (@park_name , @entry_fee);
+
+SET @park_id = SCOPE_IDENTITY(); -- return the added row id 
+END
+
+GO
+
+-- calling the stored procedure 
+DECLARE @parkId INT; -- variable to get return value 
+
+EXEC [dbo].AddNewPark @park_name = 'Green Meadows', @entry_fee = 5,  @park_id = @parkId OUT; -- OUT should be specified unless the return value will not be captured 
+SELECT @parkId;
+```
+
 ## Scaler Functions
 
 ### CONCAT Function 
