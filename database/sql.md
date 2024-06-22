@@ -71,6 +71,11 @@ the **Instance pipe name**  is the connection string for the database.
     )
 ```
 
+- can be also generated through the `NEWSEQUENTIALID()` , this generate sequential id which have few properties 
+    - faster than `newid(0)` 
+    - works better in the indexing 
+    - **next created id can be guessed**
+
 ## sample trigger 
 
 sample code for the sql trigger 
