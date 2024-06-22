@@ -90,9 +90,12 @@ BEGIN
     update Payment
     set  PaymentDate = GetDate()
     where PaymentId in ( select PaymentId from INSERTED)
-END ```
+END 
+```
 
-## sample procedure 
+## sample Stored procedure 
+
+set of SQL statements which can be executed. 
 
 sample code for the stored procedure 
 ``` sql 
