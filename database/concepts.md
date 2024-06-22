@@ -7,8 +7,8 @@
 A set of SQL statements which are governed by the ACID  properties.
 sample transaction => transaction of cash is withdrawn bank account to cash account
 
->[!NOTE] 
-- Each transaction is a single unit of action
+>[!NOTE]
+ Each transaction is a single unit of action
 eg: 
 amount should be reduced from bank account and added to the cash account . Either both of them is recorded or none is recorded. 
 
