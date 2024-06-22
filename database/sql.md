@@ -55,10 +55,10 @@ the **Instance pipe name**  is the connection string for the database.
 
 ### Float 
 - approximate number datatype , the numbers here are of approximate values 
--  should never be used for finance , accountance information
+-  should never be used for finance , accounting information
 
 
-### Unique Identifyer
+### Unique Identifier
 - hexadecimal number which is globally unique 
 - can be generated through the `NEWID()` function 
 - can set th table creation the value to `DEFAULT` to `NEWID()`
@@ -195,12 +195,16 @@ SELECT DATENAME(DAY, GETDATE()) as 'day' -- 29
 ```
 
 ### DATEDIFF()
-- return the diffrence between 2 dates in specified portion 
-- diffrence between date1 and date2 will be given in **days**. 
+- return the difference between 2 dates in specified portion 
+- difference between date1 and date2 will be given in **days**. 
 
 ```SQL
 SELECT DATEDIFF(DAY, DATEADD(DAY,-5,GETDATE()) , GETDATE()) AS 'daysDiff' -- 5 
 ```
+
+### SCOPE_IDENTITY()
+- returns the last value inserted to the Identity column in a table
+
 ## window Functions 
 
 operate on multiple rows at a time and return one output per row 
@@ -222,9 +226,9 @@ RANK() OVER (PARTITION BY <expr> ORDER BY <expr> [ ASC | DESC ] )
 ## Set operators 
 
 - when 2 nulls are compared they are evaluated to TRUE. 
-- coloums numbers returned from each select statement  should be same 
-- coloumns data types should match
-- the coloumn names of the first table will be displayed.  
+- colum numbers returned from each select statement  should be same 
+- column's data types should match
+- the column names of the first table will be displayed.  
 
 ### Set operator precedence 
 1. INTERSECT 

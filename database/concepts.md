@@ -4,10 +4,12 @@
 - both **read and write** optimised. 
 
 ### ACID semantics 
-sample transaction => trasaction of cash is withdrawn bank account to cash account
+A set of SQL statements which are governed by the ACID  properties.
+sample transaction => transaction of cash is withdrawn bank account to cash account
 
-> Atomacity - Each trasactions is a single unit of action
-
+>[!Atomicity] 
+- Each transaction is a single unit of action
+eg: 
 amount should be reduced from bank account and added to the cash account . Either both of them is recorded or none is recorded. 
 
 > Consistancy - transactions should take data from one valid state to another. 
