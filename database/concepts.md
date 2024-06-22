@@ -7,21 +7,25 @@
 A set of SQL statements which are governed by the ACID  properties.
 sample transaction => transaction of cash is withdrawn bank account to cash account
 
-> Atomicity
+>[!NOTE] 
+**Atomicity**\
  Each transaction is a single unit of action \
 eg: 
 amount should be reduced from bank account and added to the cash account . Either both of them is recorded or none is recorded. 
 
->[!NOTE]  Consistency 
+>[!NOTE]  
+**Consistency** \
 transactions should take data from one valid state to another. 
 
->[!NOTE] Isolation 
+>[!NOTE] 
+**Isolation** \
 concurrent transactions cannot interfere with eachother. \
 A application that reads bank balance cannot return information like this :\
 *Bank Balance* => after transaction occurred.\
 *Cash Balance* => before the transaction occurred. 
 
->[!NOTE] Durability 
+>[!NOTE]
+**Durability**\
  when transaction is committed it will not change even if database system went offline.
 
 ## Analytical Databases
