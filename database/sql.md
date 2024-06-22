@@ -41,6 +41,11 @@ the **Instance pipe name**  is the connection string for the database.
 - can store variable length of characters 
 - can store the non unicode charactor data 
 
+### Bit 
+- declared as `BIT` 
+- can store 0 or 1 or NULL 
+- used to represent Boolean Data 
+
 ### Decimal ( Numeric )
 
 - declared as `DECIMAL(8,5)`
