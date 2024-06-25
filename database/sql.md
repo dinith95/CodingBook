@@ -322,10 +322,24 @@ in the above example returns the products ids
 - does allow a single null value not multiple null values 
 - table can have **multiple unique constrainsts**.
 
-### Chek Constraints 
+eg: check the department name is unique 
+
+```sql
+ALTER TABLE [hcm].[departments]
+ADD CONSTRAINT uk_departments_department_name UNIQUE (department_name)
+```
+
+### Check Constraints 
 
 - applied to a column to check value in that column meets a condition 
 - check constraint **allows nulls** to be inserted to the column. 
+
+eg: check salary is greator than 0 for all employees 
+
+```sql
+ALTER TABLE [hcm].[employees] 
+ADD CONSTRAINT chk_employees_salary CHECK ([salary] > 0);
+```
 
 
 ## sample SQL Statements 
