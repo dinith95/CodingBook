@@ -47,6 +47,7 @@
 &emsp; :page_with_curl: [css_scss.md](./frontend/css_scss.md)  
 :file_folder: [languages](./languages)  
 &emsp; :page_with_curl: [C#.md](./languages/C#.md)  
+&emsp; :page_with_curl: [C#Concepts.md](./languages/C#Concepts.md)  
 &emsp; :page_with_curl: [javascript.md](./languages/javascript.md)  
 &emsp; :page_with_curl: [python.md](./languages/python.md)  
 :file_folder: [misc](./misc)  
