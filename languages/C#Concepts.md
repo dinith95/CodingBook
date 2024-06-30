@@ -99,3 +99,33 @@ add varaible multiple numbers , like in one instance 2 numbers , another 3 numbe
 > Example 
 
 [indexer-Example](https://gist.github.com/dinith95/7d72064a1587232ccc94ab6da1dbe9b9)
+
+## Composition
+- utilises a `has a`  or  `uses a` relationship between the objects 
+
+> Example 
+- Salary Calculator service `has a` a Logger 
+- Salary Calculator service `uses a` a Logger 
+
+```c#
+ public class SalaryCalculator
+{
+    // here the salaryCalculator class is dependent on the Logger class
+    // or salaryCalculator class has a Logger class instance
+    // or SalaryCalculator class is using an instance of Logger class
+    private readonly Logger _logger;
+
+    public SalaryCalculator(Logger logger)
+    {
+        _logger = logger;
+    }
+
+    public double CalculateSalary(int hoursWorked, double hourlyRate)
+    {
+        var salary = hoursWorked * hourlyRate;
+       // salary calculated logic here
+       _logger.LogInfo($"Salary calculated, final salary : {salary}");
+        return salary;
+    }
+}
+```
