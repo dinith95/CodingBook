@@ -91,3 +91,11 @@ add varaible multiple numbers , like in one instance 2 numbers , another 3 numbe
     var v1 = Add(1, 3, 4); // add 3 numbers
   var v2 = Add(1, 2);// add 2 numbers
 ```
+
+## Indexers 
+- allow classes to be index as an array 
+- assigning values and reading values can be done as it is done in an array
+
+> Example 
+
+[indexer-Example](https://gist.github.com/dinith95/7d72064a1587232ccc94ab6da1dbe9b9)
