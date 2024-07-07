@@ -74,69 +74,31 @@ task
 ## Multiple Dependency DAGs  
 - DAGs having a multiple dependency on each other 
 - Note : **dependency cannot be circular**
-
-```py
-default_args = {
-    'owner': 'dinith'
-}
-
-with DAG( 
-    dag_id='multiple-depdency',
-    description='Multi Depedency DAG',
-    default_args=default_args,
-    start_date= days_ago(1),
-    schedule_interval='@once',
-    tags=['djtest']
-) as dag:
-
-    taskA = BashOperator(task_id='taskA', bash_command='echo "Executed Task A"')
-    taskB = BashOperator(task_id='taskB', bash_command='echo "Executed Task B"')
-    taskC = BashOperator(task_id='taskC', bash_command='echo "Executed Task C"')
-    taskD = BashOperator(task_id='taskD', bash_command='echo "Executed Task D"')
-
-# the execution order is defined as below 
-taskA >> [taskB,taskC] >> taskD
-```
+- multi depedency dag example - [multi-depedency-dag](https://gist.github.com/dinith95/cc93fef12512c9682bcd07e4f33bed90#file-multi-depedency-dag-py)
 
 ## Python Operator Based DAGs
 
 - this dag calls a **Python function** as Task 
 - arguments can be passed to the function by `op_kwargs`
 - `PythonOperator` is imported from the airflow operators.
+- operator based dag example - [operator-based-dag](https://gist.github.com/dinith95/cc93fef12512c9682bcd07e4f33bed90#file-operator-based-dag-py)
 
-```py
-from airflow.operators.python import PythonOperator # python operator in imported 
+## xcom based DAGs
+- xcom can be used to communicate in between the tasks 
+- return value of the tasks will be saved to xcom
+- xcom based dag example - [x-com-based-dag](https://gist.github.com/dinith95/cc93fef12512c9682bcd07e4f33bed90#file-xcom-dag-py)
 
-default_args = {
-    'owner': 'dinith'
-}
-
-# this function is called when task executed 
-def hello_world():
-    print("Hello World from the python function")
-
-# this function is called with arguments when task2 is executed
-def hello_world2(name, city):
-    print(f"Hello {name} from  {city} the python function ")
-
-with DAG( 
-    dag_id='helloworld-python',
-    description='Hellow-wrold-python-DAG',
-    default_args=default_args,
-    start_date= days_ago(1),
-    schedule_interval='@daily',
-    tags=['djtest']
-) as dag:
-
-    task = PythonOperator(task_id='hello_world', python_callable=hello_world, dag=dag)
-    
-    task2 = PythonOperator( 
-                task_id='hello_world2',
-                  python_callable=hello_world2, # name of the python function
-                  # arguments can be passed to the python function using op_kwargs
-                  op_kwargs={'name':'Dinith', 'city':'Colombo'}, 
-                  dag=dag)
-
-task >> task2
-```
+## branch based DAGs 
+- through this DAG branch can be achieved 
+- i.e based on a condition task 
+  -   a specific task can be **executed**
+  -   and another task can be **skipped**
   
+> Example 
+> 
+function to process the scores, if 
+ - score > 50 => notify as passed 
+ - score < 50 => notify as failed 
+(here random number is used to mimic the score dataset)
+
+[sample-branch](https://gist.github.com/dinith95/cc93fef12512c9682bcd07e4f33bed90#file-sample-branch-py)
