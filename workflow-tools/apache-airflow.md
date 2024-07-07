@@ -71,6 +71,72 @@ with DAG(
 task
 ```
 
-## Multiple Depedency DAGs 
+## Multiple Dependency DAGs  
+- DAGs having a multiple dependency on each other 
+- Note : **dependency cannot be circular**
 
+```py
+default_args = {
+    'owner': 'dinith'
+}
+
+with DAG( 
+    dag_id='multiple-depdency',
+    description='Multi Depedency DAG',
+    default_args=default_args,
+    start_date= days_ago(1),
+    schedule_interval='@once',
+    tags=['djtest']
+) as dag:
+
+    taskA = BashOperator(task_id='taskA', bash_command='echo "Executed Task A"')
+    taskB = BashOperator(task_id='taskB', bash_command='echo "Executed Task B"')
+    taskC = BashOperator(task_id='taskC', bash_command='echo "Executed Task C"')
+    taskD = BashOperator(task_id='taskD', bash_command='echo "Executed Task D"')
+
+# the execution order is defined as below 
+taskA >> [taskB,taskC] >> taskD
+```
+
+## Python Operator Based DAGs
+
+- this dag calls a **Python function** as Task 
+- arguments can be passed to the function by `op_kwargs`
+- `PythonOperator` is imported from the airflow operators.
+
+```py
+from airflow.operators.python import PythonOperator # python operator in imported 
+
+default_args = {
+    'owner': 'dinith'
+}
+
+# this function is called when task executed 
+def hello_world():
+    print("Hello World from the python function")
+
+# this function is called with arguments when task2 is executed
+def hello_world2(name, city):
+    print(f"Hello {name} from  {city} the python function ")
+
+with DAG( 
+    dag_id='helloworld-python',
+    description='Hellow-wrold-python-DAG',
+    default_args=default_args,
+    start_date= days_ago(1),
+    schedule_interval='@daily',
+    tags=['djtest']
+) as dag:
+
+    task = PythonOperator(task_id='hello_world', python_callable=hello_world, dag=dag)
+    
+    task2 = PythonOperator( 
+                task_id='hello_world2',
+                  python_callable=hello_world2, # name of the python function
+                  # arguments can be passed to the python function using op_kwargs
+                  op_kwargs={'name':'Dinith', 'city':'Colombo'}, 
+                  dag=dag)
+
+task >> task2
+```
   
