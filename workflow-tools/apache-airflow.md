@@ -102,3 +102,62 @@ function to process the scores, if
 (here random number is used to mimic the score dataset)
 
 [sample-branch](https://gist.github.com/dinith95/cc93fef12512c9682bcd07e4f33bed90#file-sample-branch-py)
+
+# Operators 
+
+## HTTP Sensor Operator
+
+- keep on polling on an `endpoint` till a success result comes 
+  
+### Important Attributes 
+
+> http_conn_id
+
+- http connection config id stored in the connection in the Apache Airflow .
+
+> response_check
+
+- function to check whether the response is in desired state, 
+- return a `boolean` 
+
+> poke_interval 
+
+- interval in **Seconds** which the retries made to the endpoint ( pokes made to endpoint)
+
+> timeout 
+
+- after this **seconds** is exceed the task will fail 
+
+> request_params
+
+- request query params 
+
+### sample 
+
+```py 
+# this method is used to check the status of the translation task
+def TranslateResponseValidator(response):
+    resObj = response.json()
+    print(resObj)
+    res = resObj['isSuccess'] == True
+    return res
+
+translationTask = HttpSensor(
+        task_id='translation_task',
+        method='GET',
+        endpoint='Status',
+        http_conn_id='test_tools',
+        request_params =
+            {
+                'correlationalId':'000915bf-f8ba-4b99-a0aa-a37a283db527',
+                'jobType':'copysp'
+            },
+        response_check= TranslateResponseValidator,
+        trigger_rule='one_success',
+        poke_interval=10, # poke tge endpoint in every 10 seconds 
+        timeout=60,# task will fail if it returns non success response after 60 secs
+        dag=dag
+     )
+
+
+
