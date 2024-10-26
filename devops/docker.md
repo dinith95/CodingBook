@@ -41,7 +41,13 @@ container is created from the docker base image with application or other proces
 - can be used crete multiple docker builds to be bundled together . 
 - each of the items can be added under `services`
 
+### Commands 
 
+- `up` - create the docker containers 
+- `down` - remove the docker containers 
+- `build` - build the docker image by providing a `Dockerfile`
+
+sample docker compose file :[docker-compose](https://gist.github.com/dinith95/71a12f81c84ef0648d7b99fd45f47582)
 ## docker useful commands 
 
 delete single image -   ```docker image rm```
