@@ -37,6 +37,10 @@ registry is the place where to store the docker images and share with others.
 
 container is created from the docker base image with application or other process running on it. [more info](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system%20libraries%20and%20settings.)
 
+## Docker Compose 
+- can be used crete multiple docker builds to be bundled together . 
+- each of the items can be added under `services`
+
 
 ## docker useful commands 
 
