@@ -11,6 +11,49 @@ public static class RolesEnum
 }
 ```
 
+or to get the name of the enum we can use the method `ToString()`. 
+
+example : 
+
+``` c#
+// weekdays enums 
+public enum WeekDays 
+{ 
+    Monday , Tuesday, Wednesday, Thursday, Friday
+}
+
+ string day = WeekDays.Monday.ToString() ; // return the "Monday" 
+```
+
+## Pattern Matching 
+
+switch or nested if statements can be simplified using the above pattern matching statements . 
+
+Ms learn link : [Learn Link](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/pattern-matching#compare-discrete-values)
+
+
+Notes to keep in mind : 
+- the `_` means any value 
+- make sure all combinations are covered 
+- the matching order matters 
+
+eg : SAmple pattern matching to Get grade 
+
+``` C#
+ private static string GetGrade(int marks)
+ {
+     return marks switch
+     {
+         > 75 => "A",
+         > 65 => "B",
+         > 55 => "C",
+         > 40 => "S",
+         _ => "F" 
+     };
+ }
+ ```
+
+
 ## Linq queries 
 
 Linq queries can be used to filter through arrays and list ( collections ) . Also very much handy in performing a quick operation to the lists. 
