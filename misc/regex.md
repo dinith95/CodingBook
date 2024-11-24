@@ -53,4 +53,6 @@
 
 ## regex groups 
 
-( r | s | rs ) - either can be *r or s or rs*
+(abc)(123) - captures the abc set as a one group and 123 as another group 
+
+(?:) - non capturing group , used to find the result but not displayed in the result 
