@@ -25,6 +25,47 @@ public enum WeekDays
  string day = WeekDays.Monday.ToString() ; // return the "Monday" 
 ```
 
+## Keywords and props 
+
+### Required
+
+`Required`  keyword specifies that the value should be set in the object initialisation .  If not done error will be thrown.
+
+``` c#
+// sample class with the required keyword
+public class Person
+{
+    public required string Name { get; init; }
+    public required int Age { get; init; }
+}
+
+// calling the person class only with name 
+ var dinith2 = new Person { Name = "Dinith"}; // throws an error 
+```
+
+### Init 
+
+specifies the value can only be set inside the constructor or in the object initialisation. 
+
+``` c#
+// sample class with the init keyword
+public class Person
+{
+    public required string Name { get; init; }
+    public required int Age { get; init; }
+
+    // thorows an error  as it try to modify Name attribute
+    public void NewName(string name) => Name = name;
+}
+```
+
+
+
+
+
+
+### Required 
+
 ## Pattern Matching 
 
 switch or nested if statements can be simplified using the above pattern matching statements . 
@@ -52,6 +93,7 @@ eg : SAmple pattern matching to Get grade
      };
  }
  ```
+
 
 
 ## Linq queries 
