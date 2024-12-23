@@ -55,7 +55,7 @@ git checkout $remotebranch
 
 ## git branch management
 
-### Deletting multiple brnaches 
+### Deleting multiple brnaches 
 
 to delete uing the git console 
 
@@ -68,3 +68,17 @@ to delete in the powershell / windows terminal
 ``` pwsh
  git branch -d (git branch --list 'hotfix*').trim()
  ```
+
+ ### Deleting Remote Branches from file 
+
+ `:no_entry:` `:no_entry:` this will delete the branch from **Remote**
+
+ ``` pwsh
+ $content = Get-Content -Path "./branches.txt" # file path
+$branches = $content -split "`r`n"
+
+foreach ($branch in $branches) {
+    write-host "Deleting branch $branch"
+    git push origin --delete $branch
+}
+```
