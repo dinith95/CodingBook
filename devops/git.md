@@ -71,7 +71,7 @@ to delete in the powershell / windows terminal
 
  ### Deleting Remote Branches from file 
 
- `:no_entry:` `:no_entry:` this will delete the branch from **Remote**
+ :no_entry: :no_entry: this will delete the branch from **Remote**
 
  ``` pwsh
  $content = Get-Content -Path "./branches.txt" # file path
