@@ -1,17 +1,17 @@
-## Kubernates concepts 
+# Kubernates concepts 
 
-### Pods 
+## Pods 
 
  - pods are the smallest unit that the **K8s Manages** . 
  - pods can contain **1 or more containers** but in most cases **1container only**. 
  - are a logical resource. 
 
-### Namespaces 
+## Namespaces 
 
 - pods are collected / grouped into namespaces . 
 - limits to the resource usage can be set in namespaces. 
 
-### Nodes 
+## Nodes 
 
 - nodes are physical or virtual vms that are running the k8s . 
 
@@ -19,56 +19,18 @@
 
 > worker nodes - pull container images and runs the pods 
 
-### controlers 
+## controlers 
 
  - track the resources and keep resources as per the users description
 
  eg : no of pods / version of software running in a pods 
 
-### Replica set 
- tell how many instances of the pods should be running . 
+## Replica set ( Replication Controller - old tech) 
 
- if 1 pod goes down Replica set will create another pod. 
+ - ensure the specified number of pods are runnning . 
+ - f a pod goes down Replica set will create another pod. 
+ - replicaSet has a selector which applies to pods having a perticular label
 
-## Kubectl commands 
+  ### Load Balacing 
+  - will create more pods if there is too much load on the current system
 
- ## Create 
-
- - use to create a new pod or a service 
-
-### arguments 
-
-    ```-f``` - specify the yaml file path
-
-## apply 
-
-- apply the configuration to a pod / deployment existing in the cluster 
-- it will update the pod / deployment 
-
-### arguments 
-    ```-f``` - yaml file path 
-
-
-## Quick tips 
-
-### use dry run 
-
- - this will create sample yaml file for a kubectl command with the changes 
- - used with the ```kubectl run``` 
-  - eg : ```kubectl run redis --image=redis --dry-run -o yaml```  - this will output yaml file to create redis container from the redis image 
-
-    ### Get logs of a pod
-
-    basic command : ``` kubectl logs -n < namespace> < pod-name > -f ```
-
-    parameters information 
-
-    - -f => this will show the logs continuously. 
-
-    ### Manage the contexts 
-
-    Get list of contexts - ```kubectl config get-contexts```
-
-    Get the current contexts - ```kubectl config current-context```
-
-    change context - ```kubectl config use-context <context>```
