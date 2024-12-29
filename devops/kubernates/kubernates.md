@@ -40,3 +40,15 @@
   - updates to pods ( like new image version ) in a rolling manner 
   - can rollback to the previous version ( revision )
 
+## DNS  - Acessing Services 
+
+### Full path 
+any service will be having the following path patter  `db-srvice.dev.svc.cluster.loacal` , the above path can be broken down to . 
+
+`db-service` - service name 
+`dev` - namespace 
+`svc` - service 
+`cluster.local` - domain 
+
+Services outside the **namespace** should use the **full path** to access. 
+
