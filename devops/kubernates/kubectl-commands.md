@@ -43,6 +43,17 @@
 
 ## Quick tips 
 
+### output formats - `-o`
+
+there are several output formats the kubectl support can be specified with `-o` 
+
+- default - human readable format 
+- `-o wide` - human redable format with additional info
+- `-o json` - json output 
+- `-o name` - prints only the name 
+- `-o yaml` - prints the output yaml file 
+
+
 ### use dry run 
 
  - this will create sample yaml file for a kubectl command with the changes 
