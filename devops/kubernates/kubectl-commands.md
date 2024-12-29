@@ -1,5 +1,15 @@
 # Kubectl commands 
 
+## Get 
+
+- retrieves the resources 
+- command ```kubectl get <resource-type>```
+
+### Arguments 
+
+- ```-l``` - gets pods filterd by a label 
+- ```-n``` - get pods filtered by namespace ( not specified will return default )
+
 ## Create 
 
  - use to create a new pod or a service 
@@ -8,7 +18,7 @@
 
     ```-f``` - specify the yaml file path
 
-## apply 
+## Apply 
 
 - apply the configuration to a pod / deployment existing in the cluster 
 - it will update the pod / deployment 
@@ -16,13 +26,20 @@
 ### arguments 
     ```-f``` - yaml file path 
 
-## scale 
+## Scale 
 
 ### Scale Replicaset 
 - use to scale the ReplicaSet  
 - command , can use any 
   -  ```kubectl scale --replicas=<count> rs/<replica-name>```
   -  ```kubectl scale --replicas=6 -f <file-name> ```
+
+## Edit 
+- use to edit kubernetes resources 
+
+### Replicaset 
+- edit the details of a replicaset 
+- note : if the image is changed it wont impact existing pods running , so that those pods has to be recreated. 
 
 ## Quick tips 
 
