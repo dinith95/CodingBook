@@ -34,3 +34,9 @@
   ### Load Balacing 
   - will create more pods if there is too much load on the current system
 
+## Deployments  
+- they does the similar function of the replica-set , maintain specified set of instances running at any given time . 
+- also they help to manage the 
+  - updates to pods ( like new image version ) in a rolling manner 
+  - can rollback to the previous version ( revision )
+
