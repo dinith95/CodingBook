@@ -49,6 +49,15 @@
 - edit the details of a replicaset 
 - note : if the image is changed it wont impact existing pods running , so that those pods has to be recreated. 
 
+## Exec 
+- execute a command inside a pod 
+-  ``` kubectl exec  <pod-name> -- <command> ```
+
+###  get to termianl of pod 
+- access the terminal of the pod 
+- ``` kubectl exec -it  <pod-name>  -- sh ```
+
+
 ## Quick tips 
 
 ### output formats - `-o`

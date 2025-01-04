@@ -92,4 +92,25 @@ spec:
       name: myconfigmap
 ```
 
+## security context 
 
+- defines the security related attributes for the pod and containers running in the pod . 
+
+### Run As User 
+
+- defines the user role which the processes in the pod will execute 
+- by default it is `root` ( `userId: 0`)
+- can be configured on **Container and pod level**
+- configeration on container **takes precedence**
+
+### set up capabilities 
+
+- can grant certain priviledges with granting all the priviledges of the linux . 
+- capabilities can be modified as shown below.
+
+``` yaml
+
+securityContext:
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"] ## add capabilities 
+        drop: ["NET_RAW"] ## remove capabilities 
