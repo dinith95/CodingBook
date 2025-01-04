@@ -19,6 +19,13 @@
 
     ```-f``` - specify the yaml file path
 
+    ### configmap 
+
+    `--from-literal` - this allows us to pass the configs as string 
+
+    sample : create config for app color 
+    ``` --from-literal=APP_COLOR=darkblue```
+
 ## Apply 
 
 - apply the configuration to a pod / deployment existing in the cluster 
