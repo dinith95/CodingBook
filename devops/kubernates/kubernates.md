@@ -52,3 +52,44 @@ any service will be having the following path patter  `db-srvice.dev.svc.cluster
 
 Services outside the **namespace** should use the **full path** to access. 
 
+## Configmaps 
+storing the configeration information . 
+config map definiton file - [definiton file](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods) . 
+
+cofigmap can be refrred in multiple ways 
+
+### As Env Variable 
+
+Pod can refer the config value as an env variable from the configmap 
+
+they are not updated automatiacally and need periodic restart 
+
+``` yaml
+env:
+ - name: PLAYER_INITIAL_LIVES  # name of the env variable                 
+   valueFrom:
+      configMapKeyRef: # reference to the configmap 
+        name: game-demo           
+        key: player_initial_lives
+```
+
+### As Volume 
+- volume should be added to the pod spec 
+- reference to that volume should add as `volumeMounts` 
+
+``` yaml
+spec:
+  containers:
+  - name: mypod
+    image: redis
+    volumeMounts:
+    - name: foo # add the volume to volume mount
+      mountPath: "/etc/foo"
+      readOnly: true
+  volumes:
+  - name: foo
+    configMap: ## add my configmap as a volume with name foo 
+      name: myconfigmap
+```
+
+

@@ -4,6 +4,7 @@
 
 - retrieves the resources 
 - command ```kubectl get <resource-type>```
+- the output type can be based on the [output-formats](#output-formats----o)
 
 ### Arguments 
 
