@@ -149,8 +149,12 @@ securityContext:
 - eg : pod having 2 Gi memory , can scale upto 2Gi
 
 ### Limit Range 
-- use to set default values for all pods , if the values are not specified  
+- use to set values for all pods , if the values are not specified  
 - it is only applicable for pods created after limit range is set 
+- following values can be set 
+  - **default** values , if not specified for a pod 
+  - **max and min** values 
+- if a pod exceeding the min or max limit is attempted to create,  it throws an error . 
 
 ### resource quotas 
 - configured at namespace levels 
