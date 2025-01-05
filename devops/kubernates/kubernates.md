@@ -159,3 +159,22 @@ securityContext:
 ### resource quotas 
 - configured at namespace levels 
 - set maximum **requests and limit amount** for the namespace 
+
+## Taints and Toleration  
+
+### Taints
+ -  defined on **node** 
+ -  allowing only certain type of pods are to be scheduled  on that node 
+ -  for the pod to be schduled pod should meet that criteria
+ -  eg : taint : appName should be `WebApp` 
+    -   ```kubectl taint nodes <node> appName=WebApp:<effect>```
+-   There are 3 **Effects**
+    -   `PreferNoSchedule` - scheduler will try to avoid scheduling of the pods which dosent match the taint 
+    -   `NoSchedule` - no new pods will be scheduled on that node which dosent match the taint 
+    -   `NoExecute` - affects current pods on the node which does not matched the taint , those pods are evicted . 
+
+### Toleration
+- specific property which allows pods to be scheduled in **tainted node**
+- eg : appName=WebApp 
+
+
