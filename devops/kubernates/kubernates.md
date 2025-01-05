@@ -178,3 +178,43 @@ securityContext:
 - eg : appName=WebApp 
 
 
+
+## Node Selector & Node Affinity
+
+### Node Selector
+- pod can be configured to run on a specific node matching the label 
+-  limited in scope as it only work with simple match 
+-  eg; place only on nodes with `Large` label
+``` yaml
+nodeSelector:
+    disktype: Large
+```
+
+### Node Affinity 
+- this does the same thing but can support more complex logic 
+- eg: nodes having either labels `Large` or `Medium` 
+
+### Affinity Types 
+
+> requiredDuringSchedulingIgnoredDuringExecution
+ - during scheduling there **should be a node matching criteria**
+ - unless pod is not scheduled
+
+> preferredDuringSchedulingIgnoredDuringExecution
+- during scheduling scheduler try to match the criteria 
+- if none found it will schedule on available node 
+
+sample affinity 
+``` yaml
+affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: size
+            operator: In
+            values:
+            - Large
+            - Medium
+```
+
