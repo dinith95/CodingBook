@@ -123,7 +123,6 @@ securityContext:
 - the client application is hosted in the k8s the service account can be **mounted as a projected volume** .  
 - service account tokens will have a 
   - expiration time 
-  - 
 
 ### Service account tokens 
 - service account tokens are created and stored as a secret object 
@@ -131,3 +130,28 @@ securityContext:
 ### default service account 
 - any namespace a default service account exists 
 - when a pod is created default service account is mounted 
+
+## Resource Requirements 
+
+- the amount resources used by the pod / container  
+- **1 unit of cpu** - 1 core in azure  / 1 vCPU in AWS 
+- **1 Gi** - 1024 Megabytes of memory
+- **1 G** - 1000 Megabytes of memory 
+- by default values are not set for the cpu and memory 
+  
+### Resource Requests 
+- this is the minimum requirement to start that perticular pod 
+- eg : pod having 1 Gi memory should have a node which is more than 1 Gi of memory free 
+- after the creation of the pod , it can scale up as required 
+
+### Resource Limits 
+- **maximum resources** that can be taken by a pod. 
+- eg : pod having 2 Gi memory , can scale upto 2Gi
+
+### Limit Range 
+- use to set default values for all pods , if the values are not specified  
+- it is only applicable for pods created after limit range is set 
+
+### resource quotas 
+- configured at namespace levels 
+- set maximum **requests and limit amount** for the namespace 
