@@ -26,6 +26,10 @@
     sample : create config for app color 
     ``` --from-literal=APP_COLOR=darkblue```
 
+    ### a service accunt token 
+    - create a service account token and it valid for 1 hour 
+    - ``` kubectl create token <service-account>``` 
+
 ## Apply 
 
 - apply the configuration to a pod / deployment existing in the cluster 

@@ -114,3 +114,20 @@ securityContext:
       capabilities:
         add: ["NET_ADMIN", "SYS_TIME"] ## add capabilities 
         drop: ["NET_RAW"] ## remove capabilities 
+```
+
+## Service Account 
+
+- use by applications to access the resources
+- eg : prometheus use to get the metrics in k8s 
+- the client application is hosted in the k8s the service account can be **mounted as a projected volume** .  
+- service account tokens will have a 
+  - expiration time 
+  - 
+
+### Service account tokens 
+- service account tokens are created and stored as a secret object 
+
+### default service account 
+- any namespace a default service account exists 
+- when a pod is created default service account is mounted 
