@@ -204,6 +204,13 @@ nodeSelector:
 - during scheduling scheduler try to match the criteria 
 - if none found it will schedule on available node 
 
+> operator types 
+
+- IN - label value preset in set of values supplied 
+- NotIn - label value not present in supplied values 
+- Exists - label with key exists 
+- DoesNotExists - label with this key does not exists
+
 sample affinity 
 ``` yaml
 affinity:
