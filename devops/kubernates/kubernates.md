@@ -10,6 +10,19 @@
 
 - Init containers run before the main container start , sidecar run laong with the main container 
 
+## Container  Probes 
+
+### Readiness Probes
+
+- defines some conditions such that the pod is marked as ready in pod states 
+- eg : http get request to the web api , only that becomes success pod will be marked as ready 
+- default **3 equests will be made** but can be overridden by `failureThreshold` 
+
+### Livenes Probes 
+
+- to check the application is running healthy 
+- eg : http get request to an endpoint in application , if request dosent return success the container will be restarted . 
+
 ## Pods 
 
  - pods are the smallest unit that the **K8s Manages** . 
