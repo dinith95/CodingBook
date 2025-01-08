@@ -1,5 +1,15 @@
 # Kubernates concepts 
 
+## init Containers  
+ - use to excute some task in the startup and exit the container 
+ - run **before the default containers startup** 
+ - each init container **should complete before other init container** starts 
+ - if any container failed the pod will restart 
+
+### Diff compared to Sidecar 
+
+- Init containers run before the main container start , sidecar run laong with the main container 
+
 ## Pods 
 
  - pods are the smallest unit that the **K8s Manages** . 
