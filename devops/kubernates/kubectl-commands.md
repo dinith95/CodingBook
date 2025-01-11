@@ -62,6 +62,18 @@
 - ``` kubectl exec -it  <pod-name>  -- sh ```
 
 
+## Rollout 
+- manage the rollout of the **deployments**
+
+> undo rollout 
+ - reverts the current deployment to the previous deployment 
+ - ``` kc rollout undo deploy <deployment-name>```
+  
+### Rollout History 
+
+- view previous deployments / revisions . 
+- ``` kubectl rollout history deployment <deplyment-name>```
+
 ## Quick tips 
 
 ### output formats - `-o`

@@ -69,6 +69,7 @@
   - `Recreate` -  will remove all the pods and create new ones 
   - `RollingUpdate` - will remove one pod and deploy the new pod from the new version
 
+
 ## DNS  - Acessing Services 
 
 ### Full path 
