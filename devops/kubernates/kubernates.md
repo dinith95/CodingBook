@@ -63,6 +63,12 @@
   - updates to pods ( like new image version ) in a rolling manner 
   - can rollback to the previous version ( revision )
 
+### Deployment Strategy 
+- 2 deployment startegies 
+- **Default startegy - RollingUpdate**
+  - `Recreate` -  will remove all the pods and create new ones 
+  - `RollingUpdate` - will remove one pod and deploy the new pod from the new version
+
 ## DNS  - Acessing Services 
 
 ### Full path 
