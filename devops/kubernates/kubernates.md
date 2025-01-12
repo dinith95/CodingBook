@@ -333,3 +333,14 @@ affinity:
       persistentVolumeClaim:
         claimName: task-pv-claim # name of the pvc 
 ```
+### storage class 
+- duynamic provision
+- volume get provisioned only **application requires a volume** when the pvc is created 
+- storage class definition [k8s docs -storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/#storageclass-objects)
+
+> pvc using the storage class 
+ - add the **storage class info** in `spec` of the pvc 
+  
+  ```yaml
+  storageClassName: azure-disk-level-1 # name of the storage class created 
+  ```
