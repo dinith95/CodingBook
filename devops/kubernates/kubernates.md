@@ -292,3 +292,44 @@ affinity:
             - Medium
 ```
 
+
+## Persistent Storage  
+- storage that use to store the data in permamnant manner 
+- in the pod storage the data will be deleted when the pod is deleted 
+
+### Persistent volume ( PV )  
+- storage entity provisioned by the admin with 
+  -  size 
+  -  storage class 
+  -  accessMode 
+- pvc are connected to the pv 
+- pv definition template [k8s docs pv](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolume)
+
+> Retention Behaviour 
+
+- **Retain** - pvc is delete pv will continue to exist but cannot be assigned to new **pvc directly**
+- **Delete** - pv is deleted once **pvc** is deleted. 
+- **Recycle** - remove all the data and makes it available for new volume 
+  
+### Persistent Volume claims  ( PVCs)
+
+- these are request made by user requesting a pv 
+- pvc bind to a pv 
+- **pvc can only bind to singe pv and vice versa**
+- pvc definition template [k8s docs pvc](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolumeclaim)
+
+> Requirements to satisfy to bind to pv for pvc 
+
+- size of pvc <  size of pv 
+- same `accessModes` 
+- same `storageClass` 
+
+> adding pvc to a pod 
+ - pvc is added using below template in **spec > volume**
+
+```yaml
+ volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: task-pv-claim # name of the pvc 
+```
