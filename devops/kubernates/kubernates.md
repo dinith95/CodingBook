@@ -174,10 +174,10 @@ eg : **within cluster** - front end service connect to back end service
 - more information [k8s docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
   
 > nodeport service architecture 
- - target is set to the same value as port by default and as a practice 
+ - **target port** is set to the same value as port by default and as a practice 
  - **node port** - k8s control plane will allocate a port  if not set 
   
-![nodeport service](images/nodeport-service.jpeg)
+![nodeport service](/images/nodeport-service.jpeg)
 
 > service endpoints 
  - the pods  that services send traffic to 
