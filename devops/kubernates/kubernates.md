@@ -302,7 +302,7 @@ affinity:
   -  size 
   -  storage class 
   -  accessMode 
-- pvc are connected to the pv 
+- pvc are **bound** to the pv **if the criteria is matching** 
 - pv definition template [k8s docs pv](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/#create-a-persistentvolume)
 
 > Retention Behaviour 
@@ -336,7 +336,7 @@ affinity:
 ### storage class 
 - duynamic provision
 - volume get provisioned only **application requires a volume** when the pvc is created 
-- storage class definition [k8s docs -storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/#storageclass-objects)
+- storage class definition [k8s docs sc](https://kubernetes.io/docs/concepts/storage/storage-classes/#storageclass-objects)
 
 > pvc using the storage class 
  - add the **storage class info** in `spec` of the pvc 
