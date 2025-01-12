@@ -69,6 +69,23 @@
   - `Recreate` -  will remove all the pods and create new ones 
   - `RollingUpdate` - will remove one pod and deploy the new pod from the new version
 
+### Blue / Green deployment strategy 
+- here 2 identical production envs are run in parallel 
+- this can be achieved by kubernetes through a work around 
+
+> steps 
+ - create a new deployment with a new label 
+ - once pods a up perform the tests 
+ - then from service redirect all traffic to the new service 
+
+### Canary deployment 
+- small portion of the traffic is directed to the new service 
+
+> steps 
+ - create the new service with the same label / selector 
+ - but keep the pod count to a minimum in the new deployment ( preferred 1 )
+ - once test are successful , **increase the pod count ** in new deployment and in previous deployment make it 0
+
 
 ## DNS  - Acessing Services 
 
