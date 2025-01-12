@@ -163,6 +163,26 @@ securityContext:
         drop: ["NET_RAW"] ## remove capabilities 
 ```
 
+## Services 
+- enable the connection within the k8s cluster  and also resource groups and outside entities. 
+  
+eg : **within cluster** - front end service connect to back end service 
+    **outside cluster** - backend services connect to database 
+
+### Nodeport Services 
+- allows **external application to access a pod** using a port open to external service. 
+- more information [k8s docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
+  
+> nodeport service architecture 
+ - target is set to the same value as port by default and as a practice 
+ - **node port** - k8s control plane will allocate a port  if not set 
+  
+![nodeport service](images/nodeport-service.jpeg)
+
+> service endpoints 
+ - the pods  that services send traffic to 
+
+
 ## Service Account 
 
 - use by applications to access the resources
