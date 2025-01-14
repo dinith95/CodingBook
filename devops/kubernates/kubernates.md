@@ -1,4 +1,7 @@
-# init Containers  
+
+# container types  
+
+## init Containers  
  - use to excute some task in the startup and exit the container 
  - run **before the default containers startup** 
  - each init container **should complete before other init container** starts 
@@ -20,6 +23,24 @@
 
 - to check the application is running healthy 
 - eg : http get request to an endpoint in application , if request dosent return success the container will be restarted . 
+
+# Admission controllers 
+- intercept the request  *after the authorization* but before the *creation of the request*. 
+- only works with the **create / delete / modify** objects
+- to find **enabled admission controllers**  , check `--enable-admission-plugins` in the pod `kube-apiserver-controlplane` 
+
+## Add / Remoe Admission controller plugins 
+
+- go to the location `/etc/kubernetes/manifests` and edit file `kube-apiserver.yaml` 
+- **enabel** a plugin - add to the attribute `--enable-admission-plugins`
+- **disable** a plugin - add to the attribute `--disable-admission-plugins`
+
+## Admission controller types  
+  - **validating** - validate existing controller request and accept / reject request 
+  - eg : `NamespaceExists` - check if the namesapce exists and accept / reject request based on that 
+
+  - **mutating**  - change the exisitng controller request 
+  - eg : `AlwaysPullImages` mutates the **image pull policy**
 
 # Pods 
 
@@ -392,9 +413,20 @@ contexts:
 - **api group: empty** means the core api group , if its other api group it should be specified. 
 
 ### Role Binding Object 
-- binds **developer** to a **role**. 
+- binds **developer user** to a **role**. 
 - sample role binding : [role binding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-example)
 
+### cluster roles 
+- create clusterwide ( common to complete cluster )
+-  use to grant access to the cluster scoped resources ( nodes secrets )
+-  if the resource is namespace wide resource, it will **grant access** for type of resource in **all namespaces**
+-  eg : if cluster role with **view for pods** is created it can `view any pod in any namespace` of that cluster. 
+-  sample role bind [cluster role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#clusterrole-example)
+
+### cluster role binding 
+- grant the permission across the whole cluster 
+- cluster role binidng [cluster-role](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#clusterrolebinding-example)
+  
 ## WebHook 
 - use 3rd party tool to administer the authorization 
 
