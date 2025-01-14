@@ -1,6 +1,4 @@
-# Kubernates concepts 
-
-## init Containers  
+# init Containers  
  - use to excute some task in the startup and exit the container 
  - run **before the default containers startup** 
  - each init container **should complete before other init container** starts 
@@ -10,7 +8,7 @@
 
 - Init containers run before the main container start , sidecar run laong with the main container 
 
-## Container  Probes 
+# Container  Probes 
 
 ### Readiness Probes
 
@@ -23,18 +21,18 @@
 - to check the application is running healthy 
 - eg : http get request to an endpoint in application , if request dosent return success the container will be restarted . 
 
-## Pods 
+# Pods 
 
  - pods are the smallest unit that the **K8s Manages** . 
  - pods can contain **1 or more containers** but in most cases **1container only**. 
  - are a logical resource. 
 
-## Namespaces 
+# Namespaces 
 
 - pods are collected / grouped into namespaces . 
 - limits to the resource usage can be set in namespaces. 
 
-## Nodes 
+# Nodes 
 
 - nodes are physical or virtual vms that are running the k8s . 
 
@@ -42,13 +40,13 @@
 
 > worker nodes - pull container images and runs the pods 
 
-## controlers 
+# controlers 
 
  - track the resources and keep resources as per the users description
 
  eg : no of pods / version of software running in a pods 
 
-## Replica set ( Replication Controller - old tech) 
+# Replica set ( Replication Controller - old tech) 
 
  - ensure the specified number of pods are runnning . 
  - f a pod goes down Replica set will create another pod. 
@@ -57,7 +55,7 @@
   ### Load Balacing 
   - will create more pods if there is too much load on the current system
 
-## Deployments  
+# Deployments  
 - they does the similar function of the replica-set , maintain specified set of instances running at any given time . 
 - also they help to manage the 
   - updates to pods ( like new image version ) in a rolling manner 
@@ -87,7 +85,7 @@
  - once test are successful , **increase the pod count ** in new deployment and in previous deployment make it 0
 
 
-## DNS  - Acessing Services 
+# DNS  - Acessing Services 
 
 ### Full path 
 any service will be having the following path patter  `db-srvice.dev.svc.cluster.loacal` , the above path can be broken down to . 
@@ -99,7 +97,7 @@ any service will be having the following path patter  `db-srvice.dev.svc.cluster
 
 Services outside the **namespace** should use the **full path** to access. 
 
-## Configmaps 
+# Configmaps 
 storing the configeration information . 
 config map definiton file - [definiton file](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods) . 
 
@@ -139,7 +137,7 @@ spec:
       name: myconfigmap
 ```
 
-## security context 
+# security context 
 
 - defines the security related attributes for the pod and containers running in the pod . 
 
@@ -163,7 +161,7 @@ securityContext:
         drop: ["NET_RAW"] ## remove capabilities 
 ```
 
-## Services 
+# Services 
 - enable the connection within the k8s cluster  and also resource groups and outside entities. 
   
 eg : **within cluster** - front end service connect to back end service 
@@ -183,7 +181,7 @@ eg : **within cluster** - front end service connect to back end service
  - the pods  that services send traffic to 
 
 
-## Service Account 
+# Service Account 
 
 - use by applications to access the resources
 - eg : prometheus use to get the metrics in k8s 
@@ -198,7 +196,7 @@ eg : **within cluster** - front end service connect to back end service
 - any namespace a default service account exists 
 - when a pod is created default service account is mounted 
 
-## Resource Requirements 
+# Resource Requirements 
 
 - the amount resources used by the pod / container  
 - **1 unit of cpu** - 1 core in azure  / 1 vCPU in AWS 
@@ -227,7 +225,7 @@ eg : **within cluster** - front end service connect to back end service
 - configured at namespace levels 
 - set maximum **requests and limit amount** for the namespace 
 
-## Taints and Toleration  
+# Taints and Toleration  
 
 ### Taints
  -  defined on **node** 
@@ -246,7 +244,7 @@ eg : **within cluster** - front end service connect to back end service
 
 
 
-## Node Selector & Node Affinity
+# Node Selector & Node Affinity
 
 ### Node Selector
 - pod can be configured to run on a specific node matching the label 
@@ -293,11 +291,11 @@ affinity:
 ```
 
 
-## Persistent Storage  
+# Persistent Storage  
 - storage that use to store the data in permamnant manner 
 - in the pod storage the data will be deleted when the pod is deleted 
 
-### Persistent volume ( PV )  
+## Persistent volume ( PV )  
 - storage entity provisioned by the admin with 
   -  size 
   -  storage class 
@@ -311,7 +309,7 @@ affinity:
 - **Delete** - pv is deleted once **pvc** is deleted. 
 - **Recycle** - remove all the data and makes it available for new volume 
   
-### Persistent Volume claims  ( PVCs)
+## Persistent Volume claims  ( PVCs)
 
 - these are request made by user requesting a pv 
 - pvc bind to a pv 
@@ -333,7 +331,7 @@ affinity:
       persistentVolumeClaim:
         claimName: task-pv-claim # name of the pvc 
 ```
-### storage class 
+## storage class 
 - duynamic provision
 - volume get provisioned only **application requires a volume** when the pvc is created 
 - storage class definition [k8s docs sc](https://kubernetes.io/docs/concepts/storage/storage-classes/#storageclass-objects)
@@ -344,3 +342,59 @@ affinity:
   ```yaml
   storageClassName: azure-disk-level-1 # name of the storage class created 
   ```
+
+# user management 
+
+## kubeconfig 
+- stores the information related users , clusters 
+- present in the `$Home > .kube > config` 
+
+Has 3 sections 
+
+> Clusters 
+- information about the kubernates clusters 
+- eg : test-k8s , dev-k8s 
+
+> Users 
+- diffrent users present 
+- eg : admin / devops lead / engineer 
+
+> contexts 
+- match the clusters for users 
+- eg : user devops lead cluster dev-k8s 
+
+sample context 
+```yaml
+contexts:
+- context:
+    cluster: ckad-test-cluster
+    user: clusterUser_ckad-tutorial_ckad-test-cluster
+    namespace: default
+```
+
+# Authorization
+
+## ABAC ( Attribute Based Authorization )
+- create a policy file and should be passed to the **kube api server**
+- the policy document should be created in json format , [samples](https://kubernetes.io/docs/reference/access-authn-authz/abac/#examples)
+- for any changes the **file should be edited manually** and server should be restarted. 
+
+## Role Base Access Controls 
+- Role is created with set of permissions 
+- eg : `dev` role with **all access to pods**. 
+- then users / user groups are assigned to that role 
+
+### Role Object 
+- defines the capabilities of the role ( what a user having the role can do and cannot do ). 
+- sets **within namespace**
+- example role - developer role [dev role object](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-example)
+- for **granular resource filter** the resourcename can be used as `resourceNames: ["fin-app1"]`
+- **api group: empty** means the core api group , if its other api group it should be specified. 
+
+### Role Binding Object 
+- binds **developer** to a **role**. 
+- sample role binding : [role binding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#rolebinding-example)
+
+## WebHook 
+- use 3rd party tool to administer the authorization 
+

@@ -1,10 +1,26 @@
 # Kubectl commands 
+## auth 
+
+### can-i 
+- shows whether you have the permission to perform the action 
+- example : `kubectl auth can-i delete pods/<resource-name>`  , <resource-name> is not specified it means all the resources
+
+> check for another user 
+- admin privilege is required. 
+- add the chunk `--as <user-name>` to the above command 
+
 
 ## Get 
 
 - retrieves the resources 
 - command ```kubectl get <resource-type>```
 - the output type can be based on the [output-formats](#output-formats----o)
+
+### namespace 
+- namespace should be defined if not namespace set as default namespace will be used 
+
+> get items in all namespaces 
+- use the commadn `--all-namespaces`
 
 ### Arguments 
 
@@ -30,6 +46,13 @@
     - create a service account token and it valid for 1 hour 
     - ``` kubectl create token <service-account>``` 
 
+## config 
+- use to change the configerations of the k8s clustes 
+
+> use diffrent cubconfig file 
+- default the config file at `$Home > .kube > config` file is used. 
+- to change the path of the file use `--kubeconfig` 
+  
 ## Apply 
 
 - apply the configuration to a pod / deployment existing in the cluster 
