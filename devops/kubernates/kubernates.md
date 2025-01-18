@@ -42,6 +42,12 @@
   - **mutating**  - change the exisitng controller request 
   - eg : `AlwaysPullImages` mutates the **image pull policy**
 
+> Note - Mutating admissing controls run prior to the vallidating admission controls 
+
+## Custom Mutation / Validation controllers 
+- custom controllers can be created to mutate or validate user request 
+- can be achived through `webhook server` 
+
 # Pods 
 
  - pods are the smallest unit that the **K8s Manages** . 
@@ -188,7 +194,7 @@ securityContext:
 eg : **within cluster** - front end service connect to back end service 
     **outside cluster** - backend services connect to database 
 
-### Nodeport Services 
+## Nodeport Services 
 - allows **external application to access a pod** using a port open to external service. 
 - more information [k8s docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)
   
@@ -199,7 +205,52 @@ eg : **within cluster** - front end service connect to back end service
 ![nodeport service](/images/nodeport-service.jpeg)
 
 > service endpoints 
- - the pods  that services send traffic to 
+ - the pods  that services send traffic to
+
+## Ingress 
+
+Ingress does multiple functions 
+- functions as HTTPS 
+- act as a load balancer 
+- act as proxy server 
+- url based routing configs 
+
+### Ingress resources 
+- set of rules defined for ingress service. 
+- there are **2 types**
+  
+> rewrite target 
+ - this will replace the url segment by the value provided here 
+ - if this is not set the url will be directly forwarded to the clinet app but client app will not have that url configured 
+  
+**template** - placed under `metadata`
+
+``` yaml
+annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+```
+
+**example**
+  - app url - `https://www.app1.com/live/home` this will forwarded to `live-service`  as `https://www.app1.com/live/home` ( unchaged )
+  - but when **rewrite-target** is set to `/` it will be forwarded as `https://www.app1.com/home`
+
+### Ingress Resources -  path 
+- redirect the routing thorugh the path 
+- sample [ingress-path-template](https://gist.github.com/dinith95/8a6a4ae9ab0c160134852f00e8618834#file-resource-by-path-yaml)
+
+### Ingress Resources - host 
+- redirect the routing through host 
+- sample [ingress-host-template](https://gist.github.com/dinith95/8a6a4ae9ab0c160134852f00e8618834#file-resource-by-host-yaml)
+
+### Ingress Controller 
+- executes the rules defined by the Ingress resources 
+- k8s does not have default ingress controller
+
+following services need to be deployed 
+- deployment 
+- nodeport service 
+- configmap
+- service Account
 
 
 # Service Account 
