@@ -207,7 +207,11 @@ eg : **within cluster** - front end service connect to back end service
 > service endpoints 
  - the pods  that services send traffic to
 
-## Ingress 
+## Cluster-IP Service 
+- default type of service 
+- **map pods with multiple ips** to a single service. 
+  
+# Ingress 
 
 Ingress does multiple functions 
 - functions as HTTPS 
