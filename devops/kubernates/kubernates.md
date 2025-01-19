@@ -210,6 +210,10 @@ eg : **within cluster** - front end service connect to back end service
 ## Cluster-IP Service 
 - default type of service 
 - **map pods with multiple ips** to a single service. 
+
+> port definitions 
+- `port` - the port of the service 
+- `targetPort` - the port of the application 
   
 # Ingress 
 
