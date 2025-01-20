@@ -164,6 +164,55 @@ spec:
       name: myconfigmap
 ```
 
+# Secrets 
+- can be use store secret values with encoded data 
+- secrets are not encrypted but it is **base 64 encoded**
+- not best method to store key and confidential info as secrets are only encoded 
+
+## create secret 
+- can be created in the imprative way
+``` yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dotfile-secret
+data:
+  secret-file: dmFsdWUtMg0KDQo= # added base64 encoded manner 
+```
+
+## Binding secrets
+
+### from secret key ref 
+
+- can be bound to  as **env variable** at the **container level**
+
+``` yaml 
+ env:
+  - name: MYSQL_USER
+    valueFrom:
+      secretKeyRef:
+        name: db-user
+        key: username
+```
+
+### as a volume 
+- should be added as volume in pod 
+
+``` yaml
+volumes:
+    - name: secret-volume
+      secret:
+        secretName: dotfile-secret # name of the secret 
+```
+- it should be added in colume mounts in container 
+
+``` yaml
+volumeMounts:
+      - name: secret-volume # match the volume name in the pod
+        readOnly: true
+        mountPath: "/etc/secret-volume"
+```
+
 # security context 
 
 - defines the security related attributes for the pod and containers running in the pod . 
