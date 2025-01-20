@@ -185,6 +185,7 @@ data:
 ### from secret key ref 
 
 - can be bound to  as **env variable** at the **container level**
+- if key is not specified **all data in secret file** is passed as values
 
 ``` yaml 
  env:
@@ -192,7 +193,7 @@ data:
     valueFrom:
       secretKeyRef:
         name: db-user
-        key: username
+        key: username # optional , if not specified all values are passed 
 ```
 
 ### as a volume 
