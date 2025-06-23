@@ -539,3 +539,21 @@ contexts:
 ## WebHook 
 - use 3rd party tool to administer the authorization 
 
+
+
+# Authentication 
+
+## Default config file 
+ - located in `$HOME\\.kube\\config` 
+ - auth file template [template](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-**contexts**)
+
+it has 3 sections 
+
+### clusters 
+- has information about different k8s clusters 
+
+### Users 
+- different user information 
+
+### contexts 
+- matches the **users** with the **clusters**

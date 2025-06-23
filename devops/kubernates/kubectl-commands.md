@@ -135,3 +135,20 @@ change context - ```kubectl config use-context <context>```
 ### Get the yaml file of resource
 
 use the command ```kubectl get pod <pod-name> -o yaml```
+
+## K8s Multi commands script
+
+```ps1
+
+$filePath = ".\pods.txt"
+
+# Read all lines from the file
+$items = Get-Content -Path $filePath
+
+# Loop through and print each item
+foreach ($item in $items) {
+   & kubectl delete job -n=core-dev3 $item
+    Write-Host "Deleted job: $item"
+}
+
+```
