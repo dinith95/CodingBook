@@ -35,3 +35,10 @@ shows the secret values like environment secrets
 to change the default editor to vscode use `$env:EDITOR = "code -w"` in powershell
 
 or to set permanently add that to the **Environment Variables** in windows screen
+
+### Update table columns 
+
+create a `views.yaml` in the root of the k9s folder. 
+add values as shown in the following docs [k9s doc](https://k9scli.io/topics/columns/)
+
+> some specific attributes can be specified using the `|` command 
