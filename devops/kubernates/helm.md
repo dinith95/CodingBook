@@ -34,6 +34,7 @@ spec:
  # rest of the helm file 
 
 --- # marking end of helm template
+ {{- end }} 
 ````
 
 
