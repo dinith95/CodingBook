@@ -30,6 +30,18 @@ this uses the nugget package [CSVHelper](https://www.nuget.org/packages/CsvHelpe
 
 ## other operations 
 
+### Retrying generic Function 
+
+- retrying function to do exponential retry 
+- this will **retry the execution** of the given function based on the following conditions 
+  - *maxRetries* - total number retries to do 
+  - *maxTime* - the time span which it would span accross the retries
+  
+- Example : **maxRetries** = 5 , **maxTime** = 20 seconds , it will span out the **5 retires** over the **20 seconds** time period. 
+  
+- [retry-generic-function](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-retry-backoff-function-cs)
+
+
 ### Create SHA1 hash 
 
 - will generate the **SHA1 hash **  based on the given string
