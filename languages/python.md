@@ -17,6 +17,20 @@ for num in nums[1:3]:
 
 ```
 
+## string operations 
+
+- in python strings are considered as arrays 
+- following short codes can be used to get substrings 
+
+```py
+name = 'dinith'
+print(name[0]) # prints 'd'
+print(name[-1]) # prints 'h'
+print(name[1:3]) # prints 'in'
+print(name[:3]) # prints 'din'
+print(name[2:]) # prints 'nith'
+```
+
 ## multiple arguments
 
 In python method overloading is not required as it will modify the function as of the presesnted arguments .
