@@ -1,41 +1,5 @@
-
-## python modules mangement 
-
-python modules are a library in python . there are 2 ways to concume module in python .
-
-### importing as module 
-here the whole module is imported . 
-
-```py
-import random # random libaray is imported as module
-print(random.randint(1,10))
-```
-
-### importing a specif function only 
-here the specific function of the module is imprted to the namespace . 
-> warn - if you have exsiting implementation with same name in module . this will casue erros.
-
-```py
-from random import randint 
-#  ranint function is imported from the random library
-
-print(randint(1, 10))
-```
-
-### guarding main method.
-The main method can be accidently called when the module is imported by another module. 
-To prevent this below systax is used 
-
-```py
-if __name__ == "__main__":
-   Main() ## main will be called only when file is excuted directly
-
-```
-if python modukle is executed directly the **\_\_name__** is set to the *"\_\_main__"*
-
-executed through an import the **\_\_name__** is set to the *name of the module*
-
-## python functions
+# basic coding syntax
+## functions
 
 ### slice 
 
@@ -91,6 +55,73 @@ addNos(1,2,3,4,5,6,7,8,9)
    ## output ## - 45
 ```
 
+## python file handling
+
+file can be open and contents can be written to python in relative ease
+
+file handling modes
+
+- r - read only
+- w - write
+- a - appened
+
+**Note** - all the files opened should be closed .
+
+``` py
+# open command take 2 arguments  , file path and the mode
+file1 = open(os.path.join(path,'sample.txt'),'a') 
+text = file1.read() ## read the everything on file 1 to text varaible
+line1 = file.readline() ## read the first line of the file
+
+# here the file is read line by line without storing data to memory
+for row in file1:
+    vals = row.split(',')
+
+# writing to a file 
+sampleStr = 'i am dinith'
+file1.write(sampleStr)
+file1.close()
+```
+
+# modules and classes
+## python modules mangement 
+
+python modules are a library in python . there are 2 ways to concume module in python .
+
+### importing as module 
+here the whole module is imported . 
+
+```py
+import random # random libaray is imported as module
+print(random.randint(1,10))
+```
+
+### importing a specif function only 
+here the specific function of the module is imprted to the namespace . 
+> warn - if you have exsiting implementation with same name in module . this will casue erros.
+
+```py
+from random import randint 
+#  ranint function is imported from the random library
+
+print(randint(1, 10))
+```
+
+### guarding main method.
+The main method can be accidently called when the module is imported by another module. 
+To prevent this below systax is used 
+
+```py
+if __name__ == "__main__":
+   Main() ## main will be called only when file is excuted directly
+
+```
+if python modukle is executed directly the **\_\_name__** is set to the *"\_\_main__"*
+
+executed through an import the **\_\_name__** is set to the *name of the module*
+
+
+
 ### import from another python file
 
 a function can be called from another python file as shown below .
@@ -109,11 +140,10 @@ print(getVersion()) ## get version function is called
 from testPath.source import getVersion 
 ```
 
+
 ## python modules
 
 Python has several useful modules which we could consume to write the scripts .
-
-
 
 ### OS module
 
@@ -154,33 +184,8 @@ class Student:
         self._name = name
 ```
 
-## python file handling
 
-file can be open and contents can be written to python in relative ease
 
-file handling modes
-
-- r - read only
-- w - write
-- a - appened
-
-**Note** - all the files opened should be closed .
-
-``` py
-# open command take 2 arguments  , file path and the mode
-file1 = open(os.path.join(path,'sample.txt'),'a') 
-text = file1.read() ## read the everything on file 1 to text varaible
-line1 = file.readline() ## read the first line of the file
-
-# here the file is read line by line without storing data to memory
-for row in file1:
-    vals = row.split(',')
-
-# writing to a file 
-sampleStr = 'i am dinith'
-file1.write(sampleStr)
-file1.close()
-```
 
 
 # Useful Libraries 
