@@ -4,16 +4,16 @@
 ### slice 
 
 An array or list can be sliced as it returns a subset of elemetns .
+Example slicings : 
 
 ```py
-import sys
+num_arr = [1,2,3,4,5,6]
 
-nums = [1,2,3,4,5,6]
-
-# here only 2nd to 4th elements are considered
-# if ending position is not mentioned it will take until last element
-for num in nums[1:3]:
-    print(num)
+print(num_arr[0]) # prints 0
+print(num_arr[-1]) # prints 6
+print(num_arr[1:3]) # prints [1, 2]
+print(num_arr[:3]) # prints [0, 1, 2]
+print(num_arr[2:]) # prints [2, 3, 4, 5, 6]
 
 ```
 
