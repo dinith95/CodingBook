@@ -37,8 +37,8 @@ print(name[2:]) # prints 'nith'
 
 - store multiple values as an array 
 - **ordered** 
-- **allow multiple values**
-  **mutable**
+- **mutable**
+- **indexed** ( can have repeating values)
 
 create a list - `lista = [1, 2, 3, 4, 5]`
 
@@ -58,10 +58,13 @@ list4 = [x*2 for x in range(10)] # prints [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 - stores multiple elements as an array 
 - **ordered**
 - **immutable**
+- **indexed** ( can have repeated values )
 
 create a tuple 
 - `tuplea = (1, 2, 3, 4, 5)`
 - `tupleb = tuple(tuplea)` 
+
+tuple methods - [methods](https://www.w3schools.com/python/python_tuples_methods.asp)
 
 > create a tuple through comprehension 
  - short hand notation to create a tuple 
@@ -71,6 +74,22 @@ tuple1 = tuple(x for x in range(10)) # prints (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 tuple2 = tuple(x for x in range(10) if x % 2 == 0) # prints (0, 2, 4, 6, 8)
 tuple3 = tuple(x*2 for x in range(10)) # prints (0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
 ```
+
+### Set 
+- store multiple elements 
+- **unordered**
+- **immutable** ( can add and remove items)
+- **unindexed**
+
+> creating a set 
+
+```py 
+seta = {1, 2, 3, 4, 5} # default method
+setb = {x for x in range(10) if x % 2 == 0} # using comprehension to create a set of even numbers from 0 to 9
+```
+
+set methods - [method](https://www.w3schools.com/python/python_sets_methods.asp)
+
 ## multiple arguments
 
 In python method overloading is not required as it will modify the function as of the presesnted arguments .
