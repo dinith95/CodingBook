@@ -31,9 +31,7 @@ print(name[:3]) # prints 'din'
 print(name[2:]) # prints 'nith'
 ```
 
-## collections 
-
-### Lists 
+## Lists 
 
 - store multiple values as an array 
 - **ordered** 
@@ -44,7 +42,7 @@ create a list - `lista = [1, 2, 3, 4, 5]`
 
 all list methods - [methods](https://www.w3schools.com/python/python_lists_methods.asp)
 
-> create list through Comprehension
+### create list through Comprehension
  - short hand syntax for creating list based on condition
 
 ```py
@@ -53,7 +51,7 @@ list3 = [x for x in range(10) if x % 2 == 0] # prints [0, 2, 4, 6, 8]
 list4 = [x*2 for x in range(10)] # prints [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```
 
-### tuple 
+## tuple 
 
 - stores multiple elements as an array 
 - **ordered**
@@ -66,7 +64,7 @@ create a tuple
 
 tuple methods - [methods](https://www.w3schools.com/python/python_tuples_methods.asp)
 
-> create a tuple through comprehension 
+### create a tuple through comprehension 
  - short hand notation to create a tuple 
 
 ```py
@@ -75,7 +73,7 @@ tuple2 = tuple(x for x in range(10) if x % 2 == 0) # prints (0, 2, 4, 6, 8)
 tuple3 = tuple(x*2 for x in range(10)) # prints (0, 2, 4, 6, 8, 10, 12, 14, 16, 18)
 ```
 
-### Set 
+## Set 
 - store multiple elements 
 - **unordered**
 - **immutable** ( can add and remove items)
@@ -88,7 +86,82 @@ seta = {1, 2, 3, 4, 5} # default method
 setb = {x for x in range(10) if x % 2 == 0} # using comprehension to create a set of even numbers from 0 to 9
 ```
 
-set methods - [method](https://www.w3schools.com/python/python_sets_methods.asp)
+set methods - [method](https://www.w3schools.com/python/python_sets_methods.asp) 
+
+### Diffrence 
+
+- get the values in **set1**  but not in **set2** 
+- **syntax** : `diff = set1.difference(set2)`
+- **short syntax** : `diff2 = set1 - set2`
+
+```py 
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3,10} 
+
+diff = set1.difference(set2) # returns {4, 5}
+```
+
+### Intersection 
+- prints the common elements in both sets 
+- **syntax** : `result = set1.intersection(set2)`
+- **short syntax** : `result2 = set1 & set2`
+
+```py
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3,10} 
+
+result = set1.intersection(set2) # return {1, 2, 3}
+```
+
+### IsSubset 
+- returns **True** all the elements in *set2* are exists in *set1*
+- **syntax** : `result = set2.issubset(set1)`
+- **short syntax** : `result2 = set2 <= set1 `
+
+```py
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3} 
+
+result = set2.issubset(set1)  # returns True
+```
+
+### IsSuperset 
+- returns **True** if **set1** has all the elements in **set2**
+- **syntax** : `result = set1.issuperset(set2)`
+- **short syntax**: `result2 = set1 >= set2`
+
+```py
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3} 
+
+result = set1.issuperset(set2)  # returns True
+```
+
+### Union 
+- returns all the elements in both sets 
+- if there are duplicates , *they are included once*
+- **sytax** : `result = set1.union(set2)`
+- **short syntax** : `result2 = set1 | set2`
+
+```py
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3,6} 
+
+result = set1.union(set2)  # returns {1, 2, 3, 4, 5, 6}
+```
+
+### symmetric_difference
+- returns element that are unique to two sets 
+- common elements are not returned at all 
+- **syntax** : `result = set1.symmetric_difference(set2)`
+- **short syntax** : `result2 = set1 ^ set2`
+
+```py
+set1 = {1, 2, 3, 4, 5} 
+set2 = {1,2,3,6} 
+
+result = set1.symmetric_difference(set2) # returns {4, 5, 6}
+```
 
 ## multiple arguments
 
