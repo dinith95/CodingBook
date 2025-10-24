@@ -4,7 +4,7 @@
 ### slice 
 
 An array or list can be sliced as it returns a subset of elemetns .
-Example slicings : 
+Example slicings : ****
 
 ```py
 num_arr = [1,2,3,4,5,6]
@@ -31,6 +31,27 @@ print(name[:3]) # prints 'din'
 print(name[2:]) # prints 'nith'
 ```
 
+## collections 
+
+### Lists 
+
+- store multiple values as an array 
+- **ordered** 
+- **allow multiple values**
+
+create a list - `lista = [1, 2, 3, 4, 5]`
+
+all list methods - [methods](https://www.w3schools.com/python/python_lists_methods.asp)
+
+> create list through Comprehension
+ - short hand syntax for creating list based on condition
+
+```py
+list2 = [x for x in range(10) ]  # prints [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+list3 = [x for x in range(10) if x % 2 == 0] # prints [0, 2, 4, 6, 8]
+list4 = [x*2 for x in range(10)] # prints [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
+
 ## multiple arguments
 
 In python method overloading is not required as it will modify the function as of the presesnted arguments .
@@ -41,7 +62,7 @@ def myInfo(name='dinith' , age  = 20):
    print(name + ' age is ' ,age )
 
 myInfo(); # works without any params
-   # output -- dinith age is  20
+   # output -- dinith age is  **20**
 
 myInfo(age=36, name='dj') # order of the parameter can be changed
    # output -- dj age is  36
