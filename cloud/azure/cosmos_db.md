@@ -61,6 +61,8 @@ through can be specidied in multiple ways .
 
 - ttl for item to be active only if **ttl** is **enabled in container level**
 - ttl for itema will override ttl in container level. 
+
+more information : [ttl ms learn](https://learn.microsoft.com/en-us/training/modules/plan-resource-requirements/5-time-to-live) 
 # Database Design 
 
 ## Choosing a Partition Key [more](https://learn.microsoft.com/en-us/training/modules/implement-non-relational-data-model/6-choose-partition-key#:~:text=Next-,Choose%20a%20partition%20key,-Completed)

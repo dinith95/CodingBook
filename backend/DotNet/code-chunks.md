@@ -51,6 +51,7 @@ this uses the nugget package [CSVHelper](https://www.nuget.org/packages/CsvHelpe
 - create a dynamic class with the `ExpandoObject`
 - [dynamic-class-creation-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-dynamic-class-cs)
 
+
 ## Generic Code smippets 
 
 ### Query cosmos Data 
@@ -84,3 +85,15 @@ passing the delegate
 - selectFunc - it will project only the necessary propertese ( does the function of the select clause )
 
 - [query-code-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-cosmosquery_delegate-cs)
+
+## Tasks and Threading 
+
+### Using Parallel 
+- control the *maximum tasks that run in parallel* using the **Parallel** code feature
+- code snippet - [code-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-parallel-task-cs)
+
+### Using the custom  parallelism  
+- controls the *maximum tasks that run in parallel* using custom methods 
+- useful when **Parallel** method cannot be used. 
+
+- code sample : [code-snippet](https://gist.github.com/dinith95/cddcdf4c32633b3abd182d7f57790e88#file-custom-parallel-task-cs)
