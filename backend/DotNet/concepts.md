@@ -37,3 +37,15 @@ var total2 = sample.AddNumbers(1, 2);
 ## String Builder 
 - mutable version of the `string` 
 - highly memory efficient in iterative string modifications as unless multiple instance has to be created. 
+
+# Streams 
+- read / write from / to source like file and network connection in sequential manner 
+- process data in chunk rather than reading everything at once 
+- buffered streams reduce the disk / network overhead by reading / writing in buffers
+- use streams with **using statement** so that they are disposed properly
+
+## Async Streams 
+- does not block the thread while wating till os / network to return data 
+- fewer threads are needed. 
+- allows server to handle multiple requests 
+  
