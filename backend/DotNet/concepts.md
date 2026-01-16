@@ -58,4 +58,12 @@ var total2 = sample.AddNumbers(1, 2);
   - a `Task` object is returned
   - `Thread` is returned to pool to take up another task
   - when the **Task is complete** a new htread is taken from pool and process is continued. 
-
+- this can be seen through following code 
+  
+```csharp
+ var thread = Thread.CurrentThread;
+ Console.WriteLine($"SampleStreams running on thread {thread.ManagedThreadId}"); // returns an id 
+ await Task.Delay(3000);
+ var thread2 = Thread.CurrentThread;
+ Console.WriteLine($"SampleStreams resumed on thread {thread2.ManagedThreadId}"); // returns different id
+```
