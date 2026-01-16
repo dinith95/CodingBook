@@ -48,4 +48,14 @@ var total2 = sample.AddNumbers(1, 2);
 - does not block the thread while wating till os / network to return data 
 - fewer threads are needed. 
 - allows server to handle multiple requests 
+
+# Threads and Async 
+- **Thread** : a single unit of code execution 
+- limited number of threads available in **thread pool**
   
+## Behavior of Async
+- when `await` keyword is hit , if method is not complete 
+  - a `Task` object is returned
+  - `Thread` is returned to pool to take up another task
+  - when the **Task is complete** a new htread is taken from pool and process is continued. 
+
