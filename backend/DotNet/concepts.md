@@ -90,3 +90,14 @@ var total2 = sample.AddNumbers(1, 2);
   - do not keep the application running ends when the foreground threads complete
   - used for tasks that run in background like monitoring file changes etc.
   - all threaads in thread pool are background threads unless specified by `IsBackground` property.
+
+## Notes on thread
+
+### Task.Delay() vs Thread.Sleep()
+
+- `Thread.Sleep()`
+  - blocks the current thread for specified time
+  - other applications **cannot use the thread** during this time
+- `Task.Delay()`
+  - does not block the thread rather it returns a task that completes after specified time
+  - allows the thread to be **used by other applications** during this time
