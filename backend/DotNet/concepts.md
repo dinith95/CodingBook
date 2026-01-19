@@ -80,7 +80,6 @@ var total2 = sample.AddNumbers(1, 2);
 ## foreground vs background threads
 
 - **foreground threads**
-
   - can set using `IsBackground=false`
   - keep the application running until they complete
   - default type of thread in .net
@@ -101,3 +100,37 @@ var total2 = sample.AddNumbers(1, 2);
 - `Task.Delay()`
   - does not block the thread rather it returns a task that completes after specified time
   - allows the thread to be **used by other applications** during this time
+
+# Casting Object
+
+![Object Casting Diagram](../../images/base_derived_class.png)
+
+- Explicit cast: `(T)obj` — throws InvalidCastException if incompatible.
+- `as` operator: obj as T — returns null on failure.
+- `is` operator: checks type without casting.
+
+Examples:
+
+- Base : Animal
+- Derived : Dog
+
+## Upcasting
+
+- casting from **derived class to base class**
+- when upcasted , derived class specific methods and fields are _not accessible_
+- always safe and implicit
+
+```csharp
+Dog dog = new Dog();
+Animal animal = dog; // implicit upcast
+```
+
+## Downcasting
+
+- casting from **base class to derived class**
+- may fail at runtime if object is not of derived type
+
+```csharp
+Animal animal = new Dog();
+Dog dog = (Dog)animal; // explicit downcast
+```
