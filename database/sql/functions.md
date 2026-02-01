@@ -107,14 +107,70 @@ operate on multiple rows at a time and return one output per row
 
 ## RANK Function
 
-thiss functions assigns a rank to each of the items in the table after partitioning the result set .
+this functions assigns a rank to each of the items in the table after **partitioning the result set** based on the **partition by keyword** .
 
-- PARTITION BY - partition the result set based on criteria ( eg: employees dataset by deprtment )
+- rows with same values will get same rank
+- the next rank(s) after the tie will be skipped
 
-- ORDER BY - orders the results set in the partition by a criteria . ( Eg: employees within the department by the salary )
+- `PARTITION BY` - partition the result set based on criteria ( eg: employees dataset by deprtment )
+
+- `ORDER BY` - orders the results set in the partition by a criteria . ( Eg: employees within the department by the salary )
 
 syntax
 
 ```SQL
 RANK() OVER (PARTITION BY <expr> ORDER BY <expr> [ ASC | DESC ] )
 ```
+
+## Row Number Function
+
+- assigns a **unique sequential integer** to rows within a partition of a result set, starting at 1 for the first row in each partition.
+
+- rows with same values will get different row numbers
+
+- `PARTITION BY` - partition the result set based on criteria
+
+- `ORDER BY` - orders the results set in the partition by a criteria
+
+syntax
+
+```SQL
+ROW_NUMBER() OVER (PARTITION BY <expr> ORDER BY <expr> [ ASC | DESC ] )
+```
+
+## Dense Rank Function
+
+assigns a rank to each of the items in the table after **partitioning the result set** based on the **partition by keyword** .
+
+- rows with same values will get same rank
+- the next rank(s) after the tie **will NOT be skipped**
+
+- `PARTITION BY` - partition the result set based on criteria
+
+- `ORDER BY` - orders the results set in the partition by a criteria
+
+syntax
+
+```SQL
+DENSE_RANK() OVER (PARTITION BY <expr> ORDER BY <expr> [ ASC | DESC ] )
+```
+
+### Comparison of RANK , ROW_NUMBER and DENSE_RANK
+
+Example source data:
+
+|  id | name | score |
+| --: | ---- | ----: |
+|   1 | A    |   100 |
+|   2 | B    |   100 |
+|   3 | C    |    90 |
+|   4 | D    |    80 |
+
+Results when ordering by `score DESC`
+
+| name | score | RANK() | ROW_NUMBER() | DENSE_RANK() |
+| ---- | ----: | -----: | -----------: | -----------: |
+| A    |   100 |      1 |            1 |            1 |
+| B    |   100 |      1 |            2 |            1 |
+| C    |    90 |      3 |            3 |            2 |
+| D    |    80 |      4 |            4 |            3 |
