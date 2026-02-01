@@ -174,3 +174,24 @@ Results when ordering by `score DESC`
 | B    |   100 |      1 |            2 |            1 |
 | C    |    90 |      3 |            3 |            2 |
 | D    |    80 |      4 |            4 |            3 |
+
+## NTILE Function
+
+- divides an ordered result set into a number of approximately equal groups, or "tiles", and assigns a tile number to each row.
+- used for calulating percentiles or distributing data into buckets.
+
+- `number_of_groups` - number of groups to divide the result set into
+- `ORDER BY` - orders the results set in the partition by a criteria
+- `PARTITION BY` (_optional_) - partition the result set based on criteria
+
+> Note: When the number of rows is not evenly divisible by the number of groups, the first few groups will contain one extra row.
+
+syntax
+
+```SQL
+NTILE( number_of_groups ) OVER ( [PARTITION BY <expr>] ORDER BY <expr> [ ASC | DESC ] )
+```
+
+### Example
+
+- Get the top 10% based on the sales volume - [ntile_example](https://gist.github.com/dinith95/9e1d09244abd0368c75b8806314fbc65)
