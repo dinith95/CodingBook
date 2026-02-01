@@ -18,7 +18,9 @@ var total = sample.AddNumbers(1,2,3,4);
 var total2 = sample.AddNumbers(1, 2);
 ```
 
-# System.String & string
+# Strings
+
+## System.String & string
 
 - `string` ( lowercase ) is just a reference to the `System.String` class
 - `string` is used to follow the other variable types standard
@@ -28,12 +30,12 @@ var total2 = sample.AddNumbers(1, 2);
 
 - `string` is immutable if modified new instance is created
 
-## Reference Type
+### Reference Type
 
 - created as a **Reference Type**
 - new instances create on the **heap**
 
-## Variable Passing
+### Variable Passing
 
 - passed by value ( separate copy is created )
 - since **string is immutable** original value is never modified
@@ -42,6 +44,12 @@ var total2 = sample.AddNumbers(1, 2);
 
 - mutable version of the `string`
 - highly memory efficient in iterative string modifications as unless multiple instance has to be created.
+
+## string concat vs string join
+
+- for small number of concatenations `string.concat` is preferred
+- for combining list/arrays `string.join` is preferred
+- `string.join` also calculates the total memory required once and uses it rather than creating multiple instances
 
 # Streams
 
