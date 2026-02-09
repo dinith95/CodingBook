@@ -60,6 +60,7 @@
 &emsp; :page_with_curl: [CSharpConcepts.md](./languages/CSharpConcepts.md)  
 &emsp; :page_with_curl: [javascript.md](./languages/javascript.md)  
 &emsp; :page_with_curl: [python.md](./languages/python.md)  
+&emsp; :page_with_curl: [typescript.md](./languages/typescript.md)  
 :file_folder: [misc](./misc)  
 &emsp; :page_with_curl: [cron_expression.md](./misc/cron_expression.md)  
 &emsp; :page_with_curl: [k9s-k8s-ide.md](./misc/k9s-k8s-ide.md)  
