@@ -10,8 +10,3 @@
 
 - defines contraact for the external classes to follow
 - data shape for external API
-
-## Types
-
-- way to create more descriptive name for an **existing type or combination of types**
-- premitives can be renmed as `type UserID = string;`
