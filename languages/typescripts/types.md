@@ -47,6 +47,18 @@ val = null; // invalid assignment, cannot assign null
 val = undefined; // invalid assignment, cannot assign undefined
 ```
 
+## Function type
+
+- describe function as a Type
+- **parameters** and **return type** can be specified in function type
+
+```typescript
+type GreetFunction = (name: string) => string;
+const greet: GreetFunction = (name) => {
+  return `Hello, ${name}!`;
+};
+```
+
 ## Union Types
 
 - this expresses as value can be one of several types .
