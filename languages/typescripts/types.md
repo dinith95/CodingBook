@@ -64,3 +64,22 @@ age = false; // invalid assignment, will cause a type error
 ```typescript
 let mixedArray: (number | string)[] = [1, "two", 3]; // valid array with union types
 ```
+
+# Retrun Types
+
+## void
+
+- does not return any value
+
+## never
+
+- tells that function will never complete
+- it will throw an `Error`
+
+```typescript
+// throws the error
+function throwError(message: string): never {
+  console.log(message);
+  throw new Error(message);
+}
+```
