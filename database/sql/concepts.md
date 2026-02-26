@@ -18,6 +18,8 @@
 In SQL NULL means the value is unknown .
 
 - Null will _never be equal to another null_
+- Null compared with another null will return \_unknown
+  - if NULL != 2 , will return _unknown_
 - _NULL_ plus anything will return _NULL_
 
 to check whther value is null - `IS NULL`
