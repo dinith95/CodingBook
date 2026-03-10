@@ -77,13 +77,13 @@ age = false; // invalid assignment, will cause a type error
 let mixedArray: (number | string)[] = [1, "two", 3]; // valid array with union types
 ```
 
-# Retrun Types
+## Retrun Types
 
-## void
+### void
 
 - does not return any value
 
-## never
+### never
 
 - tells that function will never complete
 - it will throw an `Error`
@@ -94,4 +94,33 @@ function throwError(message: string): never {
   console.log(message);
   throw new Error(message);
 }
+```
+
+# Types Concepts
+
+## Optional parameters & properties
+
+- denoted by `?` after the parameter or property name
+- indicates that the parameter or property is optional and may be `undefined`
+
+```typescript
+function greet(name: string, age?: number): string {
+  if (age) {
+    return `Hello, ${name}! You are ${age} years old.`;
+  } else {
+    return `Hello, ${name}!`;
+  }
+}
+```
+
+## TypeCasting
+
+- converting a value from one type to another
+- can be done using `as` keyword or angle bracket syntax
+- useful when you want to access more attributes about the type than Generic class can infer.
+
+```typescript
+// get element by id returns HTMLElement | null,
+// it is casted  as HTMLInputElement
+let element = document.getElementById("myElement") as HTMLInputElement;
 ```

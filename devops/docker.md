@@ -1,6 +1,7 @@
-## installing docker 
+## installing docker
 
 ### installing in ubuntu / aws ec2
+
 Follow the steps mention in the [digital ocean docker install guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) **until step 2**
 
 Run below command to run **test container of docker**
@@ -9,70 +10,74 @@ Run below command to run **test container of docker**
     sudo docker run hello-world
 ```
 
-it will show *hello from docker* message . then docker installation is successful.
+it will show _hello from docker_ message . then docker installation is successful.
 
-Follow step 2  of the install guide , add the current user to docker group 
-Note => instead of the su - ${USER} ,  logout and log in 
+Follow step 2 of the install guide , add the current user to docker group
+Note => instead of the su - ${USER} , logout and log in
 
+# docker concepts
 
-## docker concepts 
+## network
 
+- docker network is the virtual network created for the docker
+- containers to communicate with each other by _contianer name_
 
-### image 
+## image
 
+docker image is developed application with the its packages and the files bundled together . normally dokcer image has
 
-docker image is developed application with the its packages and the files bundled together . normally dokcer image has 
-
- - main framework libraries ( .net core runtime)
- - application resources ( dll libraries )
- - congigeration files ( appsetting,json)
+- main framework libraries ( .net core runtime)
+- application resources ( dll libraries )
+- congigeration files ( appsetting,json)
 
 [more info ](https://docs.docker.com/engine/reference/commandline/images/)
 
-### registry 
+## registry
 
 registry is the place where to store the docker images and share with others.
 
-### container 
+## container
 
 container is created from the docker base image with application or other process running on it. [more info](https://www.docker.com/resources/what-container/#:~:text=A%20Docker%20container%20image%20is,tools%2C%20system%20libraries%20and%20settings.)
 
-## Docker Compose 
-- can be used crete multiple docker builds to be bundled together . 
+# Docker Compose
+
+- can be used crete multiple docker builds to be bundled together .
 - each of the items can be added under `services`
 
-### Commands 
+### Commands
 
-- `up` - create the docker containers 
-- `down` - remove the docker containers 
+- `up` - create the docker containers
+- `down` - remove the docker containers
 - `build` - build the docker image by providing a `Dockerfile`
 
 sample docker compose file :[docker-compose](https://gist.github.com/dinith95/71a12f81c84ef0648d7b99fd45f47582)
-## docker useful commands 
 
-delete single image -   ```docker image rm```
+# docker useful commands
 
-Remove all the images without an container - ```docker image prune -a```
+delete single image - `docker image rm`
 
-Stop all containers - ```docker stop $(docker ps -a -q)```
+Remove all the images without an container - `docker image prune -a`
 
-connect to docker instance terminal - ```sudo docker exec -it sql1 "bash"``` 
+Stop all containers - `docker stop $(docker ps -a -q)`
 
-- *sql1* - docker instance name 
+connect to docker instance terminal - `sudo docker exec -it sql1 "bash"`
 
+- _sql1_ - docker instance name
 
+# Configuring MS_SQL_sever instance in docker
 
-## Configuring MS_SQL_sever instance in docker
 Complete the [Installing docker in AWS](#installing-in-ubuntu-/-aws-ec2) section
 
-### set up docker instance 
-run below command to get sql server instance 
+### set up docker instance
+
+run below command to get sql server instance
 
 ```dockerfile
 sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
 ```
 
-start the sql container by 
+start the sql container by
 
 ```dockerfile
 sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=xxxxxx" \
@@ -81,26 +86,27 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=xxxxxx" \
 ```
 
 here :
-- *ACCEPT_EULA* - accepting the end user agreement 
-- *SA_PASSWORD* - set the sql server database pw 
 
-do a  ```docker ps -a``` and there should be instance with **sqldj1**
+- _ACCEPT_EULA_ - accepting the end user agreement
+- _SA_PASSWORD_ - set the sql server database pw
 
-### connect to docker instance 
+do a `docker ps -a` and there should be instance with **sqldj1**
 
-connect to the docker instance by  - ```  sudo docker exec -it sql1 "bash" ```
+### connect to docker instance
 
-connect to the *sql command* by 
+connect to the docker instance by - ` sudo docker exec -it sql1 "bash"`
 
-``` 
+connect to the _sql command_ by
+
+```
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "xxxxxx"
 ```
 
-here 
- - -P -  password for the sql user instance 
+here
 
- **notes**  
+- -P - password for the sql user instance
 
-- When connecting from remote make sure *port 1433 , is allowed* on inbound ports of VM
+**notes**
+
+- When connecting from remote make sure _port 1433 , is allowed_ on inbound ports of VM
 - useful link - [Microsoft sql server docs](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
-
