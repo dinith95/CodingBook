@@ -142,3 +142,24 @@ Animal animal = dog; // implicit upcast
 Animal animal = new Dog();
 Dog dog = (Dog)animal; // explicit downcast
 ```
+
+## Boxing
+
+- converting value type to reference type
+- creates a **new object** on the heap
+- not recommended for performance critical code
+
+```csharp
+int x = 5;
+object obj = x; // boxing : stored in the heap
+```
+
+## Unboxing
+
+- converting reference type back to value type
+- requires explicit cast
+
+```csharp
+object obj = 5; // boxing
+int x = (int)obj; // unboxing : explicit cast
+```
