@@ -148,6 +148,7 @@ Dog dog = (Dog)animal; // explicit downcast
 - converting value type to reference type
 - creates a **new object** on the heap
 - not recommended for performance critical code
+- recommended to use `Generics` type parameters instead of `object` type parameters to avoid boxing
 
 ```csharp
 int x = 5;
