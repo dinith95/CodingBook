@@ -109,7 +109,9 @@ var total2 = sample.AddNumbers(1, 2);
   - does not block the thread rather it returns a task that completes after specified time
   - allows the thread to be **used by other applications** during this time
 
-# Casting Object
+# Inheritance and Polymorphism
+
+## Casting Object
 
 ![Object Casting Diagram](../../images/base_derived_class.png)
 
@@ -164,3 +166,23 @@ object obj = x; // boxing : stored in the heap
 object obj = 5; // boxing
 int x = (int)obj; // unboxing : explicit cast
 ```
+
+## method overriding
+
+- derived class can provide its own implementation of a method defined in the base class
+
+- following keywords are used for method overriding
+  - `virtual` : used in base class to indicate that the method can be overridden
+  - `override` : used in derived class to indicate that the method is overriding a virtual method in the base class
+
+## abstract classes and methods
+
+- declared with `abstract` keyword
+- abstract class : cannot be **instantiated** and can contain abstract methods
+- abstract method : does not have implementation and must be implemented by derived classes
+
+## sealed classes and methods
+
+- declared with `sealed` keyword
+- sealed class : cannot be inherited
+- sealed method : cannot be overridden by derived classes
