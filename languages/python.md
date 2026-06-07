@@ -391,3 +391,101 @@ def test_sum123():
 ## structlink
 [struct link docs](https://eeshannarula29.github.io/structlinks/) - this implements linked list , trees , graphs and hash maps
 
+# python venv 
+A Python virtual environment keeps each project's packages isolated from your global Python installation.
+
+## 1. Create a virtual environment
+
+Run this from your project folder:
+
+```bash
+python -m venv .venv
+```
+
+Recommended environment folder name:
+
+```text
+.venv
+```
+
+## 2. Activate the virtual environment
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+### Windows PowerShell
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### Windows Command Prompt
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+After activation, your terminal may show:
+
+```text
+(.venv) $
+```
+
+## 3. Install packages
+
+Example:
+
+```bash
+pip install requests
+```
+
+## 4. Save installed dependencies
+
+```bash
+pip freeze > requirements.txt
+```
+
+## 5. Install dependencies from a file
+
+```bash
+pip install -r requirements.txt
+```
+
+## 6. Deactivate the virtual environment
+
+```bash
+deactivate
+```
+
+## 7. Ignore the virtual environment in Git
+
+Add this to your `.gitignore` file:
+
+```gitignore
+.venv/
+```
+
+## Typical workflow
+
+```bash
+mkdir my-project
+cd my-project
+
+python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+
+pip install requests
+pip freeze > requirements.txt
+```
+
+## Notes
+
+- Do not commit the `.venv` folder to Git.
+- Commit `requirements.txt` so others can install the same dependencies.
+- For modern Python projects, you may also use `pyproject.toml` and a lockfile.
+
+
+
