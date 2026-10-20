@@ -5,7 +5,7 @@ FOLDER_ICON = ':file_folder:'
 PAGE_ICON = ':page_with_curl:'
 TAB_CHAR = '&emsp;'
 
-ignoreDirs = ['.git','diagrams', 'images', '.github']
+ignoreDirs = ['.git','diagrams', 'images', '.github', '.claude']
 
 
 def processSubFolders(path,depth):
